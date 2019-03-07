@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Feb 2019 15:41:50 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Feb 2019 15:41:50 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>flex布局</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Sat, 23 Feb 2019 15:41:50 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/</guid>
+      <description>关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp;amp; Flex 布局教程：语法篇
+阮一峰 &amp;amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&amp;rdquo;弹性布局&amp;rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&amp;rdquo;容器&amp;rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&amp;rdquo;项目&amp;rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;</description>
+    </item>
     
     <item>
       <title>Position</title>
@@ -18,8 +39,9 @@
       
       <guid>https://zhengxiaomengmeng.github.io/2019/02/position/</guid>
       <description>position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明） ###relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　###absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &amp;ldquo;left&amp;rdquo;, &amp;ldquo;top&amp;rdquo;, &amp;ldquo;right&amp;rdquo; 以及 &amp;ldquo;bottom&amp;rdquo; 属性进行规定。可通过z-index进行层次分级。
-###fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &amp;ldquo;left&amp;rdquo;, &amp;ldquo;top&amp;rdquo;, &amp;ldquo;right&amp;rdquo; 以及 &amp;ldquo;bottom&amp;rdquo; 属性进行规定。可通过z-index进行层次分级。
+static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
+relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &amp;ldquo;left&amp;rdquo;, &amp;ldquo;top&amp;rdquo;, &amp;ldquo;right&amp;rdquo; 以及 &amp;ldquo;bottom&amp;rdquo; 属性进行规定。可通过z-index进行层次分级。
+fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &amp;ldquo;left&amp;rdquo;, &amp;ldquo;top&amp;rdquo;, &amp;ldquo;right&amp;rdquo; 以及 &amp;ldquo;bottom&amp;rdquo; 属性进行规定。可通过z-index进行层次分级。
 fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
 关于absolute与relative之间的区别，详细可以参考原文</description>
     </item>

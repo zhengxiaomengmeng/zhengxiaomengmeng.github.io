@@ -190,6 +190,66 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+          flex布局
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-23T15:41:50&#43;08:00">
+        
+  二月 23, 2019
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
           Position
         </a>
@@ -210,8 +270,9 @@
     <div class="postShorten-excerpt" itemprop="articleBody">
       
         position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明） ###relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　###absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-###fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
+static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
+relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
+fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
 fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
 关于absolute与relative之间的区别，详细可以参考原文
       
@@ -288,6 +349,35 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+                <h3 class="media-heading">flex布局</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
                 <h3 class="media-heading">Position</h3>
               </a>
@@ -297,8 +387,9 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明） ###relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　###absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-###fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
+static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
+relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
+fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
 fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
 关于absolute与relative之间的区别，详细可以参考原文</div>
             </div>
@@ -313,7 +404,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         1 posts found
+         2 posts found
       </p>
     </div>
   </div>

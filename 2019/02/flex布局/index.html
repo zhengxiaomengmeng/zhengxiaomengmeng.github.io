@@ -8,45 +8,73 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta name="description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;">
 
 
-<meta property="og:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta property="og:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Position">
-<meta name="twitter:title" content="Position">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/position/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/position/">
+<meta property="og:title" content="flex布局">
+<meta name="twitter:title" content="flex布局">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
-<meta name="twitter:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta property="og:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;">
+<meta name="twitter:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
+阮一峰 &amp; Flex 布局教程：语法篇
+阮一峰 &amp; Flex 布局教程：实例篇
+一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
+任何一个容器都可以指定为Flex布局。
+.box{ display: flex; }  行内元素也可以使用Flex布局。
+.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
+flex-direction: row | row-reverse | column | column-reverse;
+ flex-wrap  定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
+flex-flow:  || ;">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-22T15:41:50">
+    <meta property="article:published_time" content="2019-02-23T15:41:50">
   
   
-    <meta property="article:modified_time" content="2019-02-22T15:41:50">
+    <meta property="article:modified_time" content="2019-02-23T15:41:50">
   
   
   
@@ -69,14 +97,14 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>Position</title>
+    <title>flex布局</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -204,15 +232,15 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Position
+      flex布局
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-22T15:41:50&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-23T15:41:50&#43;08:00">
         
-  二月 22, 2019
+  二月 23, 2019
 
       </time>
     
@@ -225,30 +253,168 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             <div class="main-content-wrap">
               
 
-<h1 id="position定位">position定位</h1>
+<p>关于CSS3的flex布局，阮一峰的两篇讲解十分到位！</p>
 
-<p>position属性值
-参考<a href="http://www.cnblogs.com/theWayToAce/p/5264436.html">http://www.cnblogs.com/theWayToAce/p/5264436.html</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰 &amp; Flex 布局教程：语法篇</a></p>
 
-<h3 id="static"><code>static</code></h3>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">阮一峰 &amp; Flex 布局教程：实例篇</a></p>
 
-<p>（静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）</p>
+<h2 id="一-flex布局是什么">一、Flex布局是什么？</h2>
 
-<h3 id="relative"><code>relative</code></h3>
+<p>Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！</p>
 
-<p>（相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　　</p>
+<p>任何一个容器都可以指定为Flex布局。</p>
 
-<h3 id="absolute"><code>absolute</code></h3>
+<pre><code class="language-css">.box{
+display: flex;
+}
+</code></pre>
 
-<p>（绝对定位）：生成绝对定位的元素，相对于 <strong>static 定位以外的第一个父元素</strong>进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。</p>
+<p>行内元素也可以使用Flex布局。</p>
 
-<h3 id="fixed"><code>fixed</code></h3>
+<pre><code class="language-css">.box{
+display: inline-flex;
+}
+</code></pre>
 
-<p>（固定定位）：生成绝对定位的元素，相对于<strong>浏览器窗口</strong>进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。</p>
+<p>##基本概念
+采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。</p>
 
-<p>fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="" />
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
+项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
 
-<p>关于absolute与relative之间的区别，详细可以参考原文</p>
+<h2 id="基本语法">基本语法</h2>
+
+<h4 id="容器的六个基本属性">容器的六个基本属性：</h4>
+
+<ul>
+<li><p><a href="#flex-direction"><strong>flex-direction</strong> </a> 决定主轴的方向</p>
+
+<p>flex-direction: row | row-reverse | column | column-reverse;</p></li>
+
+<li><p><a href="#flex-wrap"><strong>flex-wrap</strong> </a>  定义，如果一条轴线排不下，如何换行。</p>
+
+<pre><code>flex-wrap: nowrap | wrap | wrap-reverse;
+</code></pre></li>
+
+<li><p><a href="#flex-flow"><strong>flex-flow</strong></a> flex-direction属性和flex-wrap属性的简写形式</p>
+
+<p>flex-flow: <flex-direction> || <flex-wrap>;</p></li>
+
+<li><p><a href="#justify-content"><strong>justify-content</strong> </a>
+定义了项目在主轴上的对齐方式。</p>
+
+<p>justify-content: flex-start | flex-end | center | space-between | space-around;</p></li>
+
+<li><p><a href="#align-items"><strong>align-items</strong> </a>
+定义项目在交叉轴上如何对齐。</p>
+
+<p>align-items: flex-start | flex-end | center | baseline | stretch;</p></li>
+
+<li><p><a href="#align-content"><strong>align-content</strong> </a> 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+
+<p>align-content: flex-start | flex-end | center | space-between | space-around | stretch;</p></li>
+</ul>
+
+<h4 id="项目的六个基本属性">项目的六个基本属性：</h4>
+
+<ul>
+<li><strong>order</strong></li>
+</ul>
+
+<p>定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+
+<pre><code class="language-html">.item {
+  order: &lt;integer&gt;;
+}
+</code></pre>
+
+<ul>
+<li><strong>flex-grow</strong></li>
+</ul>
+
+<p>定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大</p>
+
+<pre><code class="language-html">.item {
+  flex-grow: &lt;number&gt;; /* default 0 */
+}
+</code></pre>
+
+<ul>
+<li><strong>flex-shrink</strong></li>
+</ul>
+
+<p>定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+
+<pre><code class="language-html">.item {
+  flex-shrink: &lt;number&gt;; /* default 1 */
+}
+</code></pre>
+
+<ul>
+<li><strong>flex-basis</strong></li>
+</ul>
+
+<p>定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。length可以向width/height一样设置px、%等。</p>
+
+<pre><code class="language-html">.item {
+  flex-basis: &lt;length&gt; | auto; /* default auto */
+}
+</code></pre>
+
+<ul>
+<li><strong>flex</strong></li>
+</ul>
+
+<p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+
+<pre><code class="language-html">.item {
+  flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]
+}
+</code></pre>
+
+<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</p>
+
+<ul>
+<li><strong>align-self</strong></li>
+</ul>
+
+<p>允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch</p>
+
+<pre><code class="language-html">.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+
+<h3 id="flex水平垂直居中">flex水平垂直居中</h3>
+
+<p>父元素设定高度，将子元素水平、垂直居中
+父元素<code>justify-content</code>设置为center,<code>align-items</code>设置为center</p>
+
+<pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;flex&lt;/title&gt;
+    &lt;style&gt;
+        .par{
+            height:500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background: #cc7680;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;par&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
 
               
             </div>
@@ -264,7 +430,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -272,7 +438,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/position/" data-tooltip="Position">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -332,7 +498,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -340,7 +506,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/position/" data-tooltip="Position">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -547,9 +713,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/position\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/flex%E5%B8%83%E5%B1%80\/';
           
-            this.page.identifier = '\/2019\/02\/position\/'
+            this.page.identifier = '\/2019\/02\/flex%E5%B8%83%E5%B1%80\/'
           
         };
         (function() {
