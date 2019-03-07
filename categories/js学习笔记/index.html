@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="Study Notes">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Css">
-<meta name="twitter:title" content="Css">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/tags/css/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/tags/css/">
+<meta property="og:title" content="Js学习笔记">
+<meta name="twitter:title" content="Js学习笔记">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
 <meta property="og:description" content="Study Notes">
 <meta name="twitter:description" content="Study Notes">
@@ -39,16 +39,16 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>Css</title>
+    <title>Js学习笔记</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/tags/css/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/tags/css/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -205,20 +205,20 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
-          flex布局
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
+          闭包
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-23T15:41:50&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-24T21:36:22&#43;08:00">
         
   
   
   
   
-    2019-02-23
+    2019-02-24
   
 
       </time>
@@ -228,7 +228,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>
     
   
 
@@ -237,88 +237,22 @@
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
       
-        关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;
+        闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ var c = i; return function () { console.
       
       <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
-          Position
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-22T15:41:50&#43;08:00">
-        
-  
-  
-  
-  
-    2019-02-22
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/position/" class="postShorten-excerpt_link link">阅读全文</a>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" class="postShorten-excerpt_link link">阅读全文</a>
         
       </p>
     </div>

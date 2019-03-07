@@ -8,83 +8,83 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;">
+<meta name="description" content="闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ var c = i; return function () { console.">
 
 
-<meta property="og:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;">
+<meta property="og:description" content="闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ var c = i; return function () { console.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flex布局">
-<meta name="twitter:title" content="flex布局">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+<meta property="og:title" content="闭包">
+<meta name="twitter:title" content="闭包">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;">
-<meta name="twitter:description" content="关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;">
+<meta property="og:description" content="闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ var c = i; return function () { console.">
+<meta name="twitter:description" content="闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i&#43;&#43;){ result[i] = function(){ var c = i; return function () { console.">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-23T15:41:50">
+    <meta property="article:published_time" content="2019-02-24T21:36:22">
   
   
-    <meta property="article:modified_time" content="2019-02-23T15:41:50">
+    <meta property="article:modified_time" content="2019-02-24T21:36:22">
   
-  
-  
-    
-      <meta property="article:section" content="CSS学习笔记">
-    
   
   
     
-      <meta property="article:tag" content="CSS">
+      <meta property="article:section" content="JS学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="JavaScript">
     
   
 
@@ -105,14 +105,14 @@ flex-flow:  || ;">
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>flex布局</title>
+    <title>闭包</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -252,19 +252,19 @@ flex-flow:  || ;">
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      flex布局
+      闭包
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-23T15:41:50&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-24T21:36:22&#43;08:00">
         
   
   
   
   
-    2019-02-23
+    2019-02-24
   
 
       </time>
@@ -274,7 +274,7 @@ flex-flow:  || ;">
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>
     
   
 
@@ -286,168 +286,131 @@ flex-flow:  || ;">
             <div class="main-content-wrap">
               
 
-<p>关于CSS3的flex布局，阮一峰的两篇讲解十分到位！</p>
+<h2 id="闭包">闭包</h2>
 
-<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰 &amp; Flex 布局教程：语法篇</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html">阮一峰学习闭包</a></p>
 
-<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">阮一峰 &amp; Flex 布局教程：实例篇</a></p>
+<h3 id="闭包的概念">闭包的概念</h3>
 
-<h2 id="一-flex布局是什么">一、Flex布局是什么？</h2>
+<p>高程上关于闭包的定义：<strong>闭包是指有权访问另一个函数作用域中的变量的函数</strong></p>
 
-<p>Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！</p>
+<p>简单理解就是：定义在一个函数内部的函数</p>
 
-<p>任何一个容器都可以指定为Flex布局。</p>
+<p>在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
 
-<pre><code class="language-css">.box{
-display: flex;
-}
+<p>创建闭包的方式：<strong>在一个函数内部创建另一个函数</strong></p>
+
+<pre><code class="language-js">　function f1(){
+　　　　var n=999;
+　　　　function f2(){
+　　　　　　alert(n); 
+　　　　}
+　　　　return f2;
+　　}
+　　var result=f1();
+　　result(); // 999
 </code></pre>
 
-<p>行内元素也可以使用Flex布局。</p>
+<p>其中<code>f2( )</code>就是一个闭包能够访问它上一级函数<code>f1()</code>中的变量n。</p>
 
-<pre><code class="language-css">.box{
-display: inline-flex;
+<p><img src="https://pic4.zhimg.com/v2-88a513ba2ce27b5b41ec6e188d07b30f_r.jpg" alt="" /></p>
+
+<p>闭包关于作用域链的图示：</p>
+
+<h3 id="闭包的用途">闭包的用途</h3>
+
+<p>1、读取其他函数内部的变量</p>
+
+<p>2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。</p>
+
+<p>来看一个典型的例子</p>
+
+<pre><code class="language-js">var result = new Array();    
+function createFunctions(){    
+  for (var i=0; i &lt; 10; i++){      
+      result[i] = function(){            
+          console.log(i);      
+      };     
+   }     
 }
+
+result[6]();  //10
+
 </code></pre>
 
-<h2 id="基本概念">基本概念</h2>
+<p>从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数<code>return result</code> 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。</p>
 
-<p>采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。</p>
+<p>解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。</p>
 
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="" />
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
-项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
-
-<h2 id="基本语法">基本语法</h2>
-
-<h4 id="容器的六个基本属性">容器的六个基本属性：</h4>
-
-<ul>
-<li><p><a href="#flex-direction"><strong>flex-direction</strong> </a> 决定主轴的方向</p>
-
-<p>flex-direction: row | row-reverse | column | column-reverse;</p></li>
-
-<li><p><a href="#flex-wrap"><strong>flex-wrap</strong> </a>  定义，如果一条轴线排不下，如何换行。</p>
-
-<pre><code>flex-wrap: nowrap | wrap | wrap-reverse;
-</code></pre></li>
-
-<li><p><a href="#flex-flow"><strong>flex-flow</strong></a> flex-direction属性和flex-wrap属性的简写形式</p>
-
-<p>flex-flow: <flex-direction> || <flex-wrap>;</p></li>
-
-<li><p><a href="#justify-content"><strong>justify-content</strong> </a>
-定义了项目在主轴上的对齐方式。</p>
-
-<p>justify-content: flex-start | flex-end | center | space-between | space-around;</p></li>
-
-<li><p><a href="#align-items"><strong>align-items</strong> </a>
-定义项目在交叉轴上如何对齐。</p>
-
-<p>align-items: flex-start | flex-end | center | baseline | stretch;</p></li>
-
-<li><p><a href="#align-content"><strong>align-content</strong> </a> 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
-
-<p>align-content: flex-start | flex-end | center | space-between | space-around | stretch;</p></li>
-</ul>
-
-<h4 id="项目的六个基本属性">项目的六个基本属性：</h4>
-
-<ul>
-<li><strong>order</strong></li>
-</ul>
-
-<p>定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
-
-<pre><code class="language-html">.item {
-  order: &lt;integer&gt;;
+<pre><code class="language-js">var result = new Array();    
+function createFunctions(){   
+  for (var i=0; i &lt; 10; i++){       
+    result[i] = function(){       
+        var c = i;      
+        return function () {
+            console.log(c);
+        };       
+     }();     
+   }   
 }
+
+result[6]();  //6
+
+
 </code></pre>
 
-<ul>
-<li><strong>flex-grow</strong></li>
-</ul>
+<h3 id="闭包的注意点">闭包的注意点</h3>
 
-<p>定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大</p>
+<p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
 
-<pre><code class="language-html">.item {
-  flex-grow: &lt;number&gt;; /* default 0 */
+<p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+
+<h3 id="闭包中的this">闭包中的this</h3>
+
+<p>匿名函数的执行环境具有全局性，因此其 this 对象通常指向 window</p>
+
+<p><strong>闭包的this对象一般也是指向window</strong>。具体使用用要看具体的情况，有没有实例化对象，有没有使用apply() call() 等来改变this对象。</p>
+
+<h3 id="面试中问到关于函数闭包的问题">面试中问到关于函数闭包的问题</h3>
+
+<p>f(a)(b);</p>
+
+<p>要求返回a+b的结果。</p>
+
+<p>面试的时候面试官写出这样的一个表达式，猛一看这个心想坏了，这是什么表达式，我都没见过，一脸懵逼，一开始以为则是一个立即执行函数，仔细一看不对，这是一个函数执行之后再跟一个<code>()</code>表示执行，还好面试官提示一下，后面的括号就是表示执行函数，那前面的<code>f(a)</code>表示执行结果返回的是一个函数。</p>
+
+<p>接下来就是写这个函数：两种思路，一种我自己想的，一种网上的，当然是晚上的比较好</p>
+
+<h5 id="1-使用闭包">1、使用闭包</h5>
+
+<pre><code class="language-js">function f(x) {
+    return function(y){
+        return x+y
+    }
 }
+console.log(f(2));  //返回一个函数
+console.log(f(2)(3));  //5
 </code></pre>
 
-<ul>
-<li><strong>flex-shrink</strong></li>
-</ul>
+<p>这种方法明显的好，使用闭包，函数里面封装一个函数。最为关键的点在于，<strong>闭包就是能够读取其他函数内部变量的函数</strong>，就相当于把第一次执行时传入的参数x定义为了一个变量，因为在闭包函数中有对x的引用，所以在函数f执行完成之后，内存中x变量的值并没有被清空，在第二次执行的时候可以正常访问到x，并返回x+y。</p>
 
-<p>定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<p>其实这个问题在<a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html">阮一峰-关于闭包的学习</a>中有这个表达式，当时自己看的时候只注意到闭包的作用域，没有注意到函数执行表达式。</p>
 
-<pre><code class="language-html">.item {
-  flex-shrink: &lt;number&gt;; /* default 1 */
+<h5 id="2-我的方法">2、我的方法</h5>
+
+<p>我的方法就比较笨， 将闭包特有的性质单独拿出来实现。</p>
+
+<pre><code class="language-js">let temp;
+function f() {
+    if (temp) {
+        return temp * arguments[0]
+    } else {
+        temp = arguments[0]
+        return f;
+    }
 }
-</code></pre>
-
-<ul>
-<li><strong>flex-basis</strong></li>
-</ul>
-
-<p>定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。length可以向width/height一样设置px、%等。</p>
-
-<pre><code class="language-html">.item {
-  flex-basis: &lt;length&gt; | auto; /* default auto */
-}
-</code></pre>
-
-<ul>
-<li><strong>flex</strong></li>
-</ul>
-
-<p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-
-<pre><code class="language-html">.item {
-  flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]
-}
-</code></pre>
-
-<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</p>
-
-<ul>
-<li><strong>align-self</strong></li>
-</ul>
-
-<p>允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch</p>
-
-<pre><code class="language-html">.item {
-  align-self: auto | flex-start | flex-end | center | baseline | stretch;
-}
-</code></pre>
-
-<h3 id="flex水平垂直居中">flex水平垂直居中</h3>
-
-<p>父元素设定高度，将子元素水平、垂直居中
-父元素<code>justify-content</code>设置为center,<code>align-items</code>设置为center</p>
-
-<pre><code class="language-html">&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;flex&lt;/title&gt;
-    &lt;style&gt;
-        .par{
-            height:500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .son{
-            width: 200px;
-            height: 200px;
-            background: #cc7680;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&quot;par&quot;&gt;
-    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
+console.log(f(2));  //返回一个函数
+console.log(f(2)(3));  //5
 </code></pre>
 
               
@@ -461,7 +424,7 @@ display: inline-flex;
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/css/">CSS</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
 
                   </div>
                 
@@ -474,7 +437,7 @@ display: inline-flex;
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -482,7 +445,7 @@ display: inline-flex;
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/position/" data-tooltip="Position">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -500,7 +463,7 @@ display: inline-flex;
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -548,7 +511,7 @@ display: inline-flex;
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -556,7 +519,7 @@ display: inline-flex;
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/position/" data-tooltip="Position">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -574,7 +537,7 @@ display: inline-flex;
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -604,7 +567,7 @@ display: inline-flex;
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F02%2Fflex%25E5%25B8%2583%25E5%25B1%2580%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F02%2F%25E9%2597%25AD%25E5%258C%2585%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -804,9 +767,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/flex%E5%B8%83%E5%B1%80\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/%E9%97%AD%E5%8C%85\/';
           
-            this.page.identifier = '\/2019\/02\/flex%E5%B8%83%E5%B1%80\/'
+            this.page.identifier = '\/2019\/02\/%E9%97%AD%E5%8C%85\/'
           
         };
         (function() {

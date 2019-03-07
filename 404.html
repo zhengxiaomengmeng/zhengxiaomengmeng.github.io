@@ -123,6 +123,35 @@
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
+                <h3 class="media-heading">闭包</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">闭包 阮一峰学习闭包
+闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
+简单理解就是：定义在一个函数内部的函数
+在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+创建闭包的方式：在一个函数内部创建另一个函数
+function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
+闭包关于作用域链的图示：
+闭包的用途 1、读取其他函数内部的变量
+2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
+来看一个典型的例子
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
+解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
+var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ var c = i; return function () { console.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
                 <h3 class="media-heading">flex布局</h3>
               </a>
@@ -137,7 +166,7 @@
 一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
 任何一个容器都可以指定为Flex布局。
 .box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  ##基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
 容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
 基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
 flex-direction: row | row-reverse | column | column-reverse;
@@ -178,7 +207,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         2 posts found
+         3 posts found
       </p>
     </div>
   </div>
