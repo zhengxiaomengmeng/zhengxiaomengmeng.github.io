@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on Welcome to Dream&#39;s blog </title>
-    <link>https://zhengxiaomengmeng.github.io/tags/javascript/</link>
-    <description>Recent content in Javascript on Welcome to Dream&#39;s blog </description>
+    <title>数据结构学习笔记 on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 数据结构学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Mar 2019 22:31:13 +0800</lastBuildDate>
     
-	<atom:link href="https://zhengxiaomengmeng.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -32,27 +32,6 @@
  引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
  var a = new Object(); //(引用指针指向object)
  栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.</description>
-    </item>
-    
-    <item>
-      <title>闭包</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/</link>
-      <pubDate>Sun, 24 Feb 2019 21:36:22 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/</guid>
-      <description>闭包 阮一峰学习闭包
-闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
-简单理解就是：定义在一个函数内部的函数
-在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
-创建闭包的方式：在一个函数内部创建另一个函数
-function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
-闭包关于作用域链的图示：
-闭包的用途 1、读取其他函数内部的变量
-2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
-来看一个典型的例子
-var result = new Array(); function createFunctions(){ for (var i=0; i &amp;lt; 10; i++){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
-解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
-var result = new Array(); function createFunctions(){ for (var i=0; i &amp;lt; 10; i++){ result[i] = function(){ var c = i; return function () { console.</description>
     </item>
     
   </channel>

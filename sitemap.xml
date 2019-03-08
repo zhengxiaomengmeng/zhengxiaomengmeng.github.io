@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/</loc>
     <lastmod>2019-02-24T21:36:22+08:00</lastmod>
   </url>
@@ -41,19 +46,19 @@
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/tags/javascript/</loc>
-    <lastmod>2019-02-24T21:36:22+08:00</lastmod>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-02-24T21:36:22+08:00</lastmod>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/post/</loc>
-    <lastmod>2019-02-24T21:36:22+08:00</lastmod>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,7 +70,19 @@
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/</loc>
-    <lastmod>2019-02-24T21:36:22+08:00</lastmod>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-03-07T22:31:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,33 @@
     <description>Recent content in Js学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Feb 2019 21:36:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Mar 2019 22:31:13 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript堆栈原理</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 07 Mar 2019 22:31:13 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/</guid>
+      <description>JavaScript堆栈原理 堆&amp;amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;amp;&amp;amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &amp;gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.</description>
+    </item>
     
     <item>
       <title>闭包</title>

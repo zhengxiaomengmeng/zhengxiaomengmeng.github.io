@@ -202,6 +202,83 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+          JavaScript堆栈原理
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
+        
+  
+  
+  
+  
+    2019-03-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>, 
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
           闭包
         </a>
@@ -460,6 +537,37 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+                <h3 class="media-heading">JavaScript堆栈原理</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
                 <h3 class="media-heading">闭包</h3>
               </a>
@@ -544,7 +652,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         3 posts found
+         4 posts found
       </p>
     </div>
   </div>

@@ -8,55 +8,95 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta name="description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.">
 
 
-<meta property="og:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Position">
-<meta name="twitter:title" content="Position">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/position/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/position/">
+<meta property="og:title" content="JavaScript堆栈原理">
+<meta name="twitter:title" content="JavaScript堆栈原理">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
-<meta name="twitter:description" content="position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文">
+<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.">
+<meta name="twitter:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;  栈内存  a 1      
+操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。 &gt; var b=a;  栈内存  a 1  b 1  
+ var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。 a.">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-22T15:41:50">
+    <meta property="article:published_time" content="2019-03-07T22:31:13">
   
   
-    <meta property="article:modified_time" content="2019-02-22T15:41:50">
+    <meta property="article:modified_time" content="2019-03-07T22:31:13">
   
-  
-  
-    
-      <meta property="article:section" content="CSS学习笔记">
-    
   
   
     
-      <meta property="article:tag" content="CSS">
+      <meta property="article:section" content="JS学习笔记">
+    
+      <meta property="article:section" content="数据结构学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="JavaScript">
+    
+      <meta property="article:tag" content="数据结构">
     
   
 
@@ -77,14 +117,14 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>Position</title>
+    <title>JavaScript堆栈原理</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -224,19 +264,19 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Position
+      JavaScript堆栈原理
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-22T15:41:50&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
         
   
   
   
   
-    2019-02-22
+    2019-03-07
   
 
       </time>
@@ -246,7 +286,9 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>, 
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
     
   
 
@@ -258,30 +300,174 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             <div class="main-content-wrap">
               
 
-<h1 id="position定位">position定位</h1>
+<h2 id="javascript堆栈原理">JavaScript堆栈原理</h2>
 
-<p>position属性值
-参考<a href="http://www.cnblogs.com/theWayToAce/p/5264436.html">http://www.cnblogs.com/theWayToAce/p/5264436.html</a></p>
+<h3 id="堆-栈">堆&amp;栈</h3>
 
-<h3 id="static"><code>static</code></h3>
+<p>两者都是用来存放<strong>临时数据</strong>。</p>
 
-<p>（静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）</p>
+<p>栈是<strong>先进后出</strong>的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。</p>
 
-<h3 id="relative"><code>relative</code></h3>
+<p>堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。</p>
 
-<p>（相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　　</p>
+<p>栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。</p>
 
-<h3 id="absolute"><code>absolute</code></h3>
+<p>堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。</p>
 
-<p>（绝对定位）：生成绝对定位的元素，相对于 <strong>static 定位以外的第一个父元素</strong>进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。</p>
+<p>堆（数据结构）：堆可以被看成是一棵树，如：堆排序；</p>
 
-<h3 id="fixed"><code>fixed</code></h3>
+<p>栈（数据结构）：一种先进后出的数据结构。</p>
 
-<p>（固定定位）：生成绝对定位的元素，相对于<strong>浏览器窗口</strong>进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。</p>
+<h3 id="数据类型访问-复制">数据类型访问&amp;&amp;复制</h3>
 
-<p>fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。</p>
+<p><strong>基本数据类型</strong>：基本数据类型值指保存在<strong>栈内存</strong>中的简单数据段。访问方式是<strong>按值访问</strong>。</p>
 
-<p>关于absolute与relative之间的区别，详细可以参考原文</p>
+<blockquote>
+<p>var a =1 ;
+<table border='1' align='center' width=200px height=150px >
+<tr>
+<th colspan = '2'>栈内存</th>
+</tr>
+<tr align='center'>
+<td>a</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</table></p>
+
+<p>操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。</p>
+</blockquote>
+
+<p><strong>基本类型变量的复制</strong>：从一个变量向一个变量复制时，会在<strong>栈</strong>中创建一个新值，然后把值复制到为新变量分配的位置上。
+&gt; var b=a;
+<table border='1' align='center' width=200px height=150px >
+<tr>
+<th colspan = '2'>栈内存</th>
+</tr>
+<tr align='center'>
+<td>a</td>
+<td>1</td>
+</tr>
+<tr align='center'>
+<td>b</td>
+<td>1</td>
+</tr>
+</table></p>
+
+<blockquote>
+<p>var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；</p>
+</blockquote>
+
+<p><strong>引用数据类型</strong>：引用数据类型值指保存在<strong>堆内存</strong>中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。</p>
+
+<blockquote>
+<p>var a = new Object();       //(引用指针指向object)</p>
+</blockquote>
+
+<table border='1' align='center' width=400px height=200px >
+<tr align='center'>
+<td colspan =2 width=100px >栈内存</td>
+<td rowspan =4 width=50px ></td>
+<td>堆内存</td>
+</tr>
+<tr align='center'>
+<td width=50px >a</td>
+<td>引用指针</td>
+<td>object</td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+<blockquote>
+<p>当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。
+a.name= &lsquo;xz&rsquo;;
+<table border='1' align='center' width=400px height=200px >
+<tr align='center'>
+<td colspan =2 width=100px >栈内存</td>
+<td rowspan =4 width=50px ></td>
+<td>堆内存</td>
+</tr>
+<tr align='center'>
+<td width=50px >a</td>
+<td>引用指针</td>
+<td>object{name:&lsquo;xz&rsquo;}</td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></p>
+</blockquote>
+
+<p><strong>引用类型变量的复制</strong>：复制的是存储在栈中的指针，将指针复制到栈中未新变量分配的空间中，而这个指针副本和原指针指向存储在堆中的同一个对象；复制操作结束后，两个变量实际上将引用同一个对象。因此，在使用时，改变其中的一个变量的值，将影响另一个变量。
+&gt; var b=a;                //a,b的引用指针都指向object
+<table border='1' align='center' width=400px height=200px >
+<tr align='center'>
+<td colspan =2 width=100px >栈内存</td>
+<td rowspan =4 width=50px ></td>
+<td>堆内存</td>
+</tr>
+<tr align='center'>
+<td width=50px >a</td>
+<td>引用指针</td>
+<td>object</td>
+</tr>
+<tr align='center'>
+<td>b</td>
+<td>引用指针</td>
+<td></td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></p>
+
+<blockquote>
+<p>b.sex =&lsquo;boy&rsquo;;</p>
+</blockquote>
+
+<table border='1' align='center' width=400px height=200px >
+<tr align='center'>
+<td colspan =2 width=100px >栈内存</td>
+<td rowspan =4 width=50px ></td>
+<td>堆内存</td>
+</tr>
+<tr align='center'>
+<td width=50px >a</td>
+<td>引用指针</td>
+<td>object{name:'xz'}</td>
+</tr>
+<tr align='center'>
+<td>b</td>
+<td>引用指针</td>
+<td></td>
+</tr>
+<tr align='center'>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
 
               
             </div>
@@ -294,7 +480,9 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/css/">CSS</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
+
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
 
                   </div>
                 
@@ -307,7 +495,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -315,7 +503,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -333,7 +521,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/position/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -383,7 +571,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/" data-tooltip="flex布局">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -391,7 +579,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -409,7 +597,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/position/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -439,7 +627,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F02%2Fposition%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F03%2Fjavascript%25E5%25A0%2586%25E6%25A0%2588%25E5%258E%259F%25E7%2590%2586%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -670,9 +858,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/position\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/';
           
-            this.page.identifier = '\/2019\/02\/position\/'
+            this.page.identifier = '\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/'
           
         };
         (function() {
