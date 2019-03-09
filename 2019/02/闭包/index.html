@@ -437,7 +437,7 @@ console.log(f(2)(3));  //5
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" data-tooltip="JavaScript堆栈原理">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -513,7 +513,7 @@ console.log(f(2)(3));  //5
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" data-tooltip="JavaScript堆栈原理">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -647,13 +647,141 @@ console.log(f(2)(3));  //5
 栈（数据结构）：一种先进后出的数据结构。
 数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
  var a =1 ;
-  栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
  基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
  var b=a;
-  栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
  引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
  var a = new Object(); //(引用指针指向object)
  栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/">
+                <h3 class="media-heading">meta标签</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">meta标签使用总结</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E4%BD%BF%E7%94%A8data-%E7%9A%84%E5%A5%BD%E5%A4%84/">
+                <h3 class="media-heading">使用data-的好处</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">使用data-的好处  data-* 属性用于存储页面或应用程序的私有自定义数据。
+ data-* 属性赋予我们在所有 HTML 元素上嵌入自定义 data 属性的能力。
+  存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。
+ data-* 属性包括两部分：  (1) 语法 1. 属性名不应该包含任何大写字母，并且在前缀 &ldquo;data-&rdquo; 之后必须有至少一个字符 2. 属性值可以是任意字符串
+注释：用户代理会完全忽略前缀为 &quot;data-&quot; 的自定义属性。  好处
+1.自定义属性，可以被js很好的操作
+2.H5的新属性
+3.通过js的element.dataset.或jQuery的data(&rsquo;&rsquo;)拿到，*可以为url等字符
+4.框架的数据绑定，例如data-ng-if=&ldquo;cs==1&rdquo;</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/">
+                <h3 class="media-heading">CSS动画</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CSS动画 CSS动画主要是有transition属性完成的，animation属性是解决transition属性中遇到的一些问题。动画的实质就是某些css样式随时间的变化可以慢慢改变，不再是以前那种即时完成的，跟时间没关系。现在跟时间有关系，让仍感觉到是一幅动画。
+transition transition： [ none | &lt;single-transition-property&gt; ] || &lt;time&gt; || &lt;single-transition-timing-function&gt; || &lt;time&gt;    transition-property ：检索或设置对象中的参与过渡的属性 transition-duration：检索或设置对象过渡的持续时间 transition-timing-function ：检索或设置对象中过渡的动画类型 transition-delay ：检索或设置对象延迟过渡的时间   &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;style&gt; .test{ width: 100px; height: 100px; border:1px solid; transition: width 1s cubic-bezier(.11,.88,.25,-0.91), background 1s 1s ease-out } .test:hover{ width: 400px; background: red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  使用注意点 （1）目前，各大浏览器（包括IE 10）都已经支持无前缀的transition，所以transition已经可以很安全地不加浏览器前缀。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/">
+                <h3 class="media-heading">HTML与XHTML区别</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">HTML与XHTML区别 HTML(文本标记语言)是英文HyperText Markup Language的简称，用于创建网页的标准标记语言，html并不是编程语言，HTML 运行在浏览器上由浏览器来解析翻译给网站访客，它是建设网站的基础。
+XHTML(可扩展标识语言)是The Extensible Markup Language的简写,XHTML1.0是源自W3C的最新的HTML标准，是Web的语言。
+功能区别：
+HTML对于各大浏览器兼容性较差(pc端浏览器、手机端浏览器、PAD)，对于网页页面编写技巧要求比较高，现在web前端开发的静态网页，一般都是html4.0，HTML5就另当别论了。
+XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览器、PAD),XHTML的语法较为严谨，XHTML结合了部分XML的强大功能及大多数HTML的简单特性。
+书写习惯区别
+ HTML标签不区分大小写XHTML所有标签都必须小写。 XHTML标签必须成双成对。 html对标签顺序要求不严格，XHTML标签顺序必须正确。 XHTML 文档必须拥有根元素  总而言之xhtml比html更加规范</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+                <h3 class="media-heading">浏览器的标准模式和怪异模式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -705,13 +833,13 @@ var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i
 一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
 任何一个容器都可以指定为Flex布局。
 .box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
+.box{ display: inline-flex; }  Webkit 内核的浏览器，必须加上-webkit前缀。
+.box{ display: -webkit-flex; /* Safari */ display: flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
 容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
 基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
+flex-direction: row(默认值,主轴为水平方向，起点在左端) | row-reverse(主轴为水平方向，起点在右端) | column(主轴为垂直方向，起点在上沿) | column-reverse(主轴为垂直方向，起点在下沿);
  flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;</div>
+flex-wrap: nowrap(默认，不换行) | wrap(换行，第一行在上方) | wrap-reverse（换行，第一行在下方）;  flex-flow flex-direction属性和flex-wrap属性的简写形式</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -746,7 +874,7 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         4 posts found
+         11 posts found
       </p>
     </div>
   </div>

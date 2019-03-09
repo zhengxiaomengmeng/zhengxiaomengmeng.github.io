@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="Study Notes">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/post/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/post/">
+<meta property="og:title" content="Html">
+<meta name="twitter:title" content="Html">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/tags/html/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/tags/html/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
 <meta property="og:description" content="Study Notes">
 <meta name="twitter:description" content="Study Notes">
@@ -39,16 +39,16 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>Posts</title>
+    <title>Html</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/post/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/tags/html/index.xml">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/post/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/tags/html/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -177,93 +177,18 @@
 </nav>
 
       
+        
 
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
-          
-          
+        
+          <section class="postShorten-group main-content-wrap">
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-          JavaScript堆栈原理
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
-        
-  
-  
-  
-  
-    2019-03-07
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>, 
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
             
+              
   
     
       
@@ -323,8 +248,8 @@
   
 </article>
 
-          
             
+              
   
     
       
@@ -392,70 +317,8 @@
   
 </article>
 
-          
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/">
-          CSS动画
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-26T15:41:50&#43;08:00">
-        
-  
-  
-  
-  
-    2019-02-26
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        CSS动画 CSS动画主要是有transition属性完成的，animation属性是解决transition属性中遇到的一些问题。动画的实质就是某些css样式随时间的变化可以慢慢改变，不再是以前那种即时完成的，跟时间没关系。现在跟时间有关系，让仍感觉到是一幅动画。
-transition transition： [ none | &lt;single-transition-property&gt; ] || &lt;time&gt; || &lt;single-transition-timing-function&gt; || &lt;time&gt;    transition-property ：检索或设置对象中的参与过渡的属性 transition-duration：检索或设置对象过渡的持续时间 transition-timing-function ：检索或设置对象中过渡的动画类型 transition-delay ：检索或设置对象延迟过渡的时间   &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;style&gt; .test{ width: 100px; height: 100px; border:1px solid; transition: width 1s cubic-bezier(.11,.88,.25,-0.91), background 1s 1s ease-out } .test:hover{ width: 400px; background: red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  使用注意点 （1）目前，各大浏览器（包括IE 10）都已经支持无前缀的transition，所以transition已经可以很安全地不加浏览器前缀。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
+              
   
     
       
@@ -521,8 +384,8 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
   
 </article>
 
-          
             
+              
   
     
       
@@ -593,8 +456,8 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
   
 </article>
 
-          
             
+              
   
     
       
@@ -654,27 +517,72 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
   
 </article>
 
-          
-          
-  <div class="pagination-bar">
-    <ul class="pagination">
+            
+              
+  
+    
       
         
-        
-          <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="https://zhengxiaomengmeng.github.io/post/page/2/">
-              <span>下一页</span>
-              <i class="fa fa-angle-right text-base icon-ml"></i>
-            </a>
-          </li>
-        
       
-      <li class="pagination-number">第 1 页 共 2 页</li>
-    </ul>
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
+          IE中常见BUG（兼容性问题）
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-01T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-01
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
+    
+  
+
   </div>
 
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        https://www.cnblogs.com/songzk/p/6181641.html
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
 
-        </section>
+            
+            
+
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Dream. All Rights Reserved

@@ -8,19 +8,81 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="Study Notes">
+<meta name="description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
 
 
-<meta property="og:description" content="Study Notes">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/post/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/post/">
+<meta property="og:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器的标准模式和怪异模式">
+<meta name="twitter:title" content="浏览器的标准模式和怪异模式">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="Study Notes">
-<meta name="twitter:description" content="Study Notes">
+<meta property="og:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
+<meta name="twitter:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
 <meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-25T14:18:32">
+  
+  
+    <meta property="article:modified_time" content="2019-02-25T14:18:32">
+  
+  
+  
+    
+      <meta property="article:section" content="HTML学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="HTML">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -39,16 +101,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>Posts</title>
+    <title>浏览器的标准模式和怪异模式</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/post/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/post/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -68,7 +128,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://zhengxiaomengmeng.github.io/">Welcome to Dream&#39;s blog </a>
@@ -88,7 +148,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -178,372 +238,20 @@
 
       
 
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
-            
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-          JavaScript堆栈原理
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
-        
+    <h1 class="post-title" itemprop="headline">
+      浏览器的标准模式和怪异模式
+    </h1>
   
   
-  
-  
-    2019-03-07
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>, 
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/">
-          meta标签
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-28
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        meta标签使用总结
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E4%BD%BF%E7%94%A8data-%E7%9A%84%E5%A5%BD%E5%A4%84/">
-          使用data-的好处
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-27T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-27
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        使用data-的好处  data-* 属性用于存储页面或应用程序的私有自定义数据。
- data-* 属性赋予我们在所有 HTML 元素上嵌入自定义 data 属性的能力。
-  存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。
- data-* 属性包括两部分：  (1) 语法 1. 属性名不应该包含任何大写字母，并且在前缀 &ldquo;data-&rdquo; 之后必须有至少一个字符 2. 属性值可以是任意字符串
-注释：用户代理会完全忽略前缀为 &quot;data-&quot; 的自定义属性。  好处
-1.自定义属性，可以被js很好的操作
-2.H5的新属性
-3.通过js的element.dataset.或jQuery的data(&rsquo;&rsquo;)拿到，*可以为url等字符
-4.框架的数据绑定，例如data-ng-if=&ldquo;cs==1&rdquo;
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E4%BD%BF%E7%94%A8data-%E7%9A%84%E5%A5%BD%E5%A4%84/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/">
-          CSS动画
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-26T15:41:50&#43;08:00">
-        
-  
-  
-  
-  
-    2019-02-26
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        CSS动画 CSS动画主要是有transition属性完成的，animation属性是解决transition属性中遇到的一些问题。动画的实质就是某些css样式随时间的变化可以慢慢改变，不再是以前那种即时完成的，跟时间没关系。现在跟时间有关系，让仍感觉到是一幅动画。
-transition transition： [ none | &lt;single-transition-property&gt; ] || &lt;time&gt; || &lt;single-transition-timing-function&gt; || &lt;time&gt;    transition-property ：检索或设置对象中的参与过渡的属性 transition-duration：检索或设置对象过渡的持续时间 transition-timing-function ：检索或设置对象中过渡的动画类型 transition-delay ：检索或设置对象延迟过渡的时间   &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;style&gt; .test{ width: 100px; height: 100px; border:1px solid; transition: width 1s cubic-bezier(.11,.88,.25,-0.91), background 1s 1s ease-out } .test:hover{ width: 400px; background: red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  使用注意点 （1）目前，各大浏览器（包括IE 10）都已经支持无前缀的transition，所以transition已经可以很安全地不加浏览器前缀。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/">
-          HTML与XHTML区别
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-26T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-26
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        HTML与XHTML区别 HTML(文本标记语言)是英文HyperText Markup Language的简称，用于创建网页的标准标记语言，html并不是编程语言，HTML 运行在浏览器上由浏览器来解析翻译给网站访客，它是建设网站的基础。
-XHTML(可扩展标识语言)是The Extensible Markup Language的简写,XHTML1.0是源自W3C的最新的HTML标准，是Web的语言。
-功能区别：
-HTML对于各大浏览器兼容性较差(pc端浏览器、手机端浏览器、PAD)，对于网页页面编写技巧要求比较高，现在web前端开发的静态网页，一般都是html4.0，HTML5就另当别论了。
-XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览器、PAD),XHTML的语法较为严谨，XHTML结合了部分XML的强大功能及大多数HTML的简单特性。
-书写习惯区别
- HTML标签不区分大小写XHTML所有标签都必须小写。 XHTML标签必须成双成对。 html对标签顺序要求不严格，XHTML标签顺序必须正确。 XHTML 文档必须拥有根元素  总而言之xhtml比html更加规范
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
-          浏览器的标准模式和怪异模式
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
       <time itemprop="datePublished" datetime="2019-02-25T14:18:32&#43;08:00">
@@ -568,113 +276,139 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-         浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
+</div>
           
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h2 id="浏览器的标准模式和怪异模式">浏览器的标准模式和怪异模式</h2>
+
+<p>现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。<br>
+在<strong>标准模式</strong>下，浏览器按照HTML与CSS标准对文档进行解析和渲染；<br>
+而在<strong>怪异模式</strong>下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。<br>
+其实归根结底就是，<strong>浏览器如何能将旧网页与新网页区分开来</strong>。</p>
+
+<h3 id="标准模式与怪异模式的-区别-br">标准模式与怪异模式的<strong>区别</strong>:<br></h3>
+
+<ul>
+<li>#### 盒模型
+<img src="./images/1552026246276.jpg" alt="IE盒子模型" title="IE盒子模型.jpg" /></li>
+</ul>
+
+<p><img src="./images/1552026363058.jpg" alt="标准盒子模型" title="标准盒子模型.jpg" /></p>
+
+<ul>
+<li><h4 id="图片元素的垂直对齐方式">图片元素的垂直对齐方式：</h4>
+
+<p>对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。</p></li>
+
+<li><h4 id="table-元素中的字体">table 元素中的字体</h4>
+
+<p>CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。</p></li>
+
+<li><h4 id="内联元素的尺寸">内联元素的尺寸：</h4>
+
+<p>标准模式下，non-replaced  inline 元素无法自定义大小<br>
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。</p></li>
+
+<li><h4 id="元素的百分比高度">元素的百分比高度：</h4>
+
+<p>a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。</p></li>
+</ul>
+
+<p>b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。</p>
+
+<ul>
+<li>####  元素溢出的处理：
+标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。</li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
-  
-    
-      
-        
-      
-    
-  
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/html/">HTML</a>
 
-
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
   
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/">
+      <nav >
+        <ul class="post-actions post-action-nav">
           
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-25T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-25
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/" data-tooltip="HTML与XHTML区别">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
           
-          
-  <div class="pagination-bar">
-    <ul class="pagination">
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
       
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
-        
-          <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="https://zhengxiaomengmeng.github.io/post/page/2/">
-              <span>下一页</span>
-              <i class="fa fa-angle-right text-base icon-ml"></i>
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+              <i class="fa fa-google-plus"></i>
             </a>
           </li>
         
       
-      <li class="pagination-number">第 1 页 共 2 页</li>
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
     </ul>
-  </div>
+  
+</div>
 
-
-        </section>
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+			
+          </div>
+		  
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Dream. All Rights Reserved
@@ -682,6 +416,78 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/" data-tooltip="HTML与XHTML区别">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F02%2F%25E6%25B5%258F%25E8%25A7%2588%25E5%2599%25A8%25E7%259A%2584%25E6%25A0%2587%25E5%2587%2586%25E6%25A8%25A1%25E5%25BC%258F%25E5%2592%258C%25E6%2580%25AA%25E5%25BC%2582%25E6%25A8%25A1%25E5%25BC%258F%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -1029,6 +835,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F\/';
+          
+            this.page.identifier = '\/2019\/02\/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Dream\x27s blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 

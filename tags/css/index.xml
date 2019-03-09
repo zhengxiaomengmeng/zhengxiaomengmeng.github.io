@@ -6,10 +6,20 @@
     <description>Recent content in Css on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Feb 2019 15:41:50 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Feb 2019 15:41:50 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS动画</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 26 Feb 2019 15:41:50 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/</guid>
+      <description>CSS动画 CSS动画主要是有transition属性完成的，animation属性是解决transition属性中遇到的一些问题。动画的实质就是某些css样式随时间的变化可以慢慢改变，不再是以前那种即时完成的，跟时间没关系。现在跟时间有关系，让仍感觉到是一幅动画。
+transition transition： [ none | &amp;lt;single-transition-property&amp;gt; ] || &amp;lt;time&amp;gt; || &amp;lt;single-transition-timing-function&amp;gt; || &amp;lt;time&amp;gt;    transition-property ：检索或设置对象中的参与过渡的属性 transition-duration：检索或设置对象过渡的持续时间 transition-timing-function ：检索或设置对象中过渡的动画类型 transition-delay ：检索或设置对象延迟过渡的时间   &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .test{ width: 100px; height: 100px; border:1px solid; transition: width 1s cubic-bezier(.11,.88,.25,-0.91), background 1s 1s ease-out } .test:hover{ width: 400px; background: red; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;test&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  使用注意点 （1）目前，各大浏览器（包括IE 10）都已经支持无前缀的transition，所以transition已经可以很安全地不加浏览器前缀。</description>
+    </item>
     
     <item>
       <title>flex布局</title>
@@ -23,13 +33,13 @@
 一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&amp;rdquo;弹性布局&amp;rdquo;，用来为盒状模型提供最大的灵活性！
 任何一个容器都可以指定为Flex布局。
 .box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&amp;rdquo;容器&amp;rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&amp;rdquo;项目&amp;rdquo;。
+.box{ display: inline-flex; }  Webkit 内核的浏览器，必须加上-webkit前缀。
+.box{ display: -webkit-flex; /* Safari */ display: flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&amp;rdquo;容器&amp;rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&amp;rdquo;项目&amp;rdquo;。
 容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
 基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row | row-reverse | column | column-reverse;
+flex-direction: row(默认值,主轴为水平方向，起点在左端) | row-reverse(主轴为水平方向，起点在右端) | column(主轴为垂直方向，起点在上沿) | column-reverse(主轴为垂直方向，起点在下沿);
  flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap | wrap | wrap-reverse;  flex-flow flex-direction属性和flex-wrap属性的简写形式
-flex-flow:  || ;</description>
+flex-wrap: nowrap(默认，不换行) | wrap(换行，第一行在上方) | wrap-reverse（换行，第一行在下方）;  flex-flow flex-direction属性和flex-wrap属性的简写形式</description>
     </item>
     
     <item>
