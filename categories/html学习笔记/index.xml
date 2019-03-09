@@ -6,10 +6,19 @@
     <description>Recent content in Html学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IE中常见BUG（兼容性问题）</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
+      <description>https://www.cnblogs.com/songzk/p/6181641.html</description>
+    </item>
     
     <item>
       <title>meta标签</title>
@@ -79,15 +88,6 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
       
       <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>IE中常见BUG（兼容性问题）</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
-      <description>https://www.cnblogs.com/songzk/p/6181641.html</description>
     </item>
     
   </channel>

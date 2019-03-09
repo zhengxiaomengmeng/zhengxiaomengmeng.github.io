@@ -91,8 +91,6 @@
   
   
     
-      <meta property="article:section" content="JS学习笔记">
-    
       <meta property="article:section" content="数据结构学习笔记">
     
   
@@ -289,8 +287,6 @@
   
   
     <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>, 
     
       <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
     
@@ -520,7 +516,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/" data-tooltip="meta标签">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" data-tooltip="IE中常见BUG（兼容性问题）">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -596,7 +592,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/" data-tooltip="meta标签">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" data-tooltip="IE中常见BUG（兼容性问题）">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -729,6 +725,23 @@
  引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
  var a = new Object(); //(引用指针指向object)
  栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
+                <h3 class="media-heading">IE中常见BUG（兼容性问题）</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">https://www.cnblogs.com/songzk/p/6181641.html</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -915,28 +928,6 @@ var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i
 flex-direction: row(默认值,主轴为水平方向，起点在左端) | row-reverse(主轴为水平方向，起点在右端) | column(主轴为垂直方向，起点在上沿) | column-reverse(主轴为垂直方向，起点在下沿);
  flex-wrap  定义，如果一条轴线排不下，如何换行。
 flex-wrap: nowrap(默认，不换行) | wrap(换行，第一行在上方) | wrap-reverse（换行，第一行在下方）;  flex-flow flex-direction属性和flex-wrap属性的简写形式</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/position/">
-                <h3 class="media-heading">Position</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">position定位 position属性值 参考http://www.cnblogs.com/theWayToAce/p/5264436.html
-static （静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）
-relative （相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　absolute （绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed （固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 &ldquo;left&rdquo;, &ldquo;top&rdquo;, &ldquo;right&rdquo; 以及 &ldquo;bottom&rdquo; 属性进行规定。可通过z-index进行层次分级。
-fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动而滚动。
-关于absolute与relative之间的区别，详细可以参考原文</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
