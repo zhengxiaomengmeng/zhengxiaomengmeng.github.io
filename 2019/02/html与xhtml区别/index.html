@@ -317,7 +317,7 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" data-tooltip="浏览器的标准模式和怪异模式">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/" data-tooltip="渐进式渲染">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -393,7 +393,7 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" data-tooltip="浏览器的标准模式和怪异模式">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/" data-tooltip="渐进式渲染">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -534,6 +534,72 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
+                <h3 class="media-heading">meta viewport设置移动端自适应</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+                <h3 class="media-heading">浮动元素引起的问题和解决办法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 浮动元素引起的问题和解决办法 </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/">
+                <h3 class="media-heading">css js文件放置位置和原因</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">css js文件放置位置和原因 js文件最好放在body中，也就是标签前，因为放在所有body中的标签后面就不会出现网页加载时出现空白的情况，可以持续的给用户提供视觉反馈，同时在有些情况下，会降低错误的发生。
+而css标签应该放在标签之间，因为如果放在标签的前面，那么当DOM树构建完成了，渲染树才构建，那么当渲染树构建完成，浏览器不得不再重新渲染整个页面，这样造成了资源的浪费。效率也不高。如果放在之间，浏览器边构建边渲染，效率要高的多。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
                 <h3 class="media-heading">IE中常见BUG（兼容性问题）</h3>
               </a>
@@ -543,6 +609,66 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">https://www.cnblogs.com/songzk/p/6181641.html</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
+                <h3 class="media-heading">css实现水平、垂直居中</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">css实现水平、垂直居中 元素水平居中 块级元素水平居中 最简单的方式：margin： 0 auto; 注意点 (1)元素需要设置宽度 (2)元素不能为行内元素
+行内元素水平居中 元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。（对于块级元素不起作用）
+不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比较多）： 1.加入 table 标签 第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 、、 ) 第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）
+&lt;!DOCTYPE HTML&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;不定宽块状元素水平居中&lt;/title&gt; &lt;style&gt; table{ margin:0 auto; } ul{list-style:none;margin:0;padding:0;} li{float:left;display:inline;margin-right:8px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt;&lt;td&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  2.设置 display;inline 方法 改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/">
+                <h3 class="media-heading">css实现隐藏页面的方式</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">css实现隐藏页面的方式 opacity 设置透明度，值为0-1。为0则页面上不显示，但是元素还在那个位置,依然可以网页交互,单纯是看不到而已。在呈现上与visibility:hidden;方式一样，同样会占据页面空间。
+.class{ opacity:0; }  visibility 设置隐藏。hidden为隐藏，在页面不显示，交互效果也会没有。visible为显示,hidden为隐藏。该方法仍占用页面空间，但是不会导致浏览器重排，但是会重绘。
+.class{ visibility:hidden;//隐藏 visibility:visible;//显示 }  display 设置不显示和显示。注意了，这里要强调的一点是，如果你想使他的子元素显示，用display:visible是没用的。而上面两种方式是可以使用。该方法不占用空间，会导致浏览器的重排和重绘。
+.class { display:none; }  position position位置，用绝对定位把它挪到远远地。
+.class{ position:absolute; left:-999px; top:-999px; }  Clip-path 该属性很少见，该属性是通过裁剪的方法实现隐藏的。被隐藏的内容依然占据着那个位置，它周围的元素的行为就如同它可见时一样。记住用户交互例如鼠标悬停或者点击在剪裁区域之外也不可能生效。此外，这个属性能够使用各种过渡动画来实现不同的效果。
+.haorooms-small { background-size: cover; width: 300px; height: 300px; -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); }  &lt;div class=&quot;haorooms-small&quot; style=&quot;background-image: url('http://sandbox.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/">
+                <h3 class="media-heading">display、position的属性和作用</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">display、position的属性和作用 display 的值的作用： 1.block 像块类型元素一样显示。 2.inline 像行内元素类型一样显示。 3.inline-block 像行内元素一样显示，但其内容像块类型元素一样显示。 4.list-item 像块类型元素一样显示，并添加样式列表标记。
+position 的值的定位区别： 1.absolute 生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 2.fixed 生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 3.relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。 4.static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。 5.inherit 规定从父元素继承 position 属性的值。</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -568,102 +694,8 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E4%BD%BF%E7%94%A8data-%E7%9A%84%E5%A5%BD%E5%A4%84/">
-                <h3 class="media-heading">使用data-的好处</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">使用data-的好处  data-* 属性用于存储页面或应用程序的私有自定义数据。
- data-* 属性赋予我们在所有 HTML 元素上嵌入自定义 data 属性的能力。
-  存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。
- data-* 属性包括两部分：  (1) 语法 1. 属性名不应该包含任何大写字母，并且在前缀 &ldquo;data-&rdquo; 之后必须有至少一个字符 2. 属性值可以是任意字符串
-注释：用户代理会完全忽略前缀为 &quot;data-&quot; 的自定义属性。  好处
-1.自定义属性，可以被js很好的操作
-2.H5的新属性
-3.通过js的element.dataset.或jQuery的data(&rsquo;&rsquo;)拿到，*可以为url等字符
-4.框架的数据绑定，例如data-ng-if=&ldquo;cs==1&rdquo;</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%8A%A8%E7%94%BB/">
-                <h3 class="media-heading">CSS动画</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">CSS动画 CSS动画主要是有transition属性完成的，animation属性是解决transition属性中遇到的一些问题。动画的实质就是某些css样式随时间的变化可以慢慢改变，不再是以前那种即时完成的，跟时间没关系。现在跟时间有关系，让仍感觉到是一幅动画。
-transition transition： [ none | &lt;single-transition-property&gt; ] || &lt;time&gt; || &lt;single-transition-timing-function&gt; || &lt;time&gt;    transition-property ：检索或设置对象中的参与过渡的属性 transition-duration：检索或设置对象过渡的持续时间 transition-timing-function ：检索或设置对象中过渡的动画类型 transition-delay ：检索或设置对象延迟过渡的时间   &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Title&lt;/title&gt; &lt;style&gt; .test{ width: 100px; height: 100px; border:1px solid; transition: width 1s cubic-bezier(.11,.88,.25,-0.91), background 1s 1s ease-out } .test:hover{ width: 400px; background: red; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  使用注意点 （1）目前，各大浏览器（包括IE 10）都已经支持无前缀的transition，所以transition已经可以很安全地不加浏览器前缀。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/html%E4%B8%8Exhtml%E5%8C%BA%E5%88%AB/">
-                <h3 class="media-heading">HTML与XHTML区别</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">HTML与XHTML区别 HTML(文本标记语言)是英文HyperText Markup Language的简称，用于创建网页的标准标记语言，html并不是编程语言，HTML 运行在浏览器上由浏览器来解析翻译给网站访客，它是建设网站的基础。
-XHTML(可扩展标识语言)是The Extensible Markup Language的简写,XHTML1.0是源自W3C的最新的HTML标准，是Web的语言。
-功能区别：
-HTML对于各大浏览器兼容性较差(pc端浏览器、手机端浏览器、PAD)，对于网页页面编写技巧要求比较高，现在web前端开发的静态网页，一般都是html4.0，HTML5就另当别论了。
-XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览器、PAD),XHTML的语法较为严谨，XHTML结合了部分XML的强大功能及大多数HTML的简单特性。
-书写习惯区别
- HTML标签不区分大小写XHTML所有标签都必须小写。 XHTML标签必须成双成对。 html对标签顺序要求不严格，XHTML标签顺序必须正确。 XHTML 文档必须拥有根元素  总而言之xhtml比html更加规范</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
-                <h3 class="media-heading">浏览器的标准模式和怪异模式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"> 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  </div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/">
-                <h3 class="media-heading"></h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/">
+                <h3 class="media-heading">盒子模型 box-sizing</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -676,64 +708,6 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
-                <h3 class="media-heading">闭包</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">闭包 阮一峰学习闭包
-闭包的概念 高程上关于闭包的定义：闭包是指有权访问另一个函数作用域中的变量的函数
-简单理解就是：定义在一个函数内部的函数
-在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
-创建闭包的方式：在一个函数内部创建另一个函数
-function f1(){ var n=999; function f2(){ alert(n); } return f2; } var result=f1(); result(); // 999  其中f2( )就是一个闭包能够访问它上一级函数f1()中的变量n。
-闭包关于作用域链的图示：
-闭包的用途 1、读取其他函数内部的变量
-2、让这些变量的始终保持在内存中，这是一个双刃剑，可以方便的访问内部的变量，即使函数执行完成，其内部变量还保存在内存中可以访问，但是也会带来一系列的问题，外部函数的作用域链和变量对象不能销毁，占用内存。
-来看一个典型的例子
-var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ console.log(i); }; } } result[6](); //10  从表面上看，似乎每一个函数都返回10 ，但实际上，每个函数都返回10， 因为每个函数的作用域链中都保存着父级函数的活动对象，他们的引用的都是同一个变量i，当父级函数return result 后，变量i的值变成10 ，每个函数引用保存变量i的同一个变量对象，因为此时i=10，所以引用变量指向的值都变成10。
-解决这个问题最方便的一个方法是将闭包函数立即执行，每次引用都变成实际i对应的值。每次循环立即执行后销毁引用变量。
-var result = new Array(); function createFunctions(){ for (var i=0; i &lt; 10; i++){ result[i] = function(){ var c = i; return function () { console.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/flex%E5%B8%83%E5%B1%80/">
-                <h3 class="media-heading">flex布局</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">关于CSS3的flex布局，阮一峰的两篇讲解十分到位！
-阮一峰 &amp; Flex 布局教程：语法篇
-阮一峰 &amp; Flex 布局教程：实例篇
-一、Flex布局是什么？ Flex是Flexible Box的缩写，意为&rdquo;弹性布局&rdquo;，用来为盒状模型提供最大的灵活性！
-任何一个容器都可以指定为Flex布局。
-.box{ display: flex; }  行内元素也可以使用Flex布局。
-.box{ display: inline-flex; }  Webkit 内核的浏览器，必须加上-webkit前缀。
-.box{ display: -webkit-flex; /* Safari */ display: flex; }  基本概念 采用Flex布局的元素，称为Flex容器（flex container），简称&rdquo;容器&rdquo;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&rdquo;项目&rdquo;。
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。 项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-基本语法 容器的六个基本属性：  flex-direction  决定主轴的方向
-flex-direction: row(默认值,主轴为水平方向，起点在左端) | row-reverse(主轴为水平方向，起点在右端) | column(主轴为垂直方向，起点在上沿) | column-reverse(主轴为垂直方向，起点在下沿);
- flex-wrap  定义，如果一条轴线排不下，如何换行。
-flex-wrap: nowrap(默认，不换行) | wrap(换行，第一行在上方) | wrap-reverse（换行，第一行在下方）;  flex-flow flex-direction属性和flex-wrap属性的简写形式</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -741,7 +715,7 @@ flex-wrap: nowrap(默认，不换行) | wrap(换行，第一行在上方) | wrap
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         11 posts found
+         19 posts found
       </p>
     </div>
   </div>

@@ -6,10 +6,43 @@
     <description>Recent content in Html on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>meta viewport设置移动端自适应</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/</guid>
+      <description> meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&amp;quot;&amp;gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>css js文件放置位置和原因</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/</guid>
+      <description>css js文件放置位置和原因 js文件最好放在body中，也就是标签前，因为放在所有body中的标签后面就不会出现网页加载时出现空白的情况，可以持续的给用户提供视觉反馈，同时在有些情况下，会降低错误的发生。
+而css标签应该放在标签之间，因为如果放在标签的前面，那么当DOM树构建完成了，渲染树才构建，那么当渲染树构建完成，浏览器不得不再重新渲染整个页面，这样造成了资源的浪费。效率也不高。如果放在之间，浏览器边构建边渲染，效率要高的多。</description>
+    </item>
     
     <item>
       <title>IE中常见BUG（兼容性问题）</title>
@@ -40,10 +73,7 @@
   存储的（自定义）数据能够被页面的 JavaScript 中利用，以创建更好的用户体验（不进行 Ajax 调用或服务器端数据库查询）。
  data-* 属性包括两部分：  (1) 语法 1. 属性名不应该包含任何大写字母，并且在前缀 &amp;ldquo;data-&amp;rdquo; 之后必须有至少一个字符 2. 属性值可以是任意字符串
 注释：用户代理会完全忽略前缀为 &amp;quot;data-&amp;quot; 的自定义属性。  好处
-1.自定义属性，可以被js很好的操作
-2.H5的新属性
-3.通过js的element.dataset.或jQuery的data(&amp;rsquo;&amp;rsquo;)拿到，*可以为url等字符
-4.框架的数据绑定，例如data-ng-if=&amp;ldquo;cs==1&amp;rdquo;</description>
+通过data-可以自定义属性,可以通过HTMLElement.dataset获取这些属性的值,data-中-后接自定义属性的名字,例如data-url。实际开发中可以利用这一点在生成DOM结构时把数据储存在自定义属性中,通过一系列交互操作,可以再获得这些数据,而不用再去ajax去后台取得数据。</description>
     </item>
     
     <item>
@@ -59,6 +89,15 @@ HTML对于各大浏览器兼容性较差(pc端浏览器、手机端浏览器、P
 XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览器、PAD),XHTML的语法较为严谨，XHTML结合了部分XML的强大功能及大多数HTML的简单特性。
 书写习惯区别
  HTML标签不区分大小写XHTML所有标签都必须小写。 XHTML标签必须成双成对。 html对标签顺序要求不严格，XHTML标签顺序必须正确。 XHTML 文档必须拥有根元素  总而言之xhtml比html更加规范</description>
+    </item>
+    
+    <item>
+      <title>渐进式渲染</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/</guid>
+      <description>渐进式渲染 渐进式渲染（详情）就是一开始先加载首屏显示的内容，之后再随着时间或者滚动页面才进行后面的加载。</description>
     </item>
     
     <item>
@@ -79,15 +118,6 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
  元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
   b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
  #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
-      <description></description>
     </item>
     
   </channel>

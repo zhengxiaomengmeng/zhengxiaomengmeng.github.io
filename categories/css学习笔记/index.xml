@@ -6,10 +6,82 @@
     <description>Recent content in Css学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Feb 2019 15:41:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浮动元素引起的问题和解决办法</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description> 浮动元素引起的问题和解决办法 </description>
+    </item>
+    
+    <item>
+      <title>css实现水平、垂直居中</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</guid>
+      <description>css实现水平、垂直居中 元素水平居中 块级元素水平居中 最简单的方式：margin： 0 auto; 注意点 (1)元素需要设置宽度 (2)元素不能为行内元素
+行内元素水平居中 元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。（对于块级元素不起作用）
+不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比较多）： 1.加入 table 标签 第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 、、 ) 第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）
+&amp;lt;!DOCTYPE HTML&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;不定宽块状元素水平居中&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; table{ margin:0 auto; } ul{list-style:none;margin:0;padding:0;} li{float:left;display:inline;margin-right:8px;} &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;table&amp;gt; &amp;lt;tbody&amp;gt; &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;1&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;2&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;3&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt; &amp;lt;/tbody&amp;gt; &amp;lt;/table&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  2.设置 display;inline 方法 改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。</description>
+    </item>
+    
+    <item>
+      <title>css实现隐藏页面的方式</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+      <description>css实现隐藏页面的方式 opacity 设置透明度，值为0-1。为0则页面上不显示，但是元素还在那个位置,依然可以网页交互,单纯是看不到而已。在呈现上与visibility:hidden;方式一样，同样会占据页面空间。
+.class{ opacity:0; }  visibility 设置隐藏。hidden为隐藏，在页面不显示，交互效果也会没有。visible为显示,hidden为隐藏。该方法仍占用页面空间，但是不会导致浏览器重排，但是会重绘。
+.class{ visibility:hidden;//隐藏 visibility:visible;//显示 }  display 设置不显示和显示。注意了，这里要强调的一点是，如果你想使他的子元素显示，用display:visible是没用的。而上面两种方式是可以使用。该方法不占用空间，会导致浏览器的重排和重绘。
+.class { display:none; }  position position位置，用绝对定位把它挪到远远地。
+.class{ position:absolute; left:-999px; top:-999px; }  Clip-path 该属性很少见，该属性是通过裁剪的方法实现隐藏的。被隐藏的内容依然占据着那个位置，它周围的元素的行为就如同它可见时一样。记住用户交互例如鼠标悬停或者点击在剪裁区域之外也不可能生效。此外，这个属性能够使用各种过渡动画来实现不同的效果。
+.haorooms-small { background-size: cover; width: 300px; height: 300px; -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); }  &amp;lt;div class=&amp;quot;haorooms-small&amp;quot; style=&amp;quot;background-image: url(&#39;http://sandbox.</description>
+    </item>
+    
+    <item>
+      <title>display、position的属性和作用</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/</guid>
+      <description>display、position的属性和作用 display 的值的作用： 1.block 像块类型元素一样显示。 2.inline 像行内元素类型一样显示。 3.inline-block 像行内元素一样显示，但其内容像块类型元素一样显示。 4.list-item 像块类型元素一样显示，并添加样式列表标记。
+position 的值的定位区别： 1.absolute 生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 2.fixed 生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 3.relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。 4.static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。 5.inherit 规定从父元素继承 position 属性的值。</description>
+    </item>
+    
+    <item>
+      <title>盒子模型 box-sizing</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>盒子模型 box-sizing</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</guid>
+      <description>盒子模型 box-sizing 盒子模型 盒子模型由元素内容(content)、元素的内边距(padding:内容与边框之间的距离)，元素的边框(border)，元素的外边距(margin:边框与外部元素之间的距离)四个部分，这四个部分一起构成了盒子模型。
+对于padding、margin的取值 （注意：不允许取负值）
+注意：margin重叠，也叫 margin塌陷
+标准文档流中，两个盒子，分别有上下外边距，竖直方向的margin不叠加，只取较大的值作为margin(水平方向的margin是可以叠加的)。
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;margin叠加&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; *{ padding: 0; margin: 0; } .a{ width: 100px; height: 100px; border:1px solid; background-color: teal; margin-bottom: 10px; } .b{ width: 100px; height: 100px; border:1px solid; background-color: red; margin-top: 20px; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;a&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;b&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  注意：上下两个盒子的距离不是30px；而是20px，上面两个盒子的margin值不叠加，只取较大的值作为margin。
+另外：margin这个属性，本质上描述的是兄弟和兄弟之间的距离； 最好不要用这个marign表达父子之间的距离。
+如果向设置父子之间的距离，我们最好使用父元素的padding。
+box-sizing box-sizing 属性允许以特定的方式定义匹配某个区域的特定元素,简单来说就是可以通过box-sizing的取值来切换盒模型，它的取值可以为content-box、border-box.默认属性是content-box。
+W3C标准盒子（content-box）：又称内容盒子，是指块元素box-sizing属性为content-box的盒模型。一般在现代浏览器中使用的都是正常盒模型content-box。它所说的width一般只包含内容，不包含padding与margin，并且盒子的大小会以内容优先，自动扩展，子元素可以撑开父元素.可以理解为现实生活中的气球，大小可以随内容的变化而变化。
+ 在这种盒模型下，我们所说的元素的 width ，实际上只包含 content。盒子总宽度 = margin + border + padding + width</description>
+    </item>
     
     <item>
       <title>CSS动画</title>

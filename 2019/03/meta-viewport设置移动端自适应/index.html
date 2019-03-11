@@ -8,97 +8,91 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta name="description" content=" meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  ">
 
 
-<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta property="og:description" content=" meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript堆栈原理">
-<meta name="twitter:title" content="JavaScript堆栈原理">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+<meta property="og:title" content="meta viewport设置移动端自适应">
+<meta name="twitter:title" content="meta viewport设置移动端自适应">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
-<meta name="twitter:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta property="og:description" content=" meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  ">
+<meta name="twitter:description" content=" meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
+3个viewport （1）layout viewport
+如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
+（2）visual viewport
+layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
+（3）ideal viewport
+ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
+ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
+ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
+利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
+head标签中加入：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
+其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
+viewport设置移动端自适应的方法：
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  ">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-03-07T22:31:13">
+    <meta property="article:published_time" content="2019-03-03T00:00:00">
   
   
-    <meta property="article:modified_time" content="2019-03-07T22:31:13">
+    <meta property="article:modified_time" content="2019-03-03T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="数据结构学习笔记">
-    
   
   
     
-      <meta property="article:tag" content="JavaScript">
+      <meta property="article:section" content="HTML学习笔记">
     
-      <meta property="article:tag" content="数据结构">
+  
+  
+    
+      <meta property="article:tag" content="HTML">
     
   
 
@@ -119,14 +113,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>JavaScript堆栈原理</title>
+    <title>meta viewport设置移动端自适应</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -266,19 +260,19 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      JavaScript堆栈原理
+      meta viewport设置移动端自适应
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-03-03T00:00:00Z">
         
   
   
   
   
-    2019-03-07
+    2019-03-03
   
 
       </time>
@@ -288,7 +282,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
     
   
 
@@ -300,187 +294,52 @@
             <div class="main-content-wrap">
               
 
-<h2 id="javascript堆栈原理">JavaScript堆栈原理</h2>
+<h2 id="meta-viewport设置移动端自适应">meta viewport设置移动端自适应</h2>
 
-<h3 id="堆-栈">堆&amp;栈</h3>
+<h3 id="viewport">viewport</h3>
 
-<p>两者都是用来存放<strong>临时数据</strong>。</p>
+<p>移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。</p>
 
-<p>栈是<strong>先进后出</strong>的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。</p>
+<h3 id="3个viewport">3个viewport</h3>
 
-<p>堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。</p>
+<p>（1）layout viewport</p>
 
-<p>栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。</p>
+<p>如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。</p>
 
-<p>堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。</p>
+<p>（2）visual viewport</p>
 
-<p>堆（数据结构）：堆可以被看成是一棵树，如：堆排序；</p>
+<p>layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。</p>
 
-<p>栈（数据结构）：一种先进后出的数据结构。</p>
+<p>（3）ideal viewport</p>
 
-<h3 id="数据类型访问-复制">数据类型访问&amp;&amp;复制</h3>
+<p>ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。</p>
 
-<p><strong>基本数据类型</strong>：基本数据类型值指保存在<strong>栈内存</strong>中的简单数据段。访问方式是<strong>按值访问</strong>。</p>
+<p>ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。</p>
 
-<blockquote>
-<p>var a =1 ;</p>
-</blockquote>
+<p>ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。</p>
 
-<table border='1' align='center' width=200px height=150px >
-<tr  align='center'>
-<th colspan = '2'>栈内存</th>
-</tr>
-<tr align='center'>
-<td>a</td>
-<td>1</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</table>
+<h3 id="利用meta标签对viewport进行控制">利用meta标签对viewport进行控制</h3>
 
-<blockquote>
-<p>操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。</p>
-</blockquote>
+<p>移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。</p>
 
-<p><strong>基本类型变量的复制</strong>：从一个变量向一个变量复制时，会在<strong>栈</strong>中创建一个新值，然后把值复制到为新变量分配的位置上。</p>
+<p>head标签中加入：</p>
 
-<blockquote>
-<p>var b=a;</p>
-</blockquote>
+<pre><code class="language-meta">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;
 
-<table border='1' align='center' width=200px height=150px >
-<tr  align='center'>
-<th colspan = '2'>栈内存</th>
-</tr>
-<tr align='center'>
-<td>a</td>
-<td>1</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>1</td>
-</tr>
-</table>
+</code></pre>
 
-<blockquote>
-<p>var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；</p>
-</blockquote>
+<p>该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。
+<img src="./images/1552276168477.jpg" alt="meta viewport 的6个属性" title="meta viewport 的6个属性" /></p>
 
-<p><strong>引用数据类型</strong>：引用数据类型值指保存在<strong>堆内存</strong>中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。</p>
+<p>width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。</p>
 
-<blockquote>
-<p>var a = new Object();       //(引用指针指向object)</p>
-</blockquote>
+<p>其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。</p>
 
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object</td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
+<p>viewport设置移动端自适应的方法：</p>
 
-<blockquote>
-<p>当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。</p>
+<pre><code class="language-meta">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 
-<p>a.name= &lsquo;xz&rsquo;;</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object{name:'xz'}</td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<p><strong>引用类型变量的复制</strong>：复制的是存储在栈中的指针，将指针复制到栈中未新变量分配的空间中，而这个指针副本和原指针指向存储在堆中的同一个对象；复制操作结束后，两个变量实际上将引用同一个对象。因此，在使用时，改变其中的一个变量的值，将影响另一个变量。</p>
-
-<blockquote>
-<p>var b=a;                //a,b的引用指针都指向object</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>引用指针</td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<blockquote>
-<p>b.sex =&lsquo;boy&rsquo;;</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object{name:'xz'}</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>引用指针</td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
+</code></pre>
 
               
             </div>
@@ -493,9 +352,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
-
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/html/">HTML</a>
 
                   </div>
                 
@@ -508,7 +365,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" data-tooltip="JavaScript堆栈原理">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -516,7 +373,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/" data-tooltip="meta viewport设置移动端自适应">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-tooltip="浮动元素引起的问题和解决办法">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -534,7 +391,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -584,7 +441,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" data-tooltip="JavaScript堆栈原理">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -592,7 +449,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/" data-tooltip="meta viewport设置移动端自适应">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-tooltip="浮动元素引起的问题和解决办法">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -610,7 +467,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -640,7 +497,7 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F03%2Fjavascript%25E5%25A0%2586%25E6%25A0%2588%25E5%258E%259F%25E7%2590%2586%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F03%2Fmeta-viewport%25E8%25AE%25BE%25E7%25BD%25AE%25E7%25A7%25BB%25E5%258A%25A8%25E7%25AB%25AF%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -969,9 +826,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/03\/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94\/';
           
-            this.page.identifier = '\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/'
+            this.page.identifier = '\/2019\/03\/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94\/'
           
         };
         (function() {
