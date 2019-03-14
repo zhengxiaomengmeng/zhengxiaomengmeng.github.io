@@ -36,6 +36,28 @@
     </item>
     
     <item>
+      <title>各种布局的优缺点</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</guid>
+      <description>各种布局的优缺点 这篇博客讲的非常详细</description>
+    </item>
+    
+    <item>
+      <title>各种布局优缺点</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/</guid>
+      <description> Grid(网格) 布局 CSS Grid(网格) 布局（又称为 “Grid(网格)” ），是一个二维的基于网格的布局系统，它的目标是完全改变我们基于网格的用户界面的布局方式。
+Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的是为了解决更简单的一维布局，而不是复杂的二维布局（实际上 Flexbox 和 Grid 能协同工作，而且配合得非常好）。
+ 静态布局 传统布局，屏幕宽高变化时，盒子使用横向或者竖向的滚动条来查看被遮挡部分，也就是不管浏览器窗口的大小怎么变化就按html语义标签排列的布局来布置。 弹性布局 css3引入的，flex布局；优点在于其容易上手，根据flex规则很容易达到某个布局效果，然而缺点是：浏览器兼容性比较差，只能兼容到ie9及以上； 自适应布局 分别为不同的屏幕分辨率定义布局，在每个布局中，页面元素不随窗口大小的调整而发生变化，当窗口大小到达一定分辨率时变化一次。 流式布局 页面元素的宽度按照屏幕进行适配调整，元素的位置不变，大小变化，屏幕太大或者太小导致元素不能正常显示。 响应式布局 &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;divice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot;&amp;gt;
+使用meta标签设置，页面元素宽度随窗口调整自动适配。主要属性及其含义如下：name=&amp;ldquo;viewport&amp;rdquo;： 名称=视图；width=device-width 页面宽度=设备宽度(可以理解为获取你手机的屏幕宽度)；initial-scale - 初始的缩放比例；minimum-scale - 允许用户缩放到的最小比例 ；maximum-scale - 允许用户缩放到的最大比例 ；user-scalable - 用户是否可以手动缩放 。
+ 网格布局：grid二维布局系统，随意的定义每行每列的数目和大小。也非常简单方便，兼容性较差。   </description>
+    </item>
+    
+    <item>
       <title>meta viewport设置移动端自适应</title>
       <link>https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
@@ -64,7 +86,8 @@ viewport设置移动端自适应的方法：
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description> 浮动元素引起的问题和解决办法 </description>
+      <description>浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &amp;lt;style&amp;gt; div.parent&amp;gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &amp;lt;/style&amp;gt; &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;1&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;2&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;3&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;4&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clear&amp;quot;&amp;gt;5&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  给父元素添加clear:both;属性的:after伪元素。
+&amp;lt;style&amp;gt; div.parent&amp;gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: &#39;&#39;; display: block; clear: both; } &amp;lt;/style&amp;gt; &amp;lt;div class=&amp;quot;parent clear&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;1&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;2&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;3&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;4&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。</description>
     </item>
     
     <item>
@@ -84,6 +107,15 @@ viewport设置移动端自适应的方法：
       
       <guid>https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
       <description>https://www.cnblogs.com/songzk/p/6181641.html</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -129,15 +161,6 @@ position 的值的定位区别： 1.absolute 生成绝对定位的元素，相�
       
       <guid>https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/</guid>
       <description>meta标签使用总结</description>
-    </item>
-    
-    <item>
-      <title>盒子模型 box-sizing</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/</guid>
-      <description></description>
     </item>
     
     <item>

@@ -662,6 +662,44 @@ console.log(f(2)(3));  //5
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/">
+                <h3 class="media-heading">各种布局的优缺点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">各种布局的优缺点 这篇博客讲的非常详细</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/">
+                <h3 class="media-heading">各种布局优缺点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> Grid(网格) 布局 CSS Grid(网格) 布局（又称为 “Grid(网格)” ），是一个二维的基于网格的布局系统，它的目标是完全改变我们基于网格的用户界面的布局方式。
+Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的是为了解决更简单的一维布局，而不是复杂的二维布局（实际上 Flexbox 和 Grid 能协同工作，而且配合得非常好）。
+ 静态布局 传统布局，屏幕宽高变化时，盒子使用横向或者竖向的滚动条来查看被遮挡部分，也就是不管浏览器窗口的大小怎么变化就按html语义标签排列的布局来布置。 弹性布局 css3引入的，flex布局；优点在于其容易上手，根据flex规则很容易达到某个布局效果，然而缺点是：浏览器兼容性比较差，只能兼容到ie9及以上； 自适应布局 分别为不同的屏幕分辨率定义布局，在每个布局中，页面元素不随窗口大小的调整而发生变化，当窗口大小到达一定分辨率时变化一次。 流式布局 页面元素的宽度按照屏幕进行适配调整，元素的位置不变，大小变化，屏幕太大或者太小导致元素不能正常显示。 响应式布局 &lt;meta name=&quot;viewport&quot; content=&quot;divice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;&gt;
+使用meta标签设置，页面元素宽度随窗口调整自动适配。主要属性及其含义如下：name=&ldquo;viewport&rdquo;： 名称=视图；width=device-width 页面宽度=设备宽度(可以理解为获取你手机的屏幕宽度)；initial-scale - 初始的缩放比例；minimum-scale - 允许用户缩放到的最小比例 ；maximum-scale - 允许用户缩放到的最大比例 ；user-scalable - 用户是否可以手动缩放 。
+ 网格布局：grid二维布局系统，随意的定义每行每列的数目和大小。也非常简单方便，兼容性较差。   </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
                 <h3 class="media-heading">meta viewport设置移动端自适应</h3>
               </a>
@@ -701,7 +739,8 @@ viewport设置移动端自适应的方法：
                   Mar 3, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"> 浮动元素引起的问题和解决办法 </div>
+              <div class="media-content hide-xs font-merryweather">浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &lt;/style&gt; &lt;div class=&quot;parent&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;div class=&quot;clear&quot;&gt;5&lt;/div&gt; &lt;/div&gt;  给父元素添加clear:both;属性的:after伪元素。
+&lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: ''; display: block; clear: both; } &lt;/style&gt; &lt;div class=&quot;parent clear&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;/div&gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -737,6 +776,23 @@ viewport设置移动端自适应的方法：
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">https://www.cnblogs.com/songzk/p/6181641.html</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -784,58 +840,6 @@ viewport设置移动端自适应的方法：
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/">
-                <h3 class="media-heading">display、position的属性和作用</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">display、position的属性和作用 display 的值的作用： 1.block 像块类型元素一样显示。 2.inline 像行内元素类型一样显示。 3.inline-block 像行内元素一样显示，但其内容像块类型元素一样显示。 4.list-item 像块类型元素一样显示，并添加样式列表标记。
-position 的值的定位区别： 1.absolute 生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 2.fixed 生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 3.relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。 4.static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。 5.inherit 规定从父元素继承 position 属性的值。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/">
-                <h3 class="media-heading">meta标签</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">meta标签使用总结</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/">
-                <h3 class="media-heading">盒子模型 box-sizing</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -843,7 +847,7 @@ position 的值的定位区别： 1.absolute 生成绝对定位的元素，相�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         19 posts found
+         21 posts found
       </p>
     </div>
   </div>
