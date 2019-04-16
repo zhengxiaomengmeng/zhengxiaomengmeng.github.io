@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+
     
     
     <link rel="stylesheet" href="https://zhengxiaomengmeng.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
@@ -85,6 +86,7 @@
       
     
     </a>
+  
   
 </header>
 
@@ -487,7 +489,11 @@ viewport设置移动端自适应的方法：
                   Feb 2, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"></div>
+              <div class="media-content hide-xs font-merryweather">三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
+ 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
+实现过程 下面有5种三栏布局方式，先设置最初的样式。
+&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
+&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
