@@ -305,7 +305,7 @@ window.getComputedStyle(dom).width/height;（都支持，兼容性更好）
 dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以返回四个值：left，right，top，bottom，从而计算出宽高）。</p>
 
 <p><strong>4. 实例题(根据盒模型解释边距重叠)</strong>
-<img src="https://segmentfault.com/img/bVbb5Bs?w=493&amp;h=223" alt="父元素和子元素" />
+<img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/C040ED9083FD45F8A4121FD4A5C00D62/3406" alt="父元素和子元素" />
 <strong>问题</strong>：如上图有两个元素其中子元素高度为100px,子元素与父元素的上边距为 10px,求父元素的实际高度？</p>
 
 <p><strong>答案</strong>:说100px 对，说110px 也对，为什么捏？这个要看父元素的盒模型要怎么设置的，上代码演示咯，注意看噢：</p>
@@ -332,7 +332,7 @@ dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以
 &lt;/body&gt;
 </code></pre>
 
-<p><img src="https://segmentfault.com/img/bVbb5BN?w=1009&amp;h=374" alt="父元素的高度是100px的控制台" />
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/6E325C30F7F44FFE84A0E4493B90F26E/3409" alt="父元素的高度是100px的控制台" />
 上图证明 100px 是对的。</p>
 
 <p>接着我们给元素加个 overflow:hidden,然后在看效果：</p>
@@ -362,7 +362,7 @@ dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以
 &lt;/body&gt;
 </code></pre>
 
-<p><img src="https://segmentfault.com/img/bVbb5BZ?w=1366&amp;h=419" alt="父元素的高度是110px的控制台" />
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/9B02D248EE47477F8B8355055DC45660/3411" alt="父元素的高度是110px的控制台" />
 你会发现这时高度为 110px, 这时大家可能会疑问,为什么给父级元素设置一个 overflow:hidden以后，它的高度就成 110px 呢，这块的<strong>基本原理</strong>是啥呢，咋就这样呢？说这个之前，先引用一个知识点：</p>
 
 <p>上面代码是父子元素边距重叠，那么还有两种情况边距重叠就是，一种是兄弟元素，就是两个 div 挨着，每个都上边距或者下边距，那么重叠的原则就是取最大值。</p>
