@@ -207,6 +207,68 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/">
+          display、position的属性和作用
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-28
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        display、position的属性和作用 display 的值的作用： 1.block 像块类型元素一样显示。 2.inline 像行内元素类型一样显示。 3.inline-block 像行内元素一样显示，但其内容像块类型元素一样显示。 4.list-item 像块类型元素一样显示，并添加样式列表标记。
+position 的值的定位区别： 1.absolute 生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 2.fixed 生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 3.relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。 4.static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。 5.inherit 规定从父元素继承 position 属性的值。
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/">
           盒子模型 box-sizing
         </a>
@@ -542,6 +604,31 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/">
+                <h3 class="media-heading">CSS盒子模型的联想</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CSS盒子模型的联想 问题提出 题目:谈谈你对CSS盒子模型的认识。
+分析过程 需要掌握得知识点 基本概念：标准模型+ IE模型(区别) CSS如何设置这两种模型 JS如何设置获取盒子模型对应的宽和高 实例题(根据盒模型解释边距重叠) BFC(边距重叠解决方案)
+1. 基本概念：标准模型+ IE模型(区别) 从上图可以看到标准 W3C 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分。
+从上图可以看到 IE 盒子模型的范围也包括 margin、border、padding、content，和标准 W3C 盒子模型不同的是：IE 盒子模型的 content 部分包含了 border 和 pading。
+2. CSS如何设置这两种模型 box-sizing:conent-box;（默认）标准的盒子模型 box-sizing:border-box;IE盒子模型
+3. JS如何设置获取盒子模型对应的宽和高 dom.style.width/height（获取内联节点的宽高） dom.currentStyle.width/height (ie支持) window.getComputedStyle(dom).width/height;（都支持，兼容性更好） dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以返回四个值：left，right，top，bottom，从而计算出宽高）。
+4. 实例题(根据盒模型解释边距重叠) 问题：如上图有两个元素其中子元素高度为100px,子元素与父元素的上边距为 10px,求父元素的实际高度？
+答案:说100px 对，说110px 也对，为什么捏？这个要看父元素的盒模型要怎么设置的，上代码演示咯，注意看噢：
+&lt;style&gt; html,*{ padding: 0;margin: 0; } #sec{ background: #f00; } .child{ height: 100px; margin-top: 10px; background: yellow; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;section id=&quot;sec&quot;&gt; &lt;article class=&quot;child&quot;&gt; &lt;/article&gt; &lt;/section&gt; &lt;/body&gt;  上图证明 100px 是对的。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E5%8F%8A%E5%85%B6%E6%AF%94%E8%BE%83/">
                 <h3 class="media-heading">三栏布局实现方案及其比较</h3>
               </a>
@@ -734,28 +821,6 @@ viewport设置移动端自适应的方法：
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/">
-                <h3 class="media-heading">css实现隐藏页面的方式</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">css实现隐藏页面的方式 opacity 设置透明度，值为0-1。为0则页面上不显示，但是元素还在那个位置,依然可以网页交互,单纯是看不到而已。在呈现上与visibility:hidden;方式一样，同样会占据页面空间。
-.class{ opacity:0; }  visibility 设置隐藏。hidden为隐藏，在页面不显示，交互效果也会没有。visible为显示,hidden为隐藏。该方法仍占用页面空间，但是不会导致浏览器重排，但是会重绘。
-.class{ visibility:hidden;//隐藏 visibility:visible;//显示 }  display 设置不显示和显示。注意了，这里要强调的一点是，如果你想使他的子元素显示，用display:visible是没用的。而上面两种方式是可以使用。该方法不占用空间，会导致浏览器的重排和重绘。
-.class { display:none; }  position position位置，用绝对定位把它挪到远远地。
-.class{ position:absolute; left:-999px; top:-999px; }  Clip-path 该属性很少见，该属性是通过裁剪的方法实现隐藏的。被隐藏的内容依然占据着那个位置，它周围的元素的行为就如同它可见时一样。记住用户交互例如鼠标悬停或者点击在剪裁区域之外也不可能生效。此外，这个属性能够使用各种过渡动画来实现不同的效果。
-.haorooms-small { background-size: cover; width: 300px; height: 300px; -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); }  &lt;div class=&quot;haorooms-small&quot; style=&quot;background-image: url('http://sandbox.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -763,7 +828,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         21 posts found
+         22 posts found
       </p>
     </div>
   </div>
