@@ -204,6 +204,68 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+          浮动元素引起的问题和解决办法
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-03-03T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-03-03
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &lt;/style&gt; &lt;div class=&quot;parent&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;div class=&quot;clear&quot;&gt;5&lt;/div&gt; &lt;/div&gt;  给父元素添加clear:both;属性的:after伪元素。
+&lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: ''; display: block; clear: both; } &lt;/style&gt; &lt;div class=&quot;parent clear&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;/div&gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/">
           css js文件放置位置和原因
         </a>
@@ -563,76 +625,6 @@ position 的值的定位区别： 1.absolute 生成绝对定位的元素，相�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/">
-          盒子模型 box-sizing
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-28
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        盒子模型 box-sizing 盒子模型 盒子模型由元素内容(content)、元素的内边距(padding:内容与边框之间的距离)，元素的边框(border)，元素的外边距(margin:边框与外部元素之间的距离)四个部分，这四个部分一起构成了盒子模型。
-对于padding、margin的取值 （注意：不允许取负值）
-注意：margin重叠，也叫 margin塌陷
-标准文档流中，两个盒子，分别有上下外边距，竖直方向的margin不叠加，只取较大的值作为margin(水平方向的margin是可以叠加的)。
-&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;margin叠加&lt;/title&gt; &lt;style&gt; *{ padding: 0; margin: 0; } .a{ width: 100px; height: 100px; border:1px solid; background-color: teal; margin-bottom: 10px; } .b{ width: 100px; height: 100px; border:1px solid; background-color: red; margin-top: 20px; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;a&quot;&gt;&lt;/div&gt; &lt;div class=&quot;b&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  注意：上下两个盒子的距离不是30px；而是20px，上面两个盒子的margin值不叠加，只取较大的值作为margin。
-另外：margin这个属性，本质上描述的是兄弟和兄弟之间的距离； 最好不要用这个marign表达父子之间的距离。
-如果向设置父子之间的距离，我们最好使用父元素的padding。
-box-sizing box-sizing 属性允许以特定的方式定义匹配某个区域的特定元素,简单来说就是可以通过box-sizing的取值来切换盒模型，它的取值可以为content-box、border-box.默认属性是content-box。
-W3C标准盒子（content-box）：又称内容盒子，是指块元素box-sizing属性为content-box的盒模型。一般在现代浏览器中使用的都是正常盒模型content-box。它所说的width一般只包含内容，不包含padding与margin，并且盒子的大小会以内容优先，自动扩展，子元素可以撑开父元素.可以理解为现实生活中的气球，大小可以随内容的变化而变化。
- 在这种盒模型下，我们所说的元素的 width ，实际上只包含 content。盒子总宽度 = margin + border + padding + width
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B-box-sizing/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -716,6 +708,30 @@ W3C标准盒子（content-box）：又称内容盒子，是指块元素box-sizin
       <div class="no-result text-color-light text-center"></div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
+                <h3 class="media-heading">税友实习生一二三面</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">人生第一次面试，记录一下！
+从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
+一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记）
+只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
+二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &hellip;..忘了
+提问还有什么想问的
+三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&hellip;.忘了
+给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -917,26 +933,6 @@ viewport设置移动端自适应的方法：
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
-                <h3 class="media-heading">css实现水平、垂直居中</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">css实现水平、垂直居中 元素水平居中 块级元素水平居中 最简单的方式：margin： 0 auto; 注意点 (1)元素需要设置宽度 (2)元素不能为行内元素
-行内元素水平居中 元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。（对于块级元素不起作用）
-不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比较多）： 1.加入 table 标签 第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 、、 ) 第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）
-&lt;!DOCTYPE HTML&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;不定宽块状元素水平居中&lt;/title&gt; &lt;style&gt; table{ margin:0 auto; } ul{list-style:none;margin:0;padding:0;} li{float:left;display:inline;margin-right:8px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt;&lt;td&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  2.设置 display;inline 方法 改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -944,7 +940,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         22 posts found
+         23 posts found
       </p>
     </div>
   </div>
