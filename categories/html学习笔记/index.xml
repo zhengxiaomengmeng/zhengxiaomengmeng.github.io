@@ -6,10 +6,19 @@
     <description>Recent content in Html学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 22:43:59 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOM事件类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/</link>
+      <pubDate>Tue, 23 Apr 2019 22:43:59 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>meta viewport设置移动端自适应</title>
