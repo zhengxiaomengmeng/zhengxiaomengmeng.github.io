@@ -494,11 +494,18 @@ position 的值的定位区别： 1.absolute 生成绝对定位的元素，相�
  描述DOM事件捕获的具体流程
  Event对象的常见应用
  自定义事件
-  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
-2.DOM事件模型 捕获和冒泡
-3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+  1.DOM事件的级别
+DOM0：element.onclick=function(){}
+DOM1设定的时候没有设计跟事件相关的事件
+DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false)
+DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型
+捕获和冒泡
+3.DOM事件流
+浏览器在为当前页面与用户做交互的过程中，是怎么响应的
 *完整的事件流*：1、捕获 2、目标阶段 3、冒泡
-4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+4.描述DOM事件捕获的具体流程
+window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
 冒泡则是反过来的 var ev = document.getElementById('ev'); window.addEventListener('click',function(){ console.log('window capture') },true)//true是捕获，false是冒泡 document.addEventListener('click',function(){ console.log('document capture') },true) document.documentElement.addEventListener('click',function(){ console.log('html capture') },true) document.body.addEventListener('click',function(){ console.log('body capture') },true) ev.addEventListener('click',function(){ console.log('ev capture') },true)  5.Event对象的常见应用
 event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.</div>
             </div>
