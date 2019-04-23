@@ -7,19 +7,75 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
-<meta name="keywords" content="tech, JavaScript, CSS, HTML">
-<meta name="description" content="">
+<meta name="keywords" content="DOM, JavaScript, CSS, HTML">
+<meta name="description" content="DOM事件类 问题提出 题目: DOM事件类
+分析过程 需要掌握得知识点
+ 基本概念：DOM事件的级别
+ DOM事件模型
+ DOM事件流
+ 描述DOM事件捕获的具体流程
+ Event对象的常见应用
+ 自定义事件
+  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型 捕获和冒泡
+3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
+4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+冒泡则是反过来的 var ev = document.getElementById(&#39;ev&#39;); window.addEventListener(&#39;click&#39;,function(){ console.log(&#39;window capture&#39;) },true)//true是捕获，false是冒泡 document.addEventListener(&#39;click&#39;,function(){ console.log(&#39;document capture&#39;) },true) document.documentElement.addEventListener(&#39;click&#39;,function(){ console.log(&#39;html capture&#39;) },true) document.body.addEventListener(&#39;click&#39;,function(){ console.log(&#39;body capture&#39;) },true) ev.addEventListener(&#39;click&#39;,function(){ console.log(&#39;ev capture&#39;) },true)  5.Event对象的常见应用
+event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="DOM事件类 问题提出 题目: DOM事件类
+分析过程 需要掌握得知识点
+ 基本概念：DOM事件的级别
+ DOM事件模型
+ DOM事件流
+ 描述DOM事件捕获的具体流程
+ Event对象的常见应用
+ 自定义事件
+  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型 捕获和冒泡
+3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
+4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+冒泡则是反过来的 var ev = document.getElementById(&#39;ev&#39;); window.addEventListener(&#39;click&#39;,function(){ console.log(&#39;window capture&#39;) },true)//true是捕获，false是冒泡 document.addEventListener(&#39;click&#39;,function(){ console.log(&#39;document capture&#39;) },true) document.documentElement.addEventListener(&#39;click&#39;,function(){ console.log(&#39;html capture&#39;) },true) document.body.addEventListener(&#39;click&#39;,function(){ console.log(&#39;body capture&#39;) },true) ev.addEventListener(&#39;click&#39;,function(){ console.log(&#39;ev capture&#39;) },true)  5.Event对象的常见应用
+event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM事件类">
 <meta name="twitter:title" content="DOM事件类">
 <meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
 <meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="DOM事件类 问题提出 题目: DOM事件类
+分析过程 需要掌握得知识点
+ 基本概念：DOM事件的级别
+ DOM事件模型
+ DOM事件流
+ 描述DOM事件捕获的具体流程
+ Event对象的常见应用
+ 自定义事件
+  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型 捕获和冒泡
+3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
+4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+冒泡则是反过来的 var ev = document.getElementById(&#39;ev&#39;); window.addEventListener(&#39;click&#39;,function(){ console.log(&#39;window capture&#39;) },true)//true是捕获，false是冒泡 document.addEventListener(&#39;click&#39;,function(){ console.log(&#39;document capture&#39;) },true) document.documentElement.addEventListener(&#39;click&#39;,function(){ console.log(&#39;html capture&#39;) },true) document.body.addEventListener(&#39;click&#39;,function(){ console.log(&#39;body capture&#39;) },true) ev.addEventListener(&#39;click&#39;,function(){ console.log(&#39;ev capture&#39;) },true)  5.Event对象的常见应用
+event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.">
+<meta name="twitter:description" content="DOM事件类 问题提出 题目: DOM事件类
+分析过程 需要掌握得知识点
+ 基本概念：DOM事件的级别
+ DOM事件模型
+ DOM事件流
+ 描述DOM事件捕获的具体流程
+ Event对象的常见应用
+ 自定义事件
+  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型 捕获和冒泡
+3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
+4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+冒泡则是反过来的 var ev = document.getElementById(&#39;ev&#39;); window.addEventListener(&#39;click&#39;,function(){ console.log(&#39;window capture&#39;) },true)//true是捕获，false是冒泡 document.addEventListener(&#39;click&#39;,function(){ console.log(&#39;document capture&#39;) },true) document.documentElement.addEventListener(&#39;click&#39;,function(){ console.log(&#39;html capture&#39;) },true) document.body.addEventListener(&#39;click&#39;,function(){ console.log(&#39;body capture&#39;) },true) ev.addEventListener(&#39;click&#39;,function(){ console.log(&#39;ev capture&#39;) },true)  5.Event对象的常见应用
+event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -239,6 +295,106 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               
+
+<h2 id="dom事件类">DOM事件类</h2>
+
+<h3 id="问题提出">问题提出</h3>
+
+<p><strong>题目:</strong> DOM事件类</p>
+
+<h3 id="分析过程">分析过程</h3>
+
+<p><strong>需要掌握得知识点</strong></p>
+
+<ul>
+<li><p>基本概念：DOM事件的级别</p></li>
+
+<li><p>DOM事件模型</p></li>
+
+<li><p>DOM事件流</p></li>
+
+<li><p>描述DOM事件捕获的具体流程</p></li>
+
+<li><p>Event对象的常见应用</p></li>
+
+<li><p>自定义事件</p></li>
+</ul>
+
+<p><strong>1.DOM事件的级别</strong>
+DOM0：element.onclick=function(){}
+DOM1设定的时候没有设计跟事件相关的事件
+DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false)
+DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false)  （事件类型增加了）</p>
+
+<p><strong>2.DOM事件模型</strong>
+捕获和冒泡</p>
+
+<p><strong>3.DOM事件流</strong>
+浏览器在为当前页面与用户做交互的过程中，是怎么响应的</p>
+
+<p>*完整的事件流*：1、捕获  2、目标阶段  3、冒泡</p>
+
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/3ED7BEED94014F68BD9DB6322B403911/3413" alt="事件流" /></p>
+
+<p><strong>4.描述DOM事件捕获的具体流程</strong>
+ window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素
+ （其中获取html节点用document.documentElement，获取body节点用document.body）</p>
+
+<p>冒泡则是反过来的
+<img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/A38B6A6A1EC94B1A86D028708C15DD61/3417" alt="描述DOM事件捕获的具体流程" /></p>
+
+<pre><code class="language-DOM事件捕获"> var ev = document.getElementById('ev');
+ 
+ window.addEventListener('click',function(){
+     console.log('window capture')
+ },true)//true是捕获，false是冒泡
+
+ document.addEventListener('click',function(){
+     console.log('document capture')
+ },true)
+
+ document.documentElement.addEventListener('click',function(){
+     console.log('html capture')
+ },true)
+
+ document.body.addEventListener('click',function(){
+     console.log('body capture')
+ },true)
+
+ ev.addEventListener('click',function(){
+     console.log('ev capture')
+ },true)
+</code></pre>
+
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/CBACB6F17A4E415FA715C5A5E6DE258E/3420" alt="DOM事件捕获" /></p>
+
+<p><strong>5.Event对象的常见应用</strong></p>
+
+<pre><code class="language-Event对象的常见应用">   event.preventDefault()   （阻止默认事件）
+
+   event.stopPropagation()    （阻止冒泡行为）
+
+   event.stopImmediatePropagation()    （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法）
+
+   event.currentTarget    （当前绑定的事件，比如父级元素绑定了事件，那么event.currentTarget指的就是父元素）
+
+   event.target    （当前点击的元素）
+</code></pre>
+
+<p><strong>6.自定义事件</strong></p>
+
+<pre><code class="language-新建custome事件">
+var eve=new Event('custome');
+ev.addEventListener('custome',function(){
+    console.log('custome');
+});
+ev.dispatchEvent(eve);
+</code></pre>
+
+<p><strong>注:</strong> 还能用customEvent自定义事件，它与Event的区别？
+Event只能指定事件名；
+customEvent不仅能指定事件名，还能用Object做指定参数。</p>
+
               
             </div>
           </div>
@@ -464,7 +620,21 @@
                   Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"></div>
+              <div class="media-content hide-xs font-merryweather">DOM事件类 问题提出 题目: DOM事件类
+分析过程 需要掌握得知识点
+ 基本概念：DOM事件的级别
+ DOM事件模型
+ DOM事件流
+ 描述DOM事件捕获的具体流程
+ Event对象的常见应用
+ 自定义事件
+  1.DOM事件的级别 DOM0：element.onclick=function(){} DOM1设定的时候没有设计跟事件相关的事件 DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false) DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
+2.DOM事件模型 捕获和冒泡
+3.DOM事件流 浏览器在为当前页面与用户做交互的过程中，是怎么响应的
+*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
+4.描述DOM事件捕获的具体流程 window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
+冒泡则是反过来的 var ev = document.getElementById('ev'); window.addEventListener('click',function(){ console.log('window capture') },true)//true是捕获，false是冒泡 document.addEventListener('click',function(){ console.log('document capture') },true) document.documentElement.addEventListener('click',function(){ console.log('html capture') },true) document.body.addEventListener('click',function(){ console.log('body capture') },true) ev.addEventListener('click',function(){ console.log('ev capture') },true)  5.Event对象的常见应用
+event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
