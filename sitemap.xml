@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/</loc>
+    <lastmod>2019-04-24T22:28:11+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/</loc>
     <lastmod>2019-04-23T22:43:59+08:00</lastmod>
   </url>
@@ -182,7 +187,7 @@
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/post/</loc>
-    <lastmod>2019-04-23T22:43:59+08:00</lastmod>
+    <lastmod>2019-04-24T22:28:11+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -194,7 +199,19 @@
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/</loc>
-    <lastmod>2019-04-23T22:43:59+08:00</lastmod>
+    <lastmod>2019-04-24T22:28:11+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2019-04-24T22:28:11+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/categories/%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-04-24T22:28:11+08:00</lastmod>
     <priority>0</priority>
   </url>
   

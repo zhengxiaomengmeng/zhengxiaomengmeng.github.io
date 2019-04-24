@@ -204,6 +204,78 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+          浏览器的标准模式和怪异模式
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-25T14:18:32&#43;08:00">
+        
+  
+  
+  
+  
+    2019-02-25
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+         浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/">
           闭包
         </a>
@@ -479,6 +551,47 @@ fixed很适合用于固定某个div或者侧边栏在页面中不随页面滚动
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/">
+                <h3 class="media-heading">HTTP协议类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">HTTP协议类 问题提出 题目: HTTP协议类一面需要掌握知识
+分析过程 需要掌握得知识点
+ HTTP协议的主要特点
+ HTTP 报文的组成部分
+ HTTP方法
+ POST和GET的区别
+ HTTP状态码
+ 持久连接
+ 管线化
+  1.HTTP协议的主要特点
+ 简单快速 每个资源URI(统一资源符)是固定的，比如图片、页面地址，所以HTTP协议中处理比较简单，访问某个资源输入URI即可 灵活 每个http协议中。有一个头部分，有个数据类型，通过一个http协议的就可以完成不同数据类型的传输 无连接 (重点) 连接一次就会断开，不会保持连接 无状态 (重点) 客户端和服务端两种身份，客户端向服务端请求一个图片，http帮你建立连接、传输结束后，连接断开，下次客户端在请求数据，服务端是无法区分上次连接和这次连接是否是同一身份，因为服务端没有记住你的状态，单从http协议上是无法区分两次连接者的身份  状态区分是通过服务端加一下session做到的
+2.HTTP 报文的组成部分
+- 请求报文
+ 请求行:http方法、页面地址、协议、版本
+ 请求头:key、value告诉服务端需要内容，注意什么类型
+ 空行:告诉服务端请求头已经结束
+ 请求体
+  - 响应报文
+ 状态行:协议、版本、状态码
+ 响应头
+ 空行
+ 响应体:文档部分
+  3.HTTP方法
+ GET 获取资源
+ POST 传输资源</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
                 <h3 class="media-heading">DOM事件类</h3>
               </a>
@@ -703,24 +816,6 @@ viewport设置移动端自适应的方法：
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/">
-                <h3 class="media-heading">css js文件放置位置和原因</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">css js文件放置位置和原因 js文件最好放在body中，也就是标签前，因为放在所有body中的标签后面就不会出现网页加载时出现空白的情况，可以持续的给用户提供视觉反馈，同时在有些情况下，会降低错误的发生。
-而css标签应该放在标签之间，因为如果放在标签的前面，那么当DOM树构建完成了，渲染树才构建，那么当渲染树构建完成，浏览器不得不再重新渲染整个页面，这样造成了资源的浪费。效率也不高。如果放在之间，浏览器边构建边渲染，效率要高的多。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -728,7 +823,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         24 posts found
+         25 posts found
       </p>
     </div>
   </div>
