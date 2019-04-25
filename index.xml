@@ -6,10 +6,26 @@
     <description>Recent content on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2019 22:28:11 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 16:07:50 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>原型链类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/</link>
+      <pubDate>Thu, 25 Apr 2019 16:07:50 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/</guid>
+      <description>原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; // 第一种方式：字面量 var o1 = { name: &amp;quot;o1&amp;quot; }; var o2 = new Object({ name: &amp;quot;o2&amp;quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&amp;quot;o3&amp;quot;); // 第三种方式：Object.create var p = { name: &amp;quot;p&amp;quot; }; var o4 = Object.</description>
+    </item>
     
     <item>
       <title>HTTP协议类</title>

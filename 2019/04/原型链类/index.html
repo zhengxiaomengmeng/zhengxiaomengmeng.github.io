@@ -8,63 +8,63 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="人生第一次面试，记录一下！
-从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
-一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记） 17.for、foreach、map如何跳出循环
-只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
-二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &hellip;..忘了
-提问还有什么想问的
-三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&hellip;.忘了
-给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。">
+<meta name="description" content="原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &lt;script type=&quot;text/javascript&quot;&gt; // 第一种方式：字面量 var o1 = { name: &quot;o1&quot; }; var o2 = new Object({ name: &quot;o2&quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&quot;o3&quot;); // 第三种方式：Object.create var p = { name: &quot;p&quot; }; var o4 = Object.">
 
 
-<meta property="og:description" content="人生第一次面试，记录一下！
-从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
-一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记） 17.for、foreach、map如何跳出循环
-只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
-二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &hellip;..忘了
-提问还有什么想问的
-三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&hellip;.忘了
-给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。">
+<meta property="og:description" content="原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &lt;script type=&quot;text/javascript&quot;&gt; // 第一种方式：字面量 var o1 = { name: &quot;o1&quot; }; var o2 = new Object({ name: &quot;o2&quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&quot;o3&quot;); // 第三种方式：Object.create var p = { name: &quot;p&quot; }; var o4 = Object.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="税友实习生一二三面">
-<meta name="twitter:title" content="税友实习生一二三面">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
+<meta property="og:title" content="原型链类">
+<meta name="twitter:title" content="原型链类">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="人生第一次面试，记录一下！
-从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
-一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记） 17.for、foreach、map如何跳出循环
-只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
-二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &hellip;..忘了
-提问还有什么想问的
-三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&hellip;.忘了
-给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。">
-<meta name="twitter:description" content="人生第一次面试，记录一下！
-从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
-一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记） 17.for、foreach、map如何跳出循环
-只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
-二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &hellip;..忘了
-提问还有什么想问的
-三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&hellip;.忘了
-给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。">
+<meta property="og:description" content="原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &lt;script type=&quot;text/javascript&quot;&gt; // 第一种方式：字面量 var o1 = { name: &quot;o1&quot; }; var o2 = new Object({ name: &quot;o2&quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&quot;o3&quot;); // 第三种方式：Object.create var p = { name: &quot;p&quot; }; var o4 = Object.">
+<meta name="twitter:description" content="原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &lt;script type=&quot;text/javascript&quot;&gt; // 第一种方式：字面量 var o1 = { name: &quot;o1&quot; }; var o2 = new Object({ name: &quot;o2&quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&quot;o3&quot;); // 第三种方式：Object.create var p = { name: &quot;p&quot; }; var o4 = Object.">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-04-22T21:53:35">
+    <meta property="article:published_time" content="2019-04-25T16:07:50">
   
   
-    <meta property="article:modified_time" content="2019-04-22T21:53:35">
+    <meta property="article:modified_time" content="2019-04-25T16:07:50">
   
-  
-  
-    
-      <meta property="article:section" content="Interview笔记">
-    
   
   
     
-      <meta property="article:tag" content="Interview">
+      <meta property="article:section" content="JS学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="JavaScript">
     
   
 
@@ -85,14 +85,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>税友实习生一二三面</title>
+    <title>原型链类</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -234,19 +234,19 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      税友实习生一二三面
+      原型链类
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-04-22T21:53:35&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-04-25T16:07:50&#43;08:00">
         
   
   
   
   
-    2019-04-22
+    2019-04-25
   
 
       </time>
@@ -256,7 +256,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/interview%e7%ac%94%e8%ae%b0">Interview笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>
     
   
 
@@ -266,54 +266,111 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>人生第一次面试，记录一下！</p>
+              
 
-<p>从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。
-税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。</p>
+<h2 id="原型链类">原型链类</h2>
 
-<p><strong>一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右）</strong>
-1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容）
-2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小）
-3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能）
-4.ES6的新特性
-5.什么是原型，什么是原型链
-6.讲述一下使用JQuery和Vue框架的优缺点
-7.兼容性问题，平时在项目中怎么处理
-8.Vue的数据双向绑定原理
-9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件）
-10.在IE浏览器处理兼容性时，hack用法
-11.用原生的js写Ajax
-12.echarts感觉如何，有没有应用过
-13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么）
-14.为什么选择前端这个职业，它对你的吸引在哪里
-15.在项目中如何和后端开发人员合作
-16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记）
-17.for、foreach、map如何跳出循环</p>
+<h3 id="问题提出">问题提出</h3>
 
-<p>只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的）
-最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水</p>
+<p><strong>题目</strong>:原型链类</p>
 
-<p><strong>二面（HR面）（25分钟左右）</strong>
-1.优缺点
-2.你认为中大型企业招聘实习生的要求是什么
-3.学习规划
-4.调查户口
-5.期待工资（不要太直接，最好给个范围）
-6.前端吸引你的地方
-7.在前端这职位的发展规划
-8.对于上一轮面试印象最深刻的问题
-9.聊本科（主要是我本科在东北，所有他们比较好奇）
-10. &hellip;..忘了</p>
+<h3 id="分析过程">分析过程</h3>
 
-<p>提问还有什么想问的</p>
+<p><strong>需要掌握得知识点</strong></p>
 
-<p><strong>三面（技术总监面）（40分钟左右）</strong>
-1.为什么选择前端这工作，对前端的理解
-2.在考虑利益最大化，你比本科生的优势在哪里
-3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看）
-4&hellip;.忘了</p>
+<ul>
+<li><p>创建对象的几种方法</p></li>
 
-<p>给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。</p>
+<li><p>原型、构造函数、实例、原型链</p></li>
+
+<li><p>instanceof的原理</p></li>
+
+<li><p>new 运算符</p></li>
+</ul>
+
+<p><strong>1.创建对象的几种方法</strong></p>
+
+<ol>
+<li>字面量</li>
+<li>构造函数</li>
+<li>Object.create</li>
+</ol>
+
+<pre><code class="language-创建对象的几种方法">&lt;script type=&quot;text/javascript&quot;&gt;
+    // 第一种方式：字面量
+    var o1 = {
+        name: &quot;o1&quot;
+    };
+    var o2 = new Object({
+        name: &quot;o2&quot;
+    });
+    // 第二种方式：构造函数
+    var M = function(name) {
+        this.name = name;
+    };
+    var o3 = new M(&quot;o3&quot;);
+    // 第三种方式：Object.create
+    var p = {
+        name: &quot;p&quot;
+    };
+    var o4 = Object.create(p);
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>2.原型、构造函数、实例、原型链</strong></p>
+
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/0FF73ED620FC43E182CAC068AC001B11/3423" alt="原型、构造函数、实例、原型链关系图" /></p>
+
+<ul>
+<li><p>实例：只要是对象，就是一个实例。</p></li>
+
+<li><p>构造函数：任何一个对象，只要被new使用了，它就是一个构造函数。</p></li>
+
+<li><p>原型对象：函数都有一个prototype属性，是在声明一个函数的时候，js自动给它加上去的属性，prototype属性会初始化一个空对象，也就是原型对象。原型对象区分是被哪个构造函数引用：原型对象中有一个构造器constructor，这个构造器会默认你声明的那个函数。</p></li>
+
+<li><p>原型链：从一个实例对象往上找，找构造这个实例的相关联的对象，然后这个关联的对象再往上找，它又有创造它的上一级的原型对象，以此类推，最后找到Object.prototype原型对象终止。Object.prototype是原型链的顶端。</p></li>
+
+<li><p>原型链的工作原理：通过原型链的方式，找到原型对象，原型对象上的方法是被不同的实例所共有的。</p></li>
+
+<li><p>只有函数才有prototype属性，对象是没有的；</p></li>
+
+<li><p>只有实例对象有proto属性（函数也是一个对象，函数的_proto===Function.prototype）</p></li>
+
+<li><p>实例明明是被构造函数生成的，它是怎么跟原型对象产生管理的：构造函数的prototype属性，修改这个属性也就是修改了实例上一级的原型对象</p></li>
+</ul>
+
+<p><strong>3.instanceof的原理</strong></p>
+
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/994F7F60CC2E44EABA80EA509E67EA5A/3426" alt="instanceof" /></p>
+
+<ul>
+<li><p>实例对象的proto属性其实是引用的原型对象，虽然说实例对象是由构造函数产生的，但是实例对象的proto属性和构造函数本身没什么关联，关联的是构造函数的下面的一个prototype所引用的原型对象</p></li>
+
+<li><p>instanceof的原理就是用来判断实例对象的proto属性和构造函数prototype属性是不是同一个引用</p></li>
+
+<li><p>只要是在这条原型链上的构造函数，都会被instanceof看作是这个实例的构造函数</p></li>
+</ul>
+
+<p><strong>4.new 运算符</strong></p>
+
+<ol>
+<li><p>一个新对象被创建，它继承自foo,prototype；</p></li>
+
+<li><p>构造函数foo被执行。执行的时候，相应的传参会被传入，同时上下文（this）会被指定为这个新实例。new foo 等同于 new foo()，只能用在不传递任何参数的情况下；</p></li>
+
+<li><p>如果构造函数返回了一个‘对象’，那么这个对象会取代整个new出来的结果。如果构造函数没有返回对象，那么new出来的结果为步骤1创建的对象。</p></li>
+</ol>
+
+<pre><code class="language-new"> var new2 = function(func) {
+        var o = Object.create(func.prototype);
+        var k = func.call(o);
+        if (typeof k === 'object') {
+            return k;
+        } else {
+            return o;
+        }
+    }
+</code></pre>
 
               
             </div>
@@ -326,7 +383,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/interview/">Interview</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
 
                   </div>
                 
@@ -339,7 +396,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/" data-tooltip="DOM事件类">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -347,7 +404,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/" data-tooltip="CSS盒子模型的联想">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/" data-tooltip="HTTP协议类">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -365,7 +422,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -415,7 +472,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/" data-tooltip="DOM事件类">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -423,7 +480,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/" data-tooltip="CSS盒子模型的联想">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/" data-tooltip="HTTP协议类">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -441,7 +498,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -471,7 +528,7 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F04%2F%25E7%25A8%258E%25E5%258F%258B%25E5%25AE%259E%25E4%25B9%25A0%25E7%2594%259F%25E4%25B8%2580%25E4%25BA%258C%25E4%25B8%2589%25E9%259D%25A2%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F04%2F%25E5%258E%259F%25E5%259E%258B%25E9%2593%25BE%25E7%25B1%25BB%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -865,9 +922,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/04\/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/04\/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB\/';
           
-            this.page.identifier = '\/2019\/04\/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2\/'
+            this.page.identifier = '\/2019\/04\/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB\/'
           
         };
         (function() {

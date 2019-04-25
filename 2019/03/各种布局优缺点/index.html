@@ -499,6 +499,30 @@ css3引入的，flex布局；优点在于其容易上手，根据flex规则很�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
+                <h3 class="media-heading">原型链类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">原型链类 问题提出 题目:原型链类
+分析过程 需要掌握得知识点
+ 创建对象的几种方法
+ 原型、构造函数、实例、原型链
+ instanceof的原理
+ new 运算符
+  1.创建对象的几种方法
+ 字面量 构造函数 Object.create  &lt;script type=&quot;text/javascript&quot;&gt; // 第一种方式：字面量 var o1 = { name: &quot;o1&quot; }; var o2 = new Object({ name: &quot;o2&quot; }); // 第二种方式：构造函数 var M = function(name) { this.name = name; }; var o3 = new M(&quot;o3&quot;); // 第三种方式：Object.create var p = { name: &quot;p&quot; }; var o4 = Object.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/">
                 <h3 class="media-heading">HTTP协议类</h3>
               </a>
@@ -746,24 +770,6 @@ viewport设置移动端自适应的方法：
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
-                <h3 class="media-heading">浮动元素引起的问题和解决办法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &lt;/style&gt; &lt;div class=&quot;parent&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;div class=&quot;clear&quot;&gt;5&lt;/div&gt; &lt;/div&gt;  给父元素添加clear:both;属性的:after伪元素。
-&lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: ''; display: block; clear: both; } &lt;/style&gt; &lt;div class=&quot;parent clear&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;/div&gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -771,7 +777,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         25 posts found
+         26 posts found
       </p>
     </div>
   </div>
