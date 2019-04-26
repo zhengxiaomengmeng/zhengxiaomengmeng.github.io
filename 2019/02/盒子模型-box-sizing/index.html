@@ -594,6 +594,31 @@ W3C标准盒子（content-box）：又称内容盒子，是指块元素box-sizin
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                <h3 class="media-heading">面向对象</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">面向对象 问题提出 题目: 面向对象
+分析过程 需要掌握得知识点
+ 类与实例（类的声明、生成实例）
+ 类与继承（如何实现继承、继承的几种方式）
+  1.类与实例
+1.1.类的声明 eg: 1. function Animal(){ this.name = &quot;name&quot;; } 2.ES6中类(class)的声明 class Animal2{ constructor(){ this.name = name; } } 1.2.(如何通过类实例化生成对象)生成实例 eg: //如果构造函数后面没有参数，new后面这个()是可以不要的； 1.console.log(new Animal(),new Animal2());  2.类与继承
+问题
+- 如何实现继承？ - 继承的几种方式、各个形式都有什么优点和缺点？ 继承的**本质**（**原理**）就是原型链。   借助构造函数实现继承
+ （只实现了部分继承，如果父类的属性都在构造函数上，那没有问题； 如果父类的原型对象上还有方法，子类是拿不到这些方法的） function Parent1(){ this.name = &quot;parent1&quot;; } function Child(){ //call和apply改变的是函数运行上下文，把父级（Parent1这个构造函数）在子函数里执行的话， 同时修改了父级构造函数this的指向，从而导致了父类执行的时候属性都会挂在Child类实例上去。 //将父级的构造函数的this指向一个子构造函数的实例上去，父级构造函数所有的属性在子类中也有 Parent1.call(this); this.type=&quot;child1&quot;; } console.log(new Child()); 缺点：Parent1原型链上的东西并没有被Child所继承； 没有继承父类原型对象上的方法，导致的并没有真正的实现继承； function Parent1(){ this.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
                 <h3 class="media-heading">原型链类</h3>
               </a>
@@ -834,37 +859,6 @@ Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
-                <h3 class="media-heading">meta viewport设置移动端自适应</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"> meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
-3个viewport （1）layout viewport
-如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
-（2）visual viewport
-layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
-（3）ideal viewport
-ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
-ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
-ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
-利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
-head标签中加入：
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
-其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
-viewport设置移动端自适应的方法：
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  </div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -872,7 +866,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         26 posts found
+         27 posts found
       </p>
     </div>
   </div>

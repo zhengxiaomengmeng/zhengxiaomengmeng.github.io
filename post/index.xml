@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Apr 2019 16:07:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 14:33:27 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>面向对象</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 26 Apr 2019 14:33:27 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>面向对象 问题提出 题目: 面向对象
+分析过程 需要掌握得知识点
+ 类与实例（类的声明、生成实例）
+ 类与继承（如何实现继承、继承的几种方式）
+  1.类与实例
+1.1.类的声明 eg: 1. function Animal(){ this.name = &amp;quot;name&amp;quot;; } 2.ES6中类(class)的声明 class Animal2{ constructor(){ this.name = name; } } 1.2.(如何通过类实例化生成对象)生成实例 eg: //如果构造函数后面没有参数，new后面这个()是可以不要的； 1.console.log(new Animal(),new Animal2());  2.类与继承
+问题
+- 如何实现继承？ - 继承的几种方式、各个形式都有什么优点和缺点？ 继承的**本质**（**原理**）就是原型链。   借助构造函数实现继承
+ （只实现了部分继承，如果父类的属性都在构造函数上，那没有问题； 如果父类的原型对象上还有方法，子类是拿不到这些方法的） function Parent1(){ this.name = &amp;quot;parent1&amp;quot;; } function Child(){ //call和apply改变的是函数运行上下文，把父级（Parent1这个构造函数）在子函数里执行的话， 同时修改了父级构造函数this的指向，从而导致了父类执行的时候属性都会挂在Child类实例上去。 //将父级的构造函数的this指向一个子构造函数的实例上去，父级构造函数所有的属性在子类中也有 Parent1.call(this); this.type=&amp;quot;child1&amp;quot;; } console.log(new Child()); 缺点：Parent1原型链上的东西并没有被Child所继承； 没有继承父类原型对象上的方法，导致的并没有真正的实现继承； function Parent1(){ this.</description>
+    </item>
     
     <item>
       <title>原型链类</title>
