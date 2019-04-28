@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>错误监控 on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/tags/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7/</link>
+    <description>Recent content in 错误监控 on Welcome to Dream&#39;s blog </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 18:45:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhengxiaomengmeng.github.io/tags/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>错误监控类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7%E7%B1%BB/</link>
+      <pubDate>Sun, 28 Apr 2019 18:45:33 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7%E7%B1%BB/</guid>
+      <description>错误监控类 问题提出 题目: 错误监控类有哪些或者如何保证产品质量？？
+分析过程 需要掌握得知识点
+ 前端错误的分类
+ 错误的捕获方式
+ 上报错误的基本原理
+  1.前端错误的分类
+ 即时运行错误：代码错误
+ 资源加载错误：（js、css、图片加载失败）
+  2.错误的捕获方式
+ 即时运行错误： try…catch(需要把try&amp;hellip;catch布到代码中) window.onerror(dom0)只能捕获即时运行错误
+  **资源加载错误：（js、css、图片加载失败）** object.onerror(通过节点绑onerror事件，捕获加载错误；) performance.getEntries(); 获取已加载资源时长，通过这个方式可以间接的拿到没有加载资源的错误； 返回的是一个数组，有forEach方法。 performance.getEntries().forEach(item=&amp;gt;{console.log(item.name)});可以得到已成功加载的资源。 document.getElementsByTagName(‘img’);能拿到所有img的一个集合，是我们所需要加载的所有 图片的一个集合减去上面已成功加载的集合，剩下就是没有成功加载的。 Error事件捕获 window上通过事件捕获一样可以拦截到资源加载错误。可以在捕获阶段拿到这个。 body中: &amp;lt;script src=“//baidu.com/test.js” charset=“utf-8”&amp;gt;&amp;lt;/script&amp;gt;//不存在 为了证明捕获可以拿到这个事件； head中： &amp;lt;script&amp;gt; window.addEventListener(‘error’,function(e){ conosle.log(‘捕获’,e); }); &amp;lt;/script&amp;gt; ==&amp;gt;报错 GETfiles | baidu.com | test.js 没找到 捕获 Event {isTrusted:true,’type’:’error’,target:script,currentTarget:window,eventphase:1…} 不会冒泡，script标签发生了错误，触发本身onerror事件已经可以了，不会向上冒泡到window。  延伸：跨域JS运行错误可以捕获吗，错误提示是什么，应该怎么处理？ 可以拿到所有跨域文件的代码错误；
+Resource interpreted as script but transferred 错误信息：Script error.</description>
+    </item>
+    
+  </channel>
+</rss>

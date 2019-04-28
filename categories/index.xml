@@ -6,16 +6,17 @@
     <description>Recent content in Categories on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 13:59:33 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Category</title>
-      <link>https://zhengxiaomengmeng.github.io/categories/category/</link>
-      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
+      <title></title>
+      <link>https://zhengxiaomengmeng.github.io/categories/</link>
+      <pubDate>Sun, 28 Apr 2019 13:59:33 +0800</pubDate>
       
-      <guid>https://zhengxiaomengmeng.github.io/categories/category/</guid>
+      <guid>https://zhengxiaomengmeng.github.io/categories/</guid>
       <description></description>
     </item>
     
@@ -47,20 +48,20 @@
     </item>
     
     <item>
+      <title>Javascript学习笔记</title>
+      <link>https://zhengxiaomengmeng.github.io/categories/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 28 Apr 2019 18:45:33 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/categories/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Js学习笔记</title>
       <link>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 27 Apr 2019 13:41:44 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Subcategory</title>
-      <link>https://zhengxiaomengmeng.github.io/categories/subcategory/</link>
-      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/categories/subcategory/</guid>
       <description></description>
     </item>
     
