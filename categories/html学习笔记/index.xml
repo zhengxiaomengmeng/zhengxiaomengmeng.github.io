@@ -6,10 +6,30 @@
     <description>Recent content in Html学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Apr 2019 22:43:59 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 13:07:11 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/html%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>渲染机制</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sun, 28 Apr 2019 13:07:11 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</guid>
+      <description>渲染机制 问题提出 题目: 渲染机制问题
+分析过程 需要掌握得知识点
+ 什么是DOCTYPE及作用
+ 浏览器渲染过程
+ 重排(Reflow)
+ 重绘(Repaint)
+ 布局(layout)
+  1.什么是DOCTYPE及作用
+ DTD（document type definition,文档类型定义）是一系列的语法规则，用来定义XML或（X）HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。（DTD就是告诉浏览器我是什么文档类型，浏览器根据这个判断用什么引擎来解析和渲染它） DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错；（DOCTYPE就是直接告诉浏览器什么是DTD的，通知浏览器告诉当前的文档包含的是哪个DTD， 也就是哪个文档类型。）
+  常见的DOCTYPE有哪些？   HTML5 &amp;lt;!DOCTYPE html&amp;gt; HTML 4.01 Strict(严格模式) （该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素--比如：font） &amp;lt;!DOCTYPE HTML PUBLIC&amp;quot;-//W3C//DTD HTML 4.01//EN&amp;quot; &amp;quot;http://www.w3.org/TR/html4/strict.dtd&amp;quot;&amp;gt; HTML 4.01 Transitional（传统模式--宽松模式） (该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素--比如font) &amp;lt;!DOCTYPE HTML PUBLIC&amp;quot;-//W3C//DTD HTML 4.01 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/html4/loose.dtd&amp;quot;&amp;gt;  当问到此题时，说出HTML5的具体用法和HTML4的严格模式和传统模式以及这两种模式的特点，其他可以不用说。
+2.浏览器渲染过程
+ html css js三个都会影响页面最后的呈现形式（*浏览器拿到html，css之后要干什么？） 浏览器渲染过程？ 1.把html经过HTML Parser也就是DOM Parser转成DOM Tree（dom树）； 2.css按照css规则和css解释器转成css Rules（cssOM Tree）； 3.</description>
+    </item>
     
     <item>
       <title>DOM事件类</title>

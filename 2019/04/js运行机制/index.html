@@ -7,20 +7,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
-<meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="Study Notes">
+<meta name="keywords" content="tech, JavaScript, CSS, HTML">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="Study Notes">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安全">
-<meta name="twitter:title" content="安全">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/tags/%E5%AE%89%E5%85%A8/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/tags/%E5%AE%89%E5%85%A8/">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS运行机制">
+<meta name="twitter:title" content="JS运行机制">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="Study Notes">
-<meta name="twitter:description" content="Study Notes">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-04-28T13:28:38">
+  
+  
+    <meta property="article:modified_time" content="2019-04-28T13:28:38">
+  
+  
+  
+    
+      <meta property="article:section" content="category">
+    
+      <meta property="article:section" content="subcategory">
+    
+  
+  
+    
+      <meta property="article:tag" content="tag1">
+    
+      <meta property="article:tag" content="tag2">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -39,16 +61,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>安全</title>
+    <title>JS运行机制</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zhengxiaomengmeng.github.io/tags/%E5%AE%89%E5%85%A8/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/tags/%E5%AE%89%E5%85%A8/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -69,7 +89,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://zhengxiaomengmeng.github.io/">Welcome to Dream&#39;s blog </a>
@@ -90,7 +110,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -179,48 +199,30 @@
 </nav>
 
       
-        
 
-      
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
+    <h1 class="post-title" itemprop="headline">
+      JS运行机制
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/">
-          安全类
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-04-27T21:03:28&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-04-28T13:28:38&#43;08:00">
         
   
   
   
   
-    2019-04-27
+    2019-04-28
   
 
       </time>
@@ -230,45 +232,127 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%9f%ba%e7%a1%80%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">计算机基础学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/category">category</a>, 
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/subcategory">subcategory</a>
     
   
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        安全类 问题提出 题目: 安全类问题
-分析过程 需要掌握得知识点
- CSRF(基本概念和缩写、攻击原理、防御措施)
- XSS
-  1.CSRF
- 基本概念和缩写   跨站请求伪造；Cross-Site Request Forgery 缩写CSRF
-  攻击原理   1.用户是网站A的注册用户，通过身份验证登录网站A，登录之后网站A核查身份是不是正确的，如果正确就下发cookie，这个cookie保存到用户浏览器当中，这就是完成了一次身份认证的过程。 2.用户又访问了一个网站B，网站B会给用户下发用户页面的时候，会存在引诱的一个点击，这个点击往往是一个链接，就是指向网站A的一个API接口，接口是GET类型，比如：www.xxx.com/hack， 指向存在漏洞的接口，当用户经不住引诱点击了这个东西，这个点击就访问了A网站，访问A网站这个链接的时候，浏览器会自动上传cookie，上传之后网站A觉得是A这个Cookie拿过来之后对身份重新认证，发现是合法用户，就执行了这个接口的动作。
- 重点：用户在注册网站登录过，没有登录会提示登录；
-CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素）
-1.网站中某一个接口存在漏洞 2.这个用户在注册网站确实登录过
- 防御措施  访问接口的时候，浏览器自动上传cookie，但是没有手动上传一个Token，这个Token是你注册成功以后，或者没有注册，只要你访问了这个网站，服务器会自动的向你本地存储一个Token，在你访问各种接口的时候，如果没带Token,,就不能帮你通过验证，如果只是点击了引诱链接，这个链接只会自动携带cookie，不会自动携带Token，所以就避免了那个攻击。 2.Referer验证 Referer指的是页面来源，如果服务器判断页面来的是不是我的这个站点下面的页面，如果是就执行你这个动作，如果不是就拦截。 3.隐藏令牌 和Token有点像，做法：隐藏在http的head头中，不会放在链接上，这样就做的比较隐蔽。本质上没 有太大区别。只是使用方式有一点差别。  2.XSS
- 基本概念和缩写:   跨域脚本攻击；Cross-Site Scripting 缩写XSS
-  攻击原理（核心宗旨：让你插入的js不可执行）   http://www.immoc.com/learn/812
-  防御措施   http://www.immoc.com/learn/812
-  和CSRF区别 &gt; XSS不需要做任何的登录认证，核心原理向你页面注入脚本； eg：比如评论区：如果评论区注入XSS最好的方式可以在你提交区里面写上script标签，img标签上加事件，总之，它的方法利用你合法的渠道向你页面注入js，这是XSS攻击原理。 XSS是向你页面注入js运行，然后js函数体里面做它想做的事情。 CSRF利用你本身的漏洞，去帮你自动执行那些接口。  &mdash;&mdash;这两种攻击方式是不一样的，CSRF要依赖用户要登录网站。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/tag1/">tag1</a>
+
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/tag2/">tag2</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
   
-</article>
-
-            
-            
-
-          </section>
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" data-tooltip="渲染机制">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+			
+          </div>
+		  <div class="post-comment">
+		      
+			  
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'Your appId',
+        appKey: 'Your appKey',
+        notify: 'false', 
+        verify: 'false', 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+  
+		  </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Dream. All Rights Reserved
@@ -276,6 +360,78 @@ CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" data-tooltip="渲染机制">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F04%2Fjs%25E8%25BF%2590%25E8%25A1%258C%25E6%259C%25BA%25E5%2588%25B6%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -661,6 +817,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/04\/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6\/';
+          
+            this.page.identifier = '\/2019\/04\/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Dream\x27s blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 
