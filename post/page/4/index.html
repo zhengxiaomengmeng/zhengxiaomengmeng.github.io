@@ -204,68 +204,6 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/">
-          display、position的属性和作用
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-28
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        display、position的属性和作用 display 的值的作用： 1.block 像块类型元素一样显示。 2.inline 像行内元素类型一样显示。 3.inline-block 像行内元素一样显示，但其内容像块类型元素一样显示。 4.list-item 像块类型元素一样显示，并添加样式列表标记。
-position 的值的定位区别： 1.absolute 生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 2.fixed 生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 3.relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。 4.static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。 5.inherit 规定从父元素继承 position 属性的值。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/displayposition%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/meta%E6%A0%87%E7%AD%BE/">
           meta标签
         </a>
@@ -636,6 +574,78 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
 </article>
 
           
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+          浏览器的标准模式和怪异模式
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-25T14:18:32&#43;08:00">
+        
+  
+  
+  
+  
+    2019-02-25
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+         浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
+在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
+而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
+其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
+标准模式与怪异模式的区别:
+  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
+ table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
+ 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
+怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
+ 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
+  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
+ #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -719,23 +729,6 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
       <div class="no-result text-color-light text-center"></div>
       <div class="results">
         
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">JS运行机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
         
           <div class="media">
             
@@ -998,6 +991,31 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
             <hr>
           </div>
         
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/">
+                <h3 class="media-heading">CSS盒子模型的联想</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CSS盒子模型的联想 问题提出 题目:谈谈你对CSS盒子模型的认识。
+分析过程 需要掌握得知识点 基本概念：标准模型+ IE模型(区别) CSS如何设置这两种模型 JS如何设置获取盒子模型对应的宽和高 实例题(根据盒模型解释边距重叠) BFC(边距重叠解决方案)
+1. 基本概念：标准模型+ IE模型(区别) 从上图可以看到标准 W3C 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分。
+从上图可以看到 IE 盒子模型的范围也包括 margin、border、padding、content，和标准 W3C 盒子模型不同的是：IE 盒子模型的 content 部分包含了 border 和 pading。
+2. CSS如何设置这两种模型 box-sizing:conent-box;（默认）标准的盒子模型 box-sizing:border-box;IE盒子模型
+3. JS如何设置获取盒子模型对应的宽和高 dom.style.width/height（获取内联节点的宽高） dom.currentStyle.width/height (ie支持) window.getComputedStyle(dom).width/height;（都支持，兼容性更好） dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以返回四个值：left，right，top，bottom，从而计算出宽高）。
+4. 实例题(根据盒模型解释边距重叠) 问题：如上图有两个元素其中子元素高度为100px,子元素与父元素的上边距为 10px,求父元素的实际高度？
+答案:说100px 对，说110px 也对，为什么捏？这个要看父元素的盒模型要怎么设置的，上代码演示咯，注意看噢：
+&lt;style&gt; html,*{ padding: 0;margin: 0; } #sec{ background: #f00; } .child{ height: 100px; margin-top: 10px; background: yellow; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;section id=&quot;sec&quot;&gt; &lt;article class=&quot;child&quot;&gt; &lt;/article&gt; &lt;/section&gt; &lt;/body&gt;  上图证明 100px 是对的。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
       </div>
     </div>
     <div class="modal-footer">
@@ -1005,7 +1023,7 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         32 posts found
+         31 posts found
       </p>
     </div>
   </div>

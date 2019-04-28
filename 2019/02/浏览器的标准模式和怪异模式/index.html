@@ -409,28 +409,7 @@
             
 			
           </div>
-		  <div class="post-comment">
-		      
-			  
-  
-  <div id="vcomments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-
-  <script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'Your appId',
-        appKey: 'Your appKey',
-        notify: 'false', 
-        verify: 'false', 
-        avatar:'mm', 
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-  </script>
-  
-		  </div>
+		 
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
@@ -560,23 +539,6 @@
       <div class="no-result text-color-light text-center"></div>
       <div class="results">
         
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">JS运行机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
         
           <div class="media">
             
@@ -839,6 +801,31 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
             <hr>
           </div>
         
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/">
+                <h3 class="media-heading">CSS盒子模型的联想</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CSS盒子模型的联想 问题提出 题目:谈谈你对CSS盒子模型的认识。
+分析过程 需要掌握得知识点 基本概念：标准模型+ IE模型(区别) CSS如何设置这两种模型 JS如何设置获取盒子模型对应的宽和高 实例题(根据盒模型解释边距重叠) BFC(边距重叠解决方案)
+1. 基本概念：标准模型+ IE模型(区别) 从上图可以看到标准 W3C 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分。
+从上图可以看到 IE 盒子模型的范围也包括 margin、border、padding、content，和标准 W3C 盒子模型不同的是：IE 盒子模型的 content 部分包含了 border 和 pading。
+2. CSS如何设置这两种模型 box-sizing:conent-box;（默认）标准的盒子模型 box-sizing:border-box;IE盒子模型
+3. JS如何设置获取盒子模型对应的宽和高 dom.style.width/height（获取内联节点的宽高） dom.currentStyle.width/height (ie支持) window.getComputedStyle(dom).width/height;（都支持，兼容性更好） dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以返回四个值：left，right，top，bottom，从而计算出宽高）。
+4. 实例题(根据盒模型解释边距重叠) 问题：如上图有两个元素其中子元素高度为100px,子元素与父元素的上边距为 10px,求父元素的实际高度？
+答案:说100px 对，说110px 也对，为什么捏？这个要看父元素的盒模型要怎么设置的，上代码演示咯，注意看噢：
+&lt;style&gt; html,*{ padding: 0;margin: 0; } #sec{ background: #f00; } .child{ height: 100px; margin-top: 10px; background: yellow; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;section id=&quot;sec&quot;&gt; &lt;article class=&quot;child&quot;&gt; &lt;/article&gt; &lt;/section&gt; &lt;/body&gt;  上图证明 100px 是对的。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
       </div>
     </div>
     <div class="modal-footer">
@@ -846,7 +833,7 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         32 posts found
+         31 posts found
       </p>
     </div>
   </div>

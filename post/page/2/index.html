@@ -204,91 +204,6 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/">
-          HTTP协议类
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-04-24T22:28:11&#43;08:00">
-        
-  
-  
-  
-  
-    2019-04-24
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%9f%ba%e7%a1%80%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">计算机基础学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        HTTP协议类 问题提出 题目: HTTP协议类一面需要掌握知识
-分析过程 需要掌握得知识点
- HTTP协议的主要特点
- HTTP 报文的组成部分
- HTTP方法
- POST和GET的区别
- HTTP状态码
- 持久连接
- 管线化
-  1.HTTP协议的主要特点
- 简单快速 每个资源URI(统一资源符)是固定的，比如图片、页面地址，所以HTTP协议中处理比较简单，访问某个资源输入URI即可 灵活 每个http协议中。有一个头部分，有个数据类型，通过一个http协议的就可以完成不同数据类型的传输 无连接 (重点) 连接一次就会断开，不会保持连接 无状态 (重点) 客户端和服务端两种身份，客户端向服务端请求一个图片，http帮你建立连接、传输结束后，连接断开，下次客户端在请求数据，服务端是无法区分上次连接和这次连接是否是同一身份，因为服务端没有记住你的状态，单从http协议上是无法区分两次连接者的身份  状态区分是通过服务端加一下session做到的
-2.HTTP 报文的组成部分
-- 请求报文
- 请求行:http方法、页面地址、协议、版本
- 请求头:key、value告诉服务端需要内容，注意什么类型
- 空行:告诉服务端请求头已经结束
- 请求体
-  - 响应报文
- 状态行:协议、版本、状态码
- 响应头
- 空行
- 响应体:文档部分
-  3.HTTP方法
- GET 获取资源
- POST 传输资源
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/04/http%E5%8D%8F%E8%AE%AE%E7%B1%BB/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
           DOM事件类
         </a>
@@ -693,6 +608,71 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
 </article>
 
           
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/">
+          各种布局优缺点
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-03-05T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-03-05
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+         Grid(网格) 布局 CSS Grid(网格) 布局（又称为 “Grid(网格)” ），是一个二维的基于网格的布局系统，它的目标是完全改变我们基于网格的用户界面的布局方式。
+Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的是为了解决更简单的一维布局，而不是复杂的二维布局（实际上 Flexbox 和 Grid 能协同工作，而且配合得非常好）。
+ 静态布局 传统布局，屏幕宽高变化时，盒子使用横向或者竖向的滚动条来查看被遮挡部分，也就是不管浏览器窗口的大小怎么变化就按html语义标签排列的布局来布置。 弹性布局 css3引入的，flex布局；优点在于其容易上手，根据flex规则很容易达到某个布局效果，然而缺点是：浏览器兼容性比较差，只能兼容到ie9及以上； 自适应布局 分别为不同的屏幕分辨率定义布局，在每个布局中，页面元素不随窗口大小的调整而发生变化，当窗口大小到达一定分辨率时变化一次。 流式布局 页面元素的宽度按照屏幕进行适配调整，元素的位置不变，大小变化，屏幕太大或者太小导致元素不能正常显示。 响应式布局 &lt;meta name=&quot;viewport&quot; content=&quot;divice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;&gt;
+使用meta标签设置，页面元素宽度随窗口调整自动适配。主要属性及其含义如下：name=&ldquo;viewport&rdquo;： 名称=视图；width=device-width 页面宽度=设备宽度(可以理解为获取你手机的屏幕宽度)；initial-scale - 初始的缩放比例；minimum-scale - 允许用户缩放到的最小比例 ；maximum-scale - 允许用户缩放到的最大比例 ；user-scalable - 用户是否可以手动缩放 。
+ 网格布局：grid二维布局系统，随意的定义每行每列的数目和大小。也非常简单方便，兼容性较差。   
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -776,23 +756,6 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
       <div class="no-result text-color-light text-center"></div>
       <div class="results">
         
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">JS运行机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
         
           <div class="media">
             
@@ -1055,6 +1018,31 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
             <hr>
           </div>
         
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E6%83%B3/">
+                <h3 class="media-heading">CSS盒子模型的联想</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">CSS盒子模型的联想 问题提出 题目:谈谈你对CSS盒子模型的认识。
+分析过程 需要掌握得知识点 基本概念：标准模型+ IE模型(区别) CSS如何设置这两种模型 JS如何设置获取盒子模型对应的宽和高 实例题(根据盒模型解释边距重叠) BFC(边距重叠解决方案)
+1. 基本概念：标准模型+ IE模型(区别) 从上图可以看到标准 W3C 盒子模型的范围包括 margin、border、padding、content，并且 content 部分不包含其他部分。
+从上图可以看到 IE 盒子模型的范围也包括 margin、border、padding、content，和标准 W3C 盒子模型不同的是：IE 盒子模型的 content 部分包含了 border 和 pading。
+2. CSS如何设置这两种模型 box-sizing:conent-box;（默认）标准的盒子模型 box-sizing:border-box;IE盒子模型
+3. JS如何设置获取盒子模型对应的宽和高 dom.style.width/height（获取内联节点的宽高） dom.currentStyle.width/height (ie支持) window.getComputedStyle(dom).width/height;（都支持，兼容性更好） dom.getBoundingClientRect().width/height;（计算圆速的绝对定位，可以返回四个值：left，right，top，bottom，从而计算出宽高）。
+4. 实例题(根据盒模型解释边距重叠) 问题：如上图有两个元素其中子元素高度为100px,子元素与父元素的上边距为 10px,求父元素的实际高度？
+答案:说100px 对，说110px 也对，为什么捏？这个要看父元素的盒模型要怎么设置的，上代码演示咯，注意看噢：
+&lt;style&gt; html,*{ padding: 0;margin: 0; } #sec{ background: #f00; } .child{ height: 100px; margin-top: 10px; background: yellow; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;section id=&quot;sec&quot;&gt; &lt;article class=&quot;child&quot;&gt; &lt;/article&gt; &lt;/section&gt; &lt;/body&gt;  上图证明 100px 是对的。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
       </div>
     </div>
     <div class="modal-footer">
@@ -1062,7 +1050,7 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         32 posts found
+         31 posts found
       </p>
     </div>
   </div>

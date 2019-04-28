@@ -6,19 +6,10 @@
     <description>Recent content on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2019 13:28:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 13:07:11 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>JS运行机制</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</link>
-      <pubDate>Sun, 28 Apr 2019 13:28:38 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>渲染机制</title>
