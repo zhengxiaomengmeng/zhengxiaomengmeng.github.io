@@ -47,5 +47,14 @@ Resource interpreted as script but transferred 错误信息：Script error.</des
  &amp;gt; **强缓存**：问都不问，不直接请求，直接拿过来就用了；不管是绝对时间还是相对时间，这个时间过期之前不会和服务器通信了，直接从浏览器副本拿出来给页面用； ``` HTTP协议头： 在请求一个文件的时候，http头上（响应头上）会带两个东西（有可能是2个，也有可能是1个，根据服务器配置）； 响应头中会有key，value Expires 过期时间； value值表示的是绝对时间（服务器的绝对时间，这个时间是服务器下发的） 判断客户端当前的时候是不是这个时间，比较的时候是按浏览器本地的时间做比较，下发的是服务器端的时间，会有偏差； 缺点：有可能客户端和服务器的时间不一致。 Cache-Control value值 Max-age=3600（相对时间） 不管客户端和服务器时间是否一致，它最后是以客户端相对时间为止，时间单位是秒（拿到资源之后再3600s之内不会再去请求服务器，在这个时间之内直接去浏览器拿缓存） *如果服务器两个时间都下发了，依哪个时间为准呢？ 以后者相对时间为准（这个规定）  2.</description>
     </item>
     
+    <item>
+      <title>JS运行机制</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sun, 28 Apr 2019 13:59:33 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
