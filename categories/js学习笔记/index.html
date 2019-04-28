@@ -638,6 +638,40 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
+                <h3 class="media-heading">算法类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
+分析过程 需要掌握得知识点
+ 排序
+ 堆栈、队列、链表
+ 递归
+ 波兰式和逆波兰式
+  1. 排序(重要)
+ 冒泡排序
+ 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
+ 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
+ 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
+  2.堆栈(重要)、队列、链表
+ &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
+堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
+ 3.递归(重要)（60%算法题都要用到递归）
+ https://segmentfault.com/a/1190000009857470
+ 递归的终止条件和参数传递？
+4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/">
                 <h3 class="media-heading">安全类</h3>
               </a>
@@ -789,44 +823,6 @@ CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
-                <h3 class="media-heading">DOM事件类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">DOM事件类 问题提出 题目: DOM事件类
-分析过程 需要掌握得知识点
- 基本概念：DOM事件的级别
- DOM事件模型
- DOM事件流
- 描述DOM事件捕获的具体流程
- Event对象的常见应用
- 自定义事件
-  1.DOM事件的级别
-DOM0：element.onclick=function(){}
-DOM1设定的时候没有设计跟事件相关的事件
-DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false)
-DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
-2.DOM事件模型
-捕获和冒泡
-3.DOM事件流
-浏览器在为当前页面与用户做交互的过程中，是怎么响应的
-*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
-4.描述DOM事件捕获的具体流程
-window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
-冒泡则是反过来的 var ev = document.getElementById('ev'); window.addEventListener('click',function(){ console.log('window capture') },true)//true是捕获，false是冒泡 document.addEventListener('click',function(){ console.log('document capture') },true) document.documentElement.addEventListener('click',function(){ console.log('html capture') },true) document.body.addEventListener('click',function(){ console.log('body capture') },true) ev.addEventListener('click',function(){ console.log('ev capture') },true)  5.Event对象的常见应用
-event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -834,7 +830,7 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         33 posts found
+         34 posts found
       </p>
     </div>
   </div>

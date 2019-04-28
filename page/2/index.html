@@ -204,6 +204,75 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+          面向对象
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-04-26T14:33:27&#43;08:00">
+        
+  
+  
+  
+  
+    2019-04-26
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/js%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JS学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        面向对象 问题提出 题目: 面向对象问题
+分析过程 需要掌握得知识点
+ 类与实例（类的声明、生成实例）
+ 类与继承（如何实现继承、继承的几种方式）
+  1.类与实例
+1.1.类的声明 eg: 1. function Animal(){ this.name = &quot;name&quot;; } 2.ES6中类(class)的声明 class Animal2{ constructor(){ this.name = name; } } 1.2.(如何通过类实例化生成对象)生成实例 eg: //如果构造函数后面没有参数，new后面这个()是可以不要的； 1.console.log(new Animal(),new Animal2());  2.类与继承
+问题
+ 如何实现继承？ 继承的几种方式、各个形式都有什么优点和缺点？   继承的本质（原理**）就是原型链。
+ 借助构造函数实现继承   （只实现了部分继承，如果父类的属性都在构造函数上，那没有问题； 如果父类的原型对象上还有方法，子类是拿不到这些方法的） function Parent1(){ this.name = &quot;parent1&quot;; } function Child(){ //call和apply改变的是函数运行上下文，把父级（Parent1这个构造函数）在子函数里执行的话， 同时修改了父级构造函数this的指向，从而导致了父类执行的时候属性都会挂在Child类实例上去。 //将父级的构造函数的this指向一个子构造函数的实例上去，父级构造函数所有的属性在子类中也有 Parent1.call(this); this.type=&quot;child1&quot;; } console.log(new Child()); 缺点：Parent1原型链上的东西并没有被Child所继承； 没有继承父类原型对象上的方法，导致的并没有真正的实现继承； function Parent1(){ this.
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB/">
           原型链类
         </a>
@@ -624,82 +693,6 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-          JavaScript堆栈原理
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
-        
-  
-  
-  
-  
-    2019-03-07
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -884,6 +877,40 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
+                <h3 class="media-heading">算法类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
+分析过程 需要掌握得知识点
+ 排序
+ 堆栈、队列、链表
+ 递归
+ 波兰式和逆波兰式
+  1. 排序(重要)
+ 冒泡排序
+ 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
+ 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
+ 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
+  2.堆栈(重要)、队列、链表
+ &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
+堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
+ 3.递归(重要)（60%算法题都要用到递归）
+ https://segmentfault.com/a/1190000009857470
+ 递归的终止条件和参数传递？
+4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/">
                 <h3 class="media-heading">安全类</h3>
               </a>
@@ -1035,44 +1062,6 @@ CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/dom%E4%BA%8B%E4%BB%B6%E7%B1%BB/">
-                <h3 class="media-heading">DOM事件类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">DOM事件类 问题提出 题目: DOM事件类
-分析过程 需要掌握得知识点
- 基本概念：DOM事件的级别
- DOM事件模型
- DOM事件流
- 描述DOM事件捕获的具体流程
- Event对象的常见应用
- 自定义事件
-  1.DOM事件的级别
-DOM0：element.onclick=function(){}
-DOM1设定的时候没有设计跟事件相关的事件
-DOM2：element.addEventListener(&lsquo;click&rsquo;,fuction(){},false)
-DOM3：element.addEventListener(&lsquo;keyup&rsquo;,fuction(){},false) （事件类型增加了）
-2.DOM事件模型
-捕获和冒泡
-3.DOM事件流
-浏览器在为当前页面与用户做交互的过程中，是怎么响应的
-*完整的事件流*：1、捕获 2、目标阶段 3、冒泡
-4.描述DOM事件捕获的具体流程
-window&ndash;&gt;document&ndash;&gt;html&ndash;&gt;body&ndash;&gt;&hellip;&ndash;&gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
-冒泡则是反过来的 var ev = document.getElementById('ev'); window.addEventListener('click',function(){ console.log('window capture') },true)//true是捕获，false是冒泡 document.addEventListener('click',function(){ console.log('document capture') },true) document.documentElement.addEventListener('click',function(){ console.log('html capture') },true) document.body.addEventListener('click',function(){ console.log('body capture') },true) ev.addEventListener('click',function(){ console.log('ev capture') },true)  5.Event对象的常见应用
-event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1080,7 +1069,7 @@ event.preventDefault() （阻止默认事件） event.stopPropagation() （阻�
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         33 posts found
+         34 posts found
       </p>
     </div>
   </div>

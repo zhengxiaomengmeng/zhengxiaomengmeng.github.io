@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/</loc>
+    <lastmod>2019-04-27T22:54:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/</loc>
     <lastmod>2019-04-27T21:03:28+08:00</lastmod>
   </url>
@@ -293,8 +298,20 @@
   </url>
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-04-27T22:54:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-03-07T22:31:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-04-27T22:54:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   

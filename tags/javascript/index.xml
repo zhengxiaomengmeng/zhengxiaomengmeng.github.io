@@ -48,6 +48,32 @@ Resource interpreted as script but transferred 错误信息：Script error.</des
     </item>
     
     <item>
+      <title>算法类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/</link>
+      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/</guid>
+      <description>算法类 问题提出 题目: 算法类问题
+分析过程 需要掌握得知识点
+ 排序
+ 堆栈、队列、链表
+ 递归
+ 波兰式和逆波兰式
+  1. 排序(重要)
+ 冒泡排序
+ 快速排序(重要) &amp;gt; https://segmentfault.com/a/1190000009426421
+ 选择排序(重要) &amp;gt; https://segmentfault.com/a/1190000009366805
+ 希尔排序(重要) &amp;gt; https://segmentfault.com/a/1190000009461832
+  2.堆栈(重要)、队列、链表
+ &amp;ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
+堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
+ 3.递归(重要)（60%算法题都要用到递归）
+ https://segmentfault.com/a/1190000009857470
+ 递归的终止条件和参数传递？
+4.波兰式和逆波兰式 eg：(1+35)(4+63&amp;frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</description>
+    </item>
+    
+    <item>
       <title>通信类</title>
       <link>https://zhengxiaomengmeng.github.io/2019/04/%E9%80%9A%E4%BF%A1%E7%B1%BB/</link>
       <pubDate>Sat, 27 Apr 2019 13:41:44 +0800</pubDate>
