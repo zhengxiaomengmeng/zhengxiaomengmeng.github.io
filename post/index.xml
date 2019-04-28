@@ -6,10 +6,67 @@
     <description>Recent content in Posts on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Apr 2019 14:33:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 22:54:22 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/</link>
+      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>安全类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/</link>
+      <pubDate>Sat, 27 Apr 2019 21:03:28 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/</guid>
+      <description>安全类 问题提出 题目: 安全类问题
+分析过程 需要掌握得知识点
+ CSRF(基本概念和缩写、攻击原理、防御措施)
+ XSS
+  1.CSRF
+ 基本概念和缩写   跨站请求伪造；Cross-Site Request Forgery 缩写CSRF
+  攻击原理   1.用户是网站A的注册用户，通过身份验证登录网站A，登录之后网站A核查身份是不是正确的，如果正确就下发cookie，这个cookie保存到用户浏览器当中，这就是完成了一次身份认证的过程。 2.用户又访问了一个网站B，网站B会给用户下发用户页面的时候，会存在引诱的一个点击，这个点击往往是一个链接，就是指向网站A的一个API接口，接口是GET类型，比如：www.xxx.com/hack， 指向存在漏洞的接口，当用户经不住引诱点击了这个东西，这个点击就访问了A网站，访问A网站这个链接的时候，浏览器会自动上传cookie，上传之后网站A觉得是A这个Cookie拿过来之后对身份重新认证，发现是合法用户，就执行了这个接口的动作。
+ 重点：用户在注册网站登录过，没有登录会提示登录；
+CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素）
+1.网站中某一个接口存在漏洞 2.这个用户在注册网站确实登录过
+ 防御措施  访问接口的时候，浏览器自动上传cookie，但是没有手动上传一个Token，这个Token是你注册成功以后，或者没有注册，只要你访问了这个网站，服务器会自动的向你本地存储一个Token，在你访问各种接口的时候，如果没带Token,,就不能帮你通过验证，如果只是点击了引诱链接，这个链接只会自动携带cookie，不会自动携带Token，所以就避免了那个攻击。 2.Referer验证 Referer指的是页面来源，如果服务器判断页面来的是不是我的这个站点下面的页面，如果是就执行你这个动作，如果不是就拦截。 3.隐藏令牌 和Token有点像，做法：隐藏在http的head头中，不会放在链接上，这样就做的比较隐蔽。本质上没 有太大区别。只是使用方式有一点差别。  2.XSS
+ 基本概念和缩写:   跨域脚本攻击；Cross-Site Scripting 缩写XSS
+  攻击原理（核心宗旨：让你插入的js不可执行）   http://www.immoc.com/learn/812
+  防御措施   http://www.immoc.com/learn/812
+  和CSRF区别 &amp;gt; XSS不需要做任何的登录认证，核心原理向你页面注入脚本； eg：比如评论区：如果评论区注入XSS最好的方式可以在你提交区里面写上script标签，img标签上加事件，总之，它的方法利用你合法的渠道向你页面注入js，这是XSS攻击原理。 XSS是向你页面注入js运行，然后js函数体里面做它想做的事情。 CSRF利用你本身的漏洞，去帮你自动执行那些接口。  &amp;mdash;&amp;mdash;这两种攻击方式是不一样的，CSRF要依赖用户要登录网站。</description>
+    </item>
+    
+    <item>
+      <title>通信类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/%E9%80%9A%E4%BF%A1%E7%B1%BB/</link>
+      <pubDate>Sat, 27 Apr 2019 13:41:44 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E9%80%9A%E4%BF%A1%E7%B1%BB/</guid>
+      <description>通信类 问题提出 题目: 通信类问题
+分析过程 需要掌握得知识点
+ 什么是同源策略及限制
+ 前后端如何通信
+ 如何创建Ajax
+ 跨域通信的几种方式
+  1.什么是同源策略及限制
+ 1.同源策略限制从一个源加载的文档或脚本与来自另一个源的资源进行交互。 ( 这是一个用于隔离潜在恶意文件的关键的安全机制。) 2.一个源包括：协议、域名、端口 （这三个有一个不一样就是源不一样，就是我们所说的跨域了） http:// 协议 www.xxx.com 域名 没指名端口默认80 3.限制：不是一个源的文档没有权利去操作另一个源的文档；
+ 主要限制在几个方面：
+ Cookie、LocalStorage 和 IndexDB 无法读取 &amp;ndash;操作不了Cookie、LocalStorage、IndexDB
+ DOM无法获得 &amp;ndash;无法获取和操作另一个资源的DOM
+ Ajax请求不能发送（同源下的通信方式） &amp;ndash;Ajax只适合同源的通信（跨域就不行了）
+  2.前后端如何通信
+ 1、Ajax &amp;ndash;同源下的通信方式 2、WebSocket &amp;ndash;不受同源策略的限制 3、CORS &amp;ndash;支持跨域通信，也支持同源通信
+ 3.如何创建Ajax
+ 1、XMLHttpRequest对象的工作流程 2、兼容性处理 3、事件的触发条件 4、事件的触发顺序
+  function ajax(url,fnSucc,fnFaild){ //1、创建一个对象（兼容IE6写法） var xhr = XMLHttpRequest ?</description>
+    </item>
     
     <item>
       <title>面向对象</title>
@@ -17,15 +74,15 @@
       <pubDate>Fri, 26 Apr 2019 14:33:27 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/2019/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-      <description>面向对象 问题提出 题目: 面向对象
+      <description>面向对象 问题提出 题目: 面向对象问题
 分析过程 需要掌握得知识点
  类与实例（类的声明、生成实例）
  类与继承（如何实现继承、继承的几种方式）
   1.类与实例
 1.1.类的声明 eg: 1. function Animal(){ this.name = &amp;quot;name&amp;quot;; } 2.ES6中类(class)的声明 class Animal2{ constructor(){ this.name = name; } } 1.2.(如何通过类实例化生成对象)生成实例 eg: //如果构造函数后面没有参数，new后面这个()是可以不要的； 1.console.log(new Animal(),new Animal2());  2.类与继承
 问题
-- 如何实现继承？ - 继承的几种方式、各个形式都有什么优点和缺点？ 继承的**本质**（**原理**）就是原型链。   借助构造函数实现继承
- （只实现了部分继承，如果父类的属性都在构造函数上，那没有问题； 如果父类的原型对象上还有方法，子类是拿不到这些方法的） function Parent1(){ this.name = &amp;quot;parent1&amp;quot;; } function Child(){ //call和apply改变的是函数运行上下文，把父级（Parent1这个构造函数）在子函数里执行的话， 同时修改了父级构造函数this的指向，从而导致了父类执行的时候属性都会挂在Child类实例上去。 //将父级的构造函数的this指向一个子构造函数的实例上去，父级构造函数所有的属性在子类中也有 Parent1.call(this); this.type=&amp;quot;child1&amp;quot;; } console.log(new Child()); 缺点：Parent1原型链上的东西并没有被Child所继承； 没有继承父类原型对象上的方法，导致的并没有真正的实现继承； function Parent1(){ this.</description>
+ 如何实现继承？ 继承的几种方式、各个形式都有什么优点和缺点？   继承的本质（原理**）就是原型链。
+ 借助构造函数实现继承   （只实现了部分继承，如果父类的属性都在构造函数上，那没有问题； 如果父类的原型对象上还有方法，子类是拿不到这些方法的） function Parent1(){ this.name = &amp;quot;parent1&amp;quot;; } function Child(){ //call和apply改变的是函数运行上下文，把父级（Parent1这个构造函数）在子函数里执行的话， 同时修改了父级构造函数this的指向，从而导致了父类执行的时候属性都会挂在Child类实例上去。 //将父级的构造函数的this指向一个子构造函数的实例上去，父级构造函数所有的属性在子类中也有 Parent1.call(this); this.type=&amp;quot;child1&amp;quot;; } console.log(new Child()); 缺点：Parent1原型链上的东西并没有被Child所继承； 没有继承父类原型对象上的方法，导致的并没有真正的实现继承； function Parent1(){ this.</description>
     </item>
     
     <item>

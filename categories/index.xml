@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Category</title>
+      <link>https://zhengxiaomengmeng.github.io/categories/category/</link>
+      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/categories/category/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Css学习笔记</title>
       <link>https://zhengxiaomengmeng.github.io/categories/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
@@ -40,18 +49,18 @@
     <item>
       <title>Js学习笔记</title>
       <link>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Fri, 26 Apr 2019 14:33:27 +0800</pubDate>
+      <pubDate>Sat, 27 Apr 2019 13:41:44 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>协议学习笔记</title>
-      <link>https://zhengxiaomengmeng.github.io/categories/%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Wed, 24 Apr 2019 22:28:11 +0800</pubDate>
+      <title>Subcategory</title>
+      <link>https://zhengxiaomengmeng.github.io/categories/subcategory/</link>
+      <pubDate>Sat, 27 Apr 2019 22:54:22 +0800</pubDate>
       
-      <guid>https://zhengxiaomengmeng.github.io/categories/%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://zhengxiaomengmeng.github.io/categories/subcategory/</guid>
       <description></description>
     </item>
     
@@ -61,6 +70,15 @@
       <pubDate>Thu, 07 Mar 2019 22:31:13 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机基础学习笔记</title>
+      <link>https://zhengxiaomengmeng.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 27 Apr 2019 21:03:28 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
