@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/tags/vue/</link>
+    <description>Recent content in Vue on Welcome to Dream&#39;s blog </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Apr 2019 21:48:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhengxiaomengmeng.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Axios</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/axios/</link>
+      <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/axios/</guid>
+      <description>Axios 问题提出 题目: axios是什么？怎么使用？描述使用它实现登录功能的流程
+分析过程  axios是什么？  是基于promise的，用于浏览器和node.js的http客户端，主要作用是向后台发送请求的。
+ 优势   支持promise 提供一些并发的方法（最大优势） 提供拦截器（相当守卫） 浏览器支持防止CSRF（跨站请求伪造）   axios fetch ajax（jQuery）区别   相同点：都向后台请求数据 区别：前两者基于promise，后者主要还是利用callback的形式 fetch脱离了xhr是新的语法（默认不传cookie 另外不像xhr 可以监听到请求的进度）
+  怎么使用？描述使用它实现登录功能的流程  npm install axios -S装好，然后发送的是跨域，需在配置文件中config/index.js进行设置。后台如果是Tp5则定义一个资源路由。js中使用import进来，然后.get或.post。返回在.then函数中如果成功，失败则是在.catch函数中</description>
+    </item>
+    
+    <item>
+      <title>Vue-router</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/vue-router/</link>
+      <pubDate>Mon, 29 Apr 2019 15:15:15 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/vue-router/</guid>
+      <description>Vue-router 问题提出 题目: 导航钩子有哪些？他们有哪些参数？
+分析过程  导航钩子翻译过来就是路由的生命周期（vue-router）
+ 其实分成两种 全局和局部
+ 全局的钩子函数 &amp;gt; beforeEach(在路由切换开始时调用,路由守卫的实现) &amp;gt; afterEach(在路由切换离开时调用)
+ 局部到单个路由 &amp;gt; beforeEnter
+ 组件的钩子函数（局部到单个组件） &amp;gt; beforeRouterEnter &amp;gt; beforeRouterUpdate &amp;gt; beforeRouterLeave
+ 使用的顺序 (组件的钩子函数&amp;gt;局部到单个路由&amp;gt;全局的钩子函数)
+   const router = new VueRouter({ routes: routes, }) const routes = [ { path: &#39;/&#39;, name: &#39;/&#39;, component: Home, beforeEnter:function () { //局部到单个路由 } }, { path: &#39;/login&#39;, name: &#39;login&#39;, component: Login }, { path: &#39;/buy&#39;, name: &#39;buy&#39;, component: Buy, meta:{ auth:true } } ] //全局路由 /** to:即将进入目录对象 from:当前导航要离开的导航对象 next:是一个函数调用resolve 执行下一步 */ //实现路由守卫 router.</description>
+    </item>
+    
+    <item>
+      <title>Vue基础</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/vue%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 29 Apr 2019 14:47:44 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/vue%E5%9F%BA%E7%A1%80/</guid>
+      <description>Vue基础 问题提出 题目: 说出4个vue当中的指令和它的用法
+分析过程 1. v-if 条件渲染指令 代码存在销毁
+2. v-bind 绑定指令 用来绑定属性 （简写:）
+3. v-on 监听事件属性（简写@）
+4. v-for 循环指令
+5. v-model 数据双向绑定
+ v-modle是什么   vue中利用它来进行表单数据的双向绑定（说白了，它只做了两个操作） v-bind绑定了一个value的属性 利用v-on把当前的元素绑定到一个事件上
+  Vue中标签怎么绑定事件？  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;input v-model=&amp;quot;message&amp;quot;&amp;gt; &amp;lt;p&amp;gt;{{message}}&amp;lt;/p&amp;gt; ------------------------&amp;lt;br/&amp;gt; &amp;lt;input :value=&amp;quot;message2&amp;quot; @input=&amp;quot;message2=$event.target.value&amp;quot;&amp;gt; &amp;lt;p &amp;gt;{{message2}}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &amp;quot; &amp;quot;, message2: &amp;quot; &amp;quot;, } }) &amp;lt;/script&amp;gt;  - 关于Vue
+ vue是由饿了么ued团队开发并维护的一个渐进式js框架 vue是一个MVVM的框架</description>
+    </item>
+    
+    <item>
+      <title>Vuex</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/vuex/</link>
+      <pubDate>Sun, 28 Apr 2019 22:40:25 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/vuex/</guid>
+      <description>Vuex学习笔记 问题提出 题目: Vuex是什么？怎么使用？哪种功能场景是用它？
+分析过程 1. Vuex是什么
+Vuex是一个专门为Vue构建的状态集管理，主要是为了解决组件间状态共享的问题，强调的是集中式管理（说白了,主要是便于维护，便于解耦，所以不是所有的项目都适合使用vuex）如果不是大型项目使用vuex反而使项目代码繁琐多余
+2. Vuex的核心
+ state（不可缺，存储数据的位置） mutations （不可缺，用来变更状态） getters （类似vue中的computed，动态变更数据） actions （不可缺，动作层，与mutations一起使用，触发状态） modules （拆分state（仓库）方便取数据）  3. 状态集管理的流向
+从视图流向actions，actions再commit给mutations，mutations再变更state状态，这三个合在一起就是Vuex，也就是store。
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p&amp;gt;更新技术{{count}}&amp;lt;/p&amp;gt; &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;++&amp;lt;/button&amp;gt; &amp;lt;button @click=&amp;quot;reduce&amp;quot;&amp;gt;--&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var store = new Vuex.Store({ state: { count: 0 }, mutations: { //唯一一个可以更改状态的地方 addState: function (state) { if (state.count &amp;lt; 59) { state.count++; } else { state.count = 0; } }, reduceState: function (state) { if (state.</description>
+    </item>
+    
+  </channel>
+</rss>

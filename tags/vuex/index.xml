@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vuex on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/tags/vuex/</link>
+    <description>Recent content in Vuex on Welcome to Dream&#39;s blog </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 22:40:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhengxiaomengmeng.github.io/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vuex</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/vuex/</link>
+      <pubDate>Sun, 28 Apr 2019 22:40:25 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/vuex/</guid>
+      <description>Vuex学习笔记 问题提出 题目: Vuex是什么？怎么使用？哪种功能场景是用它？
+分析过程 1. Vuex是什么
+Vuex是一个专门为Vue构建的状态集管理，主要是为了解决组件间状态共享的问题，强调的是集中式管理（说白了,主要是便于维护，便于解耦，所以不是所有的项目都适合使用vuex）如果不是大型项目使用vuex反而使项目代码繁琐多余
+2. Vuex的核心
+ state（不可缺，存储数据的位置） mutations （不可缺，用来变更状态） getters （类似vue中的computed，动态变更数据） actions （不可缺，动作层，与mutations一起使用，触发状态） modules （拆分state（仓库）方便取数据）  3. 状态集管理的流向
+从视图流向actions，actions再commit给mutations，mutations再变更state状态，这三个合在一起就是Vuex，也就是store。
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p&amp;gt;更新技术{{count}}&amp;lt;/p&amp;gt; &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;++&amp;lt;/button&amp;gt; &amp;lt;button @click=&amp;quot;reduce&amp;quot;&amp;gt;--&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var store = new Vuex.Store({ state: { count: 0 }, mutations: { //唯一一个可以更改状态的地方 addState: function (state) { if (state.count &amp;lt; 59) { state.count++; } else { state.count = 0; } }, reduceState: function (state) { if (state.</description>
+    </item>
+    
+  </channel>
+</rss>

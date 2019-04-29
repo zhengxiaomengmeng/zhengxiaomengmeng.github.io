@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/axios/</loc>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/vue-router/</loc>
+    <lastmod>2019-04-29T15:15:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/vue%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-04-29T14:47:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/04/vuex/</loc>
+    <lastmod>2019-04-28T22:40:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/04/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7%E7%B1%BB/</loc>
     <lastmod>2019-04-28T18:45:33+08:00</lastmod>
   </url>
@@ -108,6 +128,11 @@
   </url>
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/02/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
@@ -158,6 +183,11 @@
   </url>
   
   <url>
+    <loc>https://zhengxiaomengmeng.github.io/2019/02/</loc>
+    <lastmod>2019-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/</loc>
     <lastmod>2019-02-24T21:36:22+08:00</lastmod>
   </url>
@@ -174,6 +204,12 @@
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/axios/</loc>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -237,26 +273,44 @@
   </url>
   
   <url>
-    <loc>https://zhengxiaomengmeng.github.io/categories/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-04-27T13:41:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://zhengxiaomengmeng.github.io/post/</loc>
-    <lastmod>2019-04-28T18:45:33+08:00</lastmod>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/tags/</loc>
-    <lastmod>2019-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/vue/</loc>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/vue-router/</loc>
+    <lastmod>2019-04-29T15:15:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/vuex/</loc>
+    <lastmod>2019-04-28T22:40:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/categories/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zhengxiaomengmeng.github.io/</loc>
-    <lastmod>2019-04-28T18:45:33+08:00</lastmod>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -317,6 +371,12 @@
   <url>
     <loc>https://zhengxiaomengmeng.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2019-04-27T21:03:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhengxiaomengmeng.github.io/tags/%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2019-04-29T21:48:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   

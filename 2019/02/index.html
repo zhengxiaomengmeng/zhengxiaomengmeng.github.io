@@ -8,51 +8,35 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
- 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
-实现过程 下面有5种三栏布局方式，先设置最初的样式。
-&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
-&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
- 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
-实现过程 下面有5种三栏布局方式，先设置最初的样式。
-&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
-&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Welcome to Dream&#39;s blog ">
 <meta name="twitter:title" content="Welcome to Dream&#39;s blog ">
 <meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/">
 <meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
- 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
-实现过程 下面有5种三栏布局方式，先设置最初的样式。
-&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
-&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.">
-<meta name="twitter:description" content="三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
- 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
-实现过程 下面有5种三栏布局方式，先设置最初的样式。
-&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
-&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-28T00:00:00">
+    <meta property="article:published_time" content="2019-02-25T00:00:00">
   
   
-    <meta property="article:modified_time" content="2019-02-28T00:00:00">
+    <meta property="article:modified_time" content="2019-02-25T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="CSS学习笔记">
-    
   
   
     
-      <meta property="article:tag" content="CSS">
+      <meta property="article:section" content="HTML学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="HTML">
     
   
 
@@ -228,13 +212,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
+      <time itemprop="datePublished" datetime="2019-02-25T00:00:00Z">
         
   
   
   
   
-    2019-02-28
+    2019-02-25
   
 
       </time>
@@ -244,7 +228,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
     
   
 
@@ -255,244 +239,6 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               
-
-<h2 id="三栏布局实现方案及其比较">三栏布局实现方案及其比较</h2>
-
-<h3 id="问题提出">问题提出</h3>
-
-<p>假设<strong>高度已知</strong>，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。</p>
-
-<div align=center><img src='./images/1555418242433.jpg'></div>
-
-<h3 id="分析过程">分析过程</h3>
-
-<p>这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了<strong>float</strong>和<strong>absolute</strong>，那这题你连及格都及格不了。</p>
-
-<h3 id="实现过程">实现过程</h3>
-
-<p>下面有5种三栏布局方式，先设置最初的样式。</p>
-
-<pre><code class="language-common.css">&lt;style&gt;
-   html, * {
-       padding: 0;
-       margin: 0;
-   }
-   .layout article div {
-       min-height: 100px;
-   }
-   .layout{
-       margin-top: 20px;
-   }
-&lt;/style&gt;
-</code></pre>
-
-<p><strong>1.float布局</strong></p>
-
-<pre><code class="language-float布局">&lt;section class=&quot;layout float&quot;&gt;
-   &lt;style media=&quot;screen&quot;&gt;
-       .layout.float .left {
-           float: left;
-           width: 300px;
-           background: #45ff96;
-       }
-       .layout.float .right {
-           float: right;
-           width: 300px;
-           background: #bce8f1;
-       }
-       .layout.float .center {
-           /*min-height: 100%;*/
-           background: #e7f1a6;
-       }
-   &lt;/style&gt;
-   &lt;article class=&quot;left-right-center&quot;&gt;
-       &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
-       &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
-       &lt;div class=&quot;center&quot;&gt;
-           &lt;h1&gt;浮动解决方案&lt;/h1&gt;
-           1.这是三栏布局中间部分
-           2.这是三栏布局中间部分
-       &lt;/div&gt;
-   &lt;/article&gt;
-&lt;/section&gt;
-</code></pre>
-
-<p>浮动布局是有局限性的，浮动元素是脱离文档流，要做清除浮动，这个处理不好的话，会带来很多问题，比如<strong>高度塌陷</strong>等。</p>
-
-<p>浮动布局的优点就是比较简单，兼容性也比较好。只要清除浮动做的好，是没有什么问题的。</p>
-
-<p>延伸：你知道哪些清除浮动的方案？每种方案的有什么优缺点?</p>
-
-<p>2.absolute布局</p>
-
-<pre><code class="language-absolute布局">&lt;section class=&quot;layout float&quot;&gt;
-    &lt;style media=&quot;screen&quot;&gt;
-        .layout.float .left {
-            float: left;
-            width: 300px;
-            background: #45ff96;
-        }
-
-        .layout.float .right {
-            float: right;
-            width: 300px;
-            background: #bce8f1;
-        }
-
-        .layout.float .center {
-            /*min-height: 100%;*/
-            background: #e7f1a6;
-        }
-    &lt;/style&gt;
-    &lt;article class=&quot;left-right-center&quot;&gt;
-        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;h1&gt;浮动解决方案&lt;/h1&gt;
-            1.这是三栏布局中间部分
-            2.这是三栏布局中间部分
-        &lt;/div&gt;
-    &lt;/article&gt;
-&lt;/section&gt;
-</code></pre>
-
-<p>绝对定位布局优点，很快捷，设置很方便，而且也不容易出问题，你可以很快的就能想出这种布局方式。</p>
-
-<p>缺点就是，绝对定位是脱离文档流的，意味着下面的所有子元素也会脱离文档流，这就导致了这种方法的有效性和可使用性是比较差的。</p>
-
-<p>3.flex布局</p>
-
-<pre><code class="language-flex布局">&lt;section class=&quot;layout flexbox&quot;&gt;
-    &lt;style media=&quot;screen&quot;&gt;
-        .layout.flexbox{
-            margin-top: 140px;
-        }
-        .layout.flexbox .left-center-right{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .layout.flexbox .left{
-            width: 300px;
-            background: #9a99ff;
-        }
-        .layout.flexbox .center{
-            flex: 1 ;
-            background: #e261f1;
-        }
-        .layout.flexbox .right{
-            width: 300px;
-            background: #dcf0c5;
-        }
-    &lt;/style&gt;
-    &lt;article class=&quot;left-center-right&quot;&gt;
-        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;h1&gt;flexbox解决方案&lt;/h1&gt;
-            1.这是三栏布局flexbox中间部分
-            2.这是三栏布局flexbox中间部分
-        &lt;/div&gt;
-        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;/article&gt;
-&lt;/section&gt;
-</code></pre>
-
-<p>flexbox布局是css3里新出的一个，它就是为了解决上述两种方式的不足出现的，是比较完美的一个。目前移动端的布局也都是用flexbox。</p>
-
-<p>flexbox的缺点就是不能兼容IE8及以下浏览器。</p>
-
-<p>4.表格布局</p>
-
-<pre><code class="language-表格布局">&lt;section class=&quot;layout table&quot;&gt;
-    &lt;style media=&quot;screen&quot;&gt;
-        .layout.table .left-center-right{
-            width: 100%;
-            display: table;
-            height: 100px;
-        }
-        .layout.table .left-center-right&gt;div{
-            display: table-cell;
-        }
-        .layout.table .left-center-right .left{
-            width: 300px;
-            background: #ffc5bb;
-        }
-        .layout.table .left-center-right .center{
-            background: #13d277;
-        }
-        .layout.table .left-center-right .right{
-            width: 300px;
-            background: #3ad2ca;
-        }
-
-    &lt;/style&gt;
-    &lt;article class=&quot;left-center-right&quot;&gt;
-        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;h1&gt;表格布局解决方案&lt;/h1&gt;
-            1.这是三栏布局表格布局中间部分
-            2.这是三栏布局表格布局中间部分
-        &lt;/div&gt;
-        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;/article&gt;
-&lt;/section&gt;
-</code></pre>
-
-<p>表格布局在历史上遭到很多人的摒弃，说表格布局麻烦，操作比较繁琐，其实这是一种误解，在很多场景中，表格布局还是很适用的，比如这个三栏布局，用表格布局就轻易写出来了。还有表格布局的兼容性很好，在flex布局不兼容的时候，可以尝试表格布局。</p>
-
-<p>表格布局也是有缺陷的，当其中一个单元格高度超出的时候，两侧的单元格也是会跟着一起变高的，而有时候这种效果不是我们想要的。</p>
-
-<p>5.网格布局</p>
-
-<pre><code class="language-网格布局">&lt;section class=&quot;layout grid&quot;&gt;
-    &lt;style media=&quot;screen&quot;&gt;
-        .layout.grid .left-center-right{
-            display: grid;
-            width: 100%;
-            grid-template-rows: 100px;
-            grid-template-columns: 300px auto 300px;
-
-        }
-        .layout.grid .left{
-            background: #ff6dfc;
-        }
-        .layout.grid .center{
-            background: #f1877a;
-        }
-        .layout.grid .right{
-            background: #d3f070;
-        }
-    &lt;/style&gt;
-    &lt;article class=&quot;left-center-right&quot;&gt;
-        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;h1&gt;grid解决方案&lt;/h1&gt;
-            1.这是三栏布局grid中间部分
-            2.这是三栏布局grid中间部分
-        &lt;/div&gt;
-        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;/article&gt;
-&lt;/section&gt;
-</code></pre>
-
-<p>网格布局也是新出的一种布局方式，如果你答出这种方式，也就证明了你的实力，证明你对技术热点是有追求的，也说明你有很强的学习能力。</p>
-
-<h3 id="实现效果图">实现效果图</h3>
-
-<div align=center><img src='./images/1555420311079.jpg'></div>
-
-<p>这五种解决方案应该是最常见的三栏布局，如果你还有其他的方案，欢迎补充！</p>
-
-<h3 id="问题延伸">问题延伸</h3>
-
-<ul>
-<li>高度已知换为高度未知呢？</li>
-<li>块内内容超出会是怎样的效果？</li>
-<li>如果是上下高度已知，中间自适应呢？</li>
-<li>如果是两栏布局呢？</li>
-<li>如果是上下左右混合布局呢？</li>
-</ul>
-
               
             </div>
           </div>
@@ -504,7 +250,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/css/">CSS</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/html/">HTML</a>
 
                   </div>
                 
@@ -517,7 +263,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" data-tooltip="IE中常见BUG（兼容性问题）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" data-tooltip="浏览器的标准模式和怪异模式">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -525,7 +271,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" data-tooltip="css实现水平、垂直居中">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -576,7 +322,7 @@
             
 			
           </div>
-		  
+		 
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
@@ -593,7 +339,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" data-tooltip="IE中常见BUG（兼容性问题）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/" data-tooltip="浏览器的标准模式和怪异模式">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -601,7 +347,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" data-tooltip="css实现水平、垂直居中">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E9%97%AD%E5%8C%85/" data-tooltip="闭包">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -710,30 +456,18 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-                <h3 class="media-heading">JavaScript堆栈原理</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/axios/">
+                <h3 class="media-heading">Axios</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。</div>
+              <div class="media-content hide-xs font-merryweather">Axios 问题提出 题目: axios是什么？怎么使用？描述使用它实现登录功能的流程
+分析过程  axios是什么？  是基于promise的，用于浏览器和node.js的http客户端，主要作用是向后台发送请求的。
+ 优势   支持promise 提供一些并发的方法（最大优势） 提供拦截器（相当守卫） 浏览器支持防止CSRF（跨站请求伪造）   axios fetch ajax（jQuery）区别   相同点：都向后台请求数据 区别：前两者基于promise，后者主要还是利用callback的形式 fetch脱离了xhr是新的语法（默认不传cookie 另外不像xhr 可以监听到请求的进度）
+  怎么使用？描述使用它实现登录功能的流程  npm install axios -S装好，然后发送的是跨域，需在配置文件中config/index.js进行设置。后台如果是Tp5则定义一个资源路由。js中使用import进来，然后.get或.post。返回在.then函数中如果成功，失败则是在.catch函数中</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -742,15 +476,22 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/">
-                <h3 class="media-heading">各种布局的优缺点</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vue-router/">
+                <h3 class="media-heading">Vue-router</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">各种布局的优缺点 这篇博客讲的非常详细</div>
+              <div class="media-content hide-xs font-merryweather">Vue-router 问题提出 题目: 导航钩子有哪些？他们有哪些参数？
+分析过程  导航钩子翻译过来就是路由的生命周期（vue-router）
+ 其实分成两种 全局和局部
+ 全局的钩子函数 &gt; beforeEach(在路由切换开始时调用,路由守卫的实现) &gt; afterEach(在路由切换离开时调用)
+ 局部到单个路由 &gt; beforeEnter
+ 组件的钩子函数（局部到单个组件） &gt; beforeRouterEnter &gt; beforeRouterUpdate &gt; beforeRouterLeave
+ 使用的顺序 (组件的钩子函数&gt;局部到单个路由&gt;全局的钩子函数)
+   const router = new VueRouter({ routes: routes, }) const routes = [ { path: '/', name: '/', component: Home, beforeEnter:function () { //局部到单个路由 } }, { path: '/login', name: 'login', component: Login }, { path: '/buy', name: 'buy', component: Buy, meta:{ auth:true } } ] //全局路由 /** to:即将进入目录对象 from:当前导航要离开的导航对象 next:是一个函数调用resolve 执行下一步 */ //实现路由守卫 router.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -759,19 +500,23 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/">
-                <h3 class="media-heading">各种布局优缺点</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vue%E5%9F%BA%E7%A1%80/">
+                <h3 class="media-heading">Vue基础</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"> Grid(网格) 布局 CSS Grid(网格) 布局（又称为 “Grid(网格)” ），是一个二维的基于网格的布局系统，它的目标是完全改变我们基于网格的用户界面的布局方式。
-Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的是为了解决更简单的一维布局，而不是复杂的二维布局（实际上 Flexbox 和 Grid 能协同工作，而且配合得非常好）。
- 静态布局 传统布局，屏幕宽高变化时，盒子使用横向或者竖向的滚动条来查看被遮挡部分，也就是不管浏览器窗口的大小怎么变化就按html语义标签排列的布局来布置。 弹性布局 css3引入的，flex布局；优点在于其容易上手，根据flex规则很容易达到某个布局效果，然而缺点是：浏览器兼容性比较差，只能兼容到ie9及以上； 自适应布局 分别为不同的屏幕分辨率定义布局，在每个布局中，页面元素不随窗口大小的调整而发生变化，当窗口大小到达一定分辨率时变化一次。 流式布局 页面元素的宽度按照屏幕进行适配调整，元素的位置不变，大小变化，屏幕太大或者太小导致元素不能正常显示。 响应式布局 &lt;meta name=&quot;viewport&quot; content=&quot;divice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;&gt;
-使用meta标签设置，页面元素宽度随窗口调整自动适配。主要属性及其含义如下：name=&ldquo;viewport&rdquo;： 名称=视图；width=device-width 页面宽度=设备宽度(可以理解为获取你手机的屏幕宽度)；initial-scale - 初始的缩放比例；minimum-scale - 允许用户缩放到的最小比例 ；maximum-scale - 允许用户缩放到的最大比例 ；user-scalable - 用户是否可以手动缩放 。
- 网格布局：grid二维布局系统，随意的定义每行每列的数目和大小。也非常简单方便，兼容性较差。   </div>
+              <div class="media-content hide-xs font-merryweather">Vue基础 问题提出 题目: 说出4个vue当中的指令和它的用法
+分析过程 1. v-if 条件渲染指令 代码存在销毁
+2. v-bind 绑定指令 用来绑定属性 （简写:）
+3. v-on 监听事件属性（简写@）
+4. v-for 循环指令
+5. v-model 数据双向绑定
+ v-modle是什么   vue中利用它来进行表单数据的双向绑定（说白了，它只做了两个操作） v-bind绑定了一个value的属性 利用v-on把当前的元素绑定到一个事件上
+  Vue中标签怎么绑定事件？  &lt;div id=&quot;app&quot;&gt; &lt;input v-model=&quot;message&quot;&gt; &lt;p&gt;{{message}}&lt;/p&gt; ------------------------&lt;br/&gt; &lt;input :value=&quot;message2&quot; @input=&quot;message2=$event.target.value&quot;&gt; &lt;p &gt;{{message2}}&lt;/p&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: '#app', data: { message: &quot; &quot;, message2: &quot; &quot;, } }) &lt;/script&gt;  - 关于Vue
+ vue是由饿了么ued团队开发并维护的一个渐进式js框架 vue是一个MVVM的框架</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -780,29 +525,21 @@ Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/meta-viewport%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94/">
-                <h3 class="media-heading">meta viewport设置移动端自适应</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vuex/">
+                <h3 class="media-heading">Vuex</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"> meta viewport设置移动端自适应 viewport 移动设备上的viewport是设备屏幕上用来显示网页的那部分区域，再具体一点就是浏览器上用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域大，也可能比浏览器的可视区域小。在默认情况下，移动设备上的viewport都是大于浏览器可视区域的，这是因为移动设备的分辨率相对于PC来说都比较小，所以为了能在移动设备上正常显示那些为PC浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，由设备本身决定），但后果是浏览器出现横向滚动条，因为浏览器可视区域的宽度比默认的viewport的宽度小。
-3个viewport （1）layout viewport
-如果把移动设备上浏览器的可视区域设为viewport的话，某些网站会因为viewport太窄而显示错乱，所以这些浏览器就默认会把viewport设为一个较宽的值，比如980px，使得即使是那些为PC浏览器设计的网站也能在移动设备浏览器上正常显示。这个浏览器默认的viewport叫做 layout viewport。layout viewport的宽度可以通过 document.documentElement.clientWidth来获取。
-（2）visual viewport
-layout viewport的宽度是大于浏览器可视区域的宽度的，所以还需要一个viewport来代表浏览器可视区域的大小，这个viewport叫做 visual viewport。visual viewport的宽度可以通过 document.documentElement.innerWidth来获取。
-（3）ideal viewport
-ideal viewport是一个能完美适配移动设备的viewport。首先，不需要缩放和横向滚动条就能正常查看网站的所有内容；其次，显示的文字、图片大小合适，如14px的文字不会因为在一个高密度像素的屏幕里显示得太小而无法看清，无论是在何种密度屏幕，何种分辨率下，显示出来的大小都差不多。这个viewport叫做 ideal viewport。
-ideal viewport并没有一个固定的尺寸，不同的设备有不同的ideal viewport。例如，所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640。
-ideal viewport 的意义在于，无论在何种分辨率的屏幕下，针对ideal viewport 而设计的网站，不需要缩放和横向滚动条都可以完美地呈现给用户。
-利用meta标签对viewport进行控制 移动设备默认的viewport是layout viewport，，但在进行移动设备网站的开发时，需要的是ideal viewport。要得到ideal viewport，需要用到meta标签。
-head标签中加入：
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;  该meta标签的作用是让当前viewport的宽度等于设备的宽度，同时不允许用户手动缩放。当然maximum-scale=1.0, user-scalable=0不是必需的，是否允许用户手动播放根据网站的需求来定，但把width设为width-device基本是必须的，这样能保证不会出现横向滚动条。 width能控制layout viewport的宽度，如果不指定该属性，layout viewport将默认为980px或1024px（也可能是其它值，由设备本身决定），如果把layout viewport的宽度设置为移动设备的宽度，那么layout viewport将成为ideal viewport。
-其实，要把当前的viewport宽度设为ideal viewport的宽度，既可以设置width=device-width，也可以设置initial-scale=1，但有一个小缺陷，就是width=device-width会导致iphone、ipad横竖屏不分，initial-scale=1会导致IE横竖屏不分，都以竖屏的ideal viewport宽度为准。所以，最完美的写法两者都写上去， initial-scale=1 解决 iphone、ipad的缺陷，width=device-width解决IE的缺陷。
-viewport设置移动端自适应的方法：
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  </div>
+              <div class="media-content hide-xs font-merryweather">Vuex学习笔记 问题提出 题目: Vuex是什么？怎么使用？哪种功能场景是用它？
+分析过程 1. Vuex是什么
+Vuex是一个专门为Vue构建的状态集管理，主要是为了解决组件间状态共享的问题，强调的是集中式管理（说白了,主要是便于维护，便于解耦，所以不是所有的项目都适合使用vuex）如果不是大型项目使用vuex反而使项目代码繁琐多余
+2. Vuex的核心
+ state（不可缺，存储数据的位置） mutations （不可缺，用来变更状态） getters （类似vue中的computed，动态变更数据） actions （不可缺，动作层，与mutations一起使用，触发状态） modules （拆分state（仓库）方便取数据）  3. 状态集管理的流向
+从视图流向actions，actions再commit给mutations，mutations再变更state状态，这三个合在一起就是Vuex，也就是store。
+&lt;div id=&quot;app&quot;&gt; &lt;p&gt;更新技术{{count}}&lt;/p&gt; &lt;button @click=&quot;add&quot;&gt;++&lt;/button&gt; &lt;button @click=&quot;reduce&quot;&gt;--&lt;/button&gt; &lt;/div&gt; &lt;script&gt; var store = new Vuex.Store({ state: { count: 0 }, mutations: { //唯一一个可以更改状态的地方 addState: function (state) { if (state.count &lt; 59) { state.count++; } else { state.count = 0; } }, reduceState: function (state) { if (state.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -811,16 +548,26 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
-                <h3 class="media-heading">浮动元素引起的问题和解决办法</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7%E7%B1%BB/">
+                <h3 class="media-heading">错误监控类</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &lt;/style&gt; &lt;div class=&quot;parent&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;div class=&quot;clear&quot;&gt;5&lt;/div&gt; &lt;/div&gt;  给父元素添加clear:both;属性的:after伪元素。
-&lt;style&gt; div.parent&gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: ''; display: block; clear: both; } &lt;/style&gt; &lt;div class=&quot;parent clear&quot;&gt; &lt;div class=&quot;fl&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;fl&quot;&gt;4&lt;/div&gt; &lt;/div&gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。</div>
+              <div class="media-content hide-xs font-merryweather">错误监控类 问题提出 题目: 错误监控类有哪些或者如何保证产品质量？？
+分析过程 需要掌握得知识点
+ 前端错误的分类
+ 错误的捕获方式
+ 上报错误的基本原理
+  1.前端错误的分类
+ 即时运行错误：代码错误
+ 资源加载错误：（js、css、图片加载失败）
+  2.错误的捕获方式
+ 即时运行错误： try…catch(需要把try&hellip;catch布到代码中) window.onerror(dom0)只能捕获即时运行错误
+  **资源加载错误：（js、css、图片加载失败）** object.onerror(通过节点绑onerror事件，捕获加载错误；) performance.getEntries(); 获取已加载资源时长，通过这个方式可以间接的拿到没有加载资源的错误； 返回的是一个数组，有forEach方法。 performance.getEntries().forEach(item=&gt;{console.log(item.name)});可以得到已成功加载的资源。 document.getElementsByTagName(‘img’);能拿到所有img的一个集合，是我们所需要加载的所有 图片的一个集合减去上面已成功加载的集合，剩下就是没有成功加载的。 Error事件捕获 window上通过事件捕获一样可以拦截到资源加载错误。可以在捕获阶段拿到这个。 body中: &lt;script src=“//baidu.com/test.js” charset=“utf-8”&gt;&lt;/script&gt;//不存在 为了证明捕获可以拿到这个事件； head中： &lt;script&gt; window.addEventListener(‘error’,function(e){ conosle.log(‘捕获’,e); }); &lt;/script&gt; ==&gt;报错 GETfiles | baidu.com | test.js 没找到 捕获 Event {isTrusted:true,’type’:’error’,target:script,currentTarget:window,eventphase:1…} 不会冒泡，script标签发生了错误，触发本身onerror事件已经可以了，不会向上冒泡到window。  延伸：跨域JS运行错误可以捕获吗，错误提示是什么，应该怎么处理？ 可以拿到所有跨域文件的代码错误；
+Resource interpreted as script but transferred 错误信息：Script error.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -829,16 +576,22 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/css-js%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E4%BD%8D%E7%BD%AE%E5%92%8C%E5%8E%9F%E5%9B%A0/">
-                <h3 class="media-heading">css js文件放置位置和原因</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E7%B1%BB/">
+                <h3 class="media-heading">JS页面性能类</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">css js文件放置位置和原因 js文件最好放在body中，也就是标签前，因为放在所有body中的标签后面就不会出现网页加载时出现空白的情况，可以持续的给用户提供视觉反馈，同时在有些情况下，会降低错误的发生。
-而css标签应该放在标签之间，因为如果放在标签的前面，那么当DOM树构建完成了，渲染树才构建，那么当渲染树构建完成，浏览器不得不再重新渲染整个页面，这样造成了资源的浪费。效率也不高。如果放在之间，浏览器边构建边渲染，效率要高的多。</div>
+              <div class="media-content hide-xs font-merryweather">JS页面性能类 问题提出 题目: 提升页面性能的方法有哪些？
+分析过程 需要掌握得知识点
+ 资源压缩合并，减少HTTP请求
+ 非核心的代码异步加载—异步加载的方式—异步加载的区别
+ 利用浏览器缓存—缓存的分类—缓存的原理
+ 使用CDN（网络优化，CDN加载资源非常快）
+ 预解析DNS ```    **1.资源压缩合并，减少HTTP请求** 资源传输的过程变小 **2.非核心的代码异步加载—异步加载的方式—异步加载的区别** 异步加载的方式： &gt; **1.动态脚本加载** —js创建了一个标签，把标签最后加到body上去或者head（加到文档当中实现加载） document.createElement(“*”); **2.defer** **3.async** **怎么用：** 在加载js时候在script标签上加这两个属性完成异步加载； **异步加载的区别：** &gt; 1.defer是在HTML解析完之后才会执行，如果是多个，按照加载顺序依次执行； 2.async是在加载完之后立即执行，如果是多个，执行顺序和加载顺序无关； **异步加载原理：**（任何一个时刻都只能做一件事） &gt; 1.defer：新加载的，在HTML解析完之前，是不会执行的；defer能保证按你的加载顺序依次执行； 2.async：哪个先回来，哪个先执行，和加载顺序无关； **3.利用浏览器缓存—缓存的分类—缓存的原理** - 缓存的分类： &gt; **缓存：** 对应文件在浏览器中存在的备份（副本），把请求的东西缓存到本地了（是放在电脑磁盘中的），浏览器下次请求相当于是从这个磁盘直接读了，而不会再去请求这个文件的地址。 **1. 强缓存**  http协议头： Expires Expires:Thu,21 Jan 2017 23:39:02 GMT Cache-Control Cahe-Control : Max-age=3600
+ &gt; **强缓存**：问都不问，不直接请求，直接拿过来就用了；不管是绝对时间还是相对时间，这个时间过期之前不会和服务器通信了，直接从浏览器副本拿出来给页面用； ``` HTTP协议头： 在请求一个文件的时候，http头上（响应头上）会带两个东西（有可能是2个，也有可能是1个，根据服务器配置）； 响应头中会有key，value Expires 过期时间； value值表示的是绝对时间（服务器的绝对时间，这个时间是服务器下发的） 判断客户端当前的时候是不是这个时间，比较的时候是按浏览器本地的时间做比较，下发的是服务器端的时间，会有偏差； 缺点：有可能客户端和服务器的时间不一致。 Cache-Control value值 Max-age=3600（相对时间） 不管客户端和服务器时间是否一致，它最后是以客户端相对时间为止，时间单位是秒（拿到资源之后再3600s之内不会再去请求服务器，在这个时间之内直接去浏览器拿缓存） *如果服务器两个时间都下发了，依哪个时间为准呢？ 以后者相对时间为准（这个规定）  2.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -847,15 +600,15 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">
-                <h3 class="media-heading">IE中常见BUG（兼容性问题）</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+                <h3 class="media-heading">JS运行机制</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Mar 3, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">https://www.cnblogs.com/songzk/p/6181641.html</div>
+              <div class="media-content hide-xs font-merryweather"></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -864,19 +617,26 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/">
-                <h3 class="media-heading"></h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
+                <h3 class="media-heading">渲染机制</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Feb 2, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">三栏布局实现方案及其比较 问题提出 假设高度已知，请写出三栏布局，左栏、右栏宽度300px，中间宽度自适应。
- 分析过程 这道题本身的难度并不大，我们在布局页面的时候，写个三栏布局还是挺简单的。但是如果在面试的时候遇到这道题，就没有那么简单了。看似简单的一道题，想把它答好是不简单的。往往越简单的题越不好答。如果看到这题只想到了float和absolute，那这题你连及格都及格不了。
-实现过程 下面有5种三栏布局方式，先设置最初的样式。
-&lt;style&gt; html, * { padding: 0; margin: 0; } .layout article div { min-height: 100px; } .layout{ margin-top: 20px; } &lt;/style&gt;  1.float布局
-&lt;section class=&quot;layout float&quot;&gt; &lt;style media=&quot;screen&quot;&gt; .layout.float .left { float: left; width: 300px; background: #45ff96; } .layout.float .right { float: right; width: 300px; background: #bce8f1; } .layout.float .center { /*min-height: 100%;*/ background: #e7f1a6; } &lt;/style&gt; &lt;article class=&quot;left-right-center&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;center&quot;&gt; &lt;h1&gt;浮动解决方案&lt;/h1&gt; 1.</div>
+              <div class="media-content hide-xs font-merryweather">渲染机制 问题提出 题目: 渲染机制问题
+分析过程 需要掌握得知识点
+ 什么是DOCTYPE及作用
+ 浏览器渲染过程
+ 重排(Reflow)
+ 重绘(Repaint)
+ 布局(layout)
+  1.什么是DOCTYPE及作用
+ DTD（document type definition,文档类型定义）是一系列的语法规则，用来定义XML或（X）HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。（DTD就是告诉浏览器我是什么文档类型，浏览器根据这个判断用什么引擎来解析和渲染它） DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错；（DOCTYPE就是直接告诉浏览器什么是DTD的，通知浏览器告诉当前的文档包含的是哪个DTD， 也就是哪个文档类型。）
+  常见的DOCTYPE有哪些？   HTML5 &lt;!DOCTYPE html&gt; HTML 4.01 Strict(严格模式) （该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素--比如：font） &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional（传统模式--宽松模式） (该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素--比如font) &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;  当问到此题时，说出HTML5的具体用法和HTML4的严格模式和传统模式以及这两种模式的特点，其他可以不用说。
+2.浏览器渲染过程
+ html css js三个都会影响页面最后的呈现形式（*浏览器拿到html，css之后要干什么？） 浏览器渲染过程？ 1.把html经过HTML Parser也就是DOM Parser转成DOM Tree（dom树）； 2.css按照css规则和css解释器转成css Rules（cssOM Tree）； 3.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -885,18 +645,32 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
-                <h3 class="media-heading">css实现水平、垂直居中</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
+                <h3 class="media-heading">算法类</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Feb 2, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">css实现水平、垂直居中 元素水平居中 块级元素水平居中 最简单的方式：margin： 0 auto; 注意点 (1)元素需要设置宽度 (2)元素不能为行内元素
-行内元素水平居中 元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。（对于块级元素不起作用）
-不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比较多）： 1.加入 table 标签 第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 、、 ) 第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）
-&lt;!DOCTYPE HTML&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;不定宽块状元素水平居中&lt;/title&gt; &lt;style&gt; table{ margin:0 auto; } ul{list-style:none;margin:0;padding:0;} li{float:left;display:inline;margin-right:8px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt;&lt;td&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  2.设置 display;inline 方法 改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。</div>
+              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
+分析过程 需要掌握得知识点
+ 排序
+ 堆栈、队列、链表
+ 递归
+ 波兰式和逆波兰式
+  1. 排序(重要)
+ 冒泡排序
+ 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
+ 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
+ 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
+  2.堆栈(重要)、队列、链表
+ &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
+堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
+ 3.递归(重要)（60%算法题都要用到递归）
+ https://segmentfault.com/a/1190000009857470
+ 递归的终止条件和参数传递？
+4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -905,20 +679,29 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/">
-                <h3 class="media-heading">css实现隐藏页面的方式</h3>
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/">
+                <h3 class="media-heading">安全类</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Feb 2, 2019
+                  Apr 4, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">css实现隐藏页面的方式 opacity 设置透明度，值为0-1。为0则页面上不显示，但是元素还在那个位置,依然可以网页交互,单纯是看不到而已。在呈现上与visibility:hidden;方式一样，同样会占据页面空间。
-.class{ opacity:0; }  visibility 设置隐藏。hidden为隐藏，在页面不显示，交互效果也会没有。visible为显示,hidden为隐藏。该方法仍占用页面空间，但是不会导致浏览器重排，但是会重绘。
-.class{ visibility:hidden;//隐藏 visibility:visible;//显示 }  display 设置不显示和显示。注意了，这里要强调的一点是，如果你想使他的子元素显示，用display:visible是没用的。而上面两种方式是可以使用。该方法不占用空间，会导致浏览器的重排和重绘。
-.class { display:none; }  position position位置，用绝对定位把它挪到远远地。
-.class{ position:absolute; left:-999px; top:-999px; }  Clip-path 该属性很少见，该属性是通过裁剪的方法实现隐藏的。被隐藏的内容依然占据着那个位置，它周围的元素的行为就如同它可见时一样。记住用户交互例如鼠标悬停或者点击在剪裁区域之外也不可能生效。此外，这个属性能够使用各种过渡动画来实现不同的效果。
-.haorooms-small { background-size: cover; width: 300px; height: 300px; -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); }  &lt;div class=&quot;haorooms-small&quot; style=&quot;background-image: url('http://sandbox.</div>
+              <div class="media-content hide-xs font-merryweather">安全类 问题提出 题目: 安全类问题
+分析过程 需要掌握得知识点
+ CSRF(基本概念和缩写、攻击原理、防御措施)
+ XSS
+  1.CSRF
+ 基本概念和缩写   跨站请求伪造；Cross-Site Request Forgery 缩写CSRF
+  攻击原理   1.用户是网站A的注册用户，通过身份验证登录网站A，登录之后网站A核查身份是不是正确的，如果正确就下发cookie，这个cookie保存到用户浏览器当中，这就是完成了一次身份认证的过程。 2.用户又访问了一个网站B，网站B会给用户下发用户页面的时候，会存在引诱的一个点击，这个点击往往是一个链接，就是指向网站A的一个API接口，接口是GET类型，比如：www.xxx.com/hack， 指向存在漏洞的接口，当用户经不住引诱点击了这个东西，这个点击就访问了A网站，访问A网站这个链接的时候，浏览器会自动上传cookie，上传之后网站A觉得是A这个Cookie拿过来之后对身份重新认证，发现是合法用户，就执行了这个接口的动作。
+ 重点：用户在注册网站登录过，没有登录会提示登录；
+CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素）
+1.网站中某一个接口存在漏洞 2.这个用户在注册网站确实登录过
+ 防御措施  访问接口的时候，浏览器自动上传cookie，但是没有手动上传一个Token，这个Token是你注册成功以后，或者没有注册，只要你访问了这个网站，服务器会自动的向你本地存储一个Token，在你访问各种接口的时候，如果没带Token,,就不能帮你通过验证，如果只是点击了引诱链接，这个链接只会自动携带cookie，不会自动携带Token，所以就避免了那个攻击。 2.Referer验证 Referer指的是页面来源，如果服务器判断页面来的是不是我的这个站点下面的页面，如果是就执行你这个动作，如果不是就拦截。 3.隐藏令牌 和Token有点像，做法：隐藏在http的head头中，不会放在链接上，这样就做的比较隐蔽。本质上没 有太大区别。只是使用方式有一点差别。  2.XSS
+ 基本概念和缩写:   跨域脚本攻击；Cross-Site Scripting 缩写XSS
+  攻击原理（核心宗旨：让你插入的js不可执行）   http://www.immoc.com/learn/812
+  防御措施   http://www.immoc.com/learn/812
+  和CSRF区别 &gt; XSS不需要做任何的登录认证，核心原理向你页面注入脚本； eg：比如评论区：如果评论区注入XSS最好的方式可以在你提交区里面写上script标签，img标签上加事件，总之，它的方法利用你合法的渠道向你页面注入js，这是XSS攻击原理。 XSS是向你页面注入js运行，然后js函数体里面做它想做的事情。 CSRF利用你本身的漏洞，去帮你自动执行那些接口。  &mdash;&mdash;这两种攻击方式是不一样的，CSRF要依赖用户要登录网站。</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -931,7 +714,7 @@ viewport设置移动端自适应的方法：
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         21 posts found
+         40 posts found
       </p>
     </div>
   </div>

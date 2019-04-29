@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Axios on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/tags/axios/</link>
+    <description>Recent content in Axios on Welcome to Dream&#39;s blog </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Apr 2019 21:48:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhengxiaomengmeng.github.io/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Axios</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/axios/</link>
+      <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/axios/</guid>
+      <description>Axios 问题提出 题目: axios是什么？怎么使用？描述使用它实现登录功能的流程
+分析过程  axios是什么？  是基于promise的，用于浏览器和node.js的http客户端，主要作用是向后台发送请求的。
+ 优势   支持promise 提供一些并发的方法（最大优势） 提供拦截器（相当守卫） 浏览器支持防止CSRF（跨站请求伪造）   axios fetch ajax（jQuery）区别   相同点：都向后台请求数据 区别：前两者基于promise，后者主要还是利用callback的形式 fetch脱离了xhr是新的语法（默认不传cookie 另外不像xhr 可以监听到请求的进度）
+  怎么使用？描述使用它实现登录功能的流程  npm install axios -S装好，然后发送的是跨域，需在配置文件中config/index.js进行设置。后台如果是Tp5则定义一个资源路由。js中使用import进来，然后.get或.post。返回在.then函数中如果成功，失败则是在.catch函数中</description>
+    </item>
+    
+  </channel>
+</rss>

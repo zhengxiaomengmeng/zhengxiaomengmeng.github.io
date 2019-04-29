@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 21:48:43 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Axios</title>
+      <link>https://zhengxiaomengmeng.github.io/tags/axios/</link>
+      <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/tags/axios/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Css</title>
@@ -53,6 +62,33 @@
       <pubDate>Sun, 28 Apr 2019 18:45:33 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://zhengxiaomengmeng.github.io/tags/vue/</link>
+      <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue Router</title>
+      <link>https://zhengxiaomengmeng.github.io/tags/vue-router/</link>
+      <pubDate>Mon, 29 Apr 2019 15:15:15 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/tags/vue-router/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vuex</title>
+      <link>https://zhengxiaomengmeng.github.io/tags/vuex/</link>
+      <pubDate>Sun, 28 Apr 2019 22:40:25 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/tags/vuex/</guid>
       <description></description>
     </item>
     
@@ -116,6 +152,15 @@
       <pubDate>Sat, 27 Apr 2019 21:03:28 +0800</pubDate>
       
       <guid>https://zhengxiaomengmeng.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>通信</title>
+      <link>https://zhengxiaomengmeng.github.io/tags/%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/tags/%E9%80%9A%E4%BF%A1/</guid>
       <description></description>
     </item>
     

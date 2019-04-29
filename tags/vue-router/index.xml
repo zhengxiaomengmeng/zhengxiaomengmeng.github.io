@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue Router on Welcome to Dream&#39;s blog </title>
+    <link>https://zhengxiaomengmeng.github.io/tags/vue-router/</link>
+    <description>Recent content in Vue Router on Welcome to Dream&#39;s blog </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Apr 2019 15:15:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhengxiaomengmeng.github.io/tags/vue-router/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue-router</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/04/vue-router/</link>
+      <pubDate>Mon, 29 Apr 2019 15:15:15 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/04/vue-router/</guid>
+      <description>Vue-router 问题提出 题目: 导航钩子有哪些？他们有哪些参数？
+分析过程  导航钩子翻译过来就是路由的生命周期（vue-router）
+ 其实分成两种 全局和局部
+ 全局的钩子函数 &amp;gt; beforeEach(在路由切换开始时调用,路由守卫的实现) &amp;gt; afterEach(在路由切换离开时调用)
+ 局部到单个路由 &amp;gt; beforeEnter
+ 组件的钩子函数（局部到单个组件） &amp;gt; beforeRouterEnter &amp;gt; beforeRouterUpdate &amp;gt; beforeRouterLeave
+ 使用的顺序 (组件的钩子函数&amp;gt;局部到单个路由&amp;gt;全局的钩子函数)
+   const router = new VueRouter({ routes: routes, }) const routes = [ { path: &#39;/&#39;, name: &#39;/&#39;, component: Home, beforeEnter:function () { //局部到单个路由 } }, { path: &#39;/login&#39;, name: &#39;login&#39;, component: Login }, { path: &#39;/buy&#39;, name: &#39;buy&#39;, component: Buy, meta:{ auth:true } } ] //全局路由 /** to:即将进入目录对象 from:当前导航要离开的导航对象 next:是一个函数调用resolve 执行下一步 */ //实现路由守卫 router.</description>
+    </item>
+    
+  </channel>
+</rss>
