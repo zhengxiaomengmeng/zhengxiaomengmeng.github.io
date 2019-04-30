@@ -394,6 +394,87 @@ vue是一个MVVM的框架</p>
 &lt;/script&gt;
 </code></pre>
 
+<p><strong>- swiper插件从后台获取数据没问题，css代码啥的也没问题，但是图片不动，应该怎么解决？</strong></p>
+
+<blockquote>
+<p><strong>主要原因：</strong> 是swiper提前初始化，这个时候数据还没有完全出来
+<strong>解决方向：</strong> 主要有两个方向：一个从swiper入手，一个从vue入手。
+vue中专门提供了一个方法 <strong>nextTick()</strong> 用于解决dom的先后执行问题。
+在new Swiper(&ldquo;,{ observer:true,//当swiper自己或者子元素时，会自动初始化swiper
+                 observeParents:true})实例中设置</p>
+</blockquote>
+
+<ul>
+<li><strong>Vue-loader</strong></li>
+</ul>
+
+<blockquote>
+<p><strong>什么是Vue-loader</strong>
+Vue-loader就是一个加载器，能把vue组件转化成JavaScript模板</p>
+
+<p><strong>为什么我们要转译这个vue组件</strong>
+1. 可以动态的渲染一些数据；
+2. 对三个标签都做了优化，script中可以直接使用es6 ，style 也默认可以使用sass；
+3. 在开发阶段，提供了热加载</p>
+</blockquote>
+
+<ul>
+<li><strong>用过插槽吗？用过具名插槽还是匿名插槽呢</strong></li>
+</ul>
+
+<blockquote>
+<p>vue中的插槽是一个非常好用的东西 slot 说白了 就是用来占位
+在vue中插槽包含三种，1.一种是默认插槽（匿名）；2.一种是具名插槽；3.还有一种是作用域插槽。
+<strong>区别：</strong>
+匿名插槽：就是没有名字，只要默认的，都能填到这里
+具名插槽：具有名字的，什么都能放</p>
+</blockquote>
+
+<pre><code>//helloworld组件
+
+&lt;About&gt;
+  &lt;h2&gt;这是HelloWorld组件内容&lt;/h2&gt; 
+  &lt;div slot=&quot;footer&quot; slot-scope=&quot;aaa&quot;&gt;{{aaa}}这是底部&lt;/div&gt;
+  &lt;div slot=&quot;header&quot;&gt;这是头部&lt;/div&gt;
+&lt;/About&gt;
+
+//结果
+&gt; 关于插槽
+&gt; 这是头部
+&gt; 这是HelloWorld组件内容
+&gt; { &quot;say&quot;: &quot;hello&quot; }这是底部
+
+</code></pre>
+
+<pre><code>//About.vue
+
+&lt;template&gt;
+    &lt;div&gt;
+      &lt;h2&gt;关于插槽&lt;/h2&gt;
+      &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;  //具名插槽
+      &lt;slot&gt;&lt;/slot&gt;  //匿名插槽
+      &lt;slot name=&quot;footer&quot; say=&quot;hello&quot;&gt;&lt;/slot&gt;//作用域插槽
+    &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<ul>
+<li><strong>Vue中VDOM的理解</strong></li>
+</ul>
+
+<ol>
+<li>什么是虚拟DOM</li>
+</ol>
+
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/50C31A937409435B97EB44982F71DF17/3434" alt="虚拟DOM和普通DOM tree" /></p>
+
+<blockquote>
+<p>说白了，虚拟DOM就是以js对象的形式去添加dom元素，本质上是优化了diff算法，采用了新旧DOM的对比，获取差异DOM，一次性更新到真实DOM，减少性能消耗。（template就是虚拟DOM）；
+ 虚拟DOM有缺陷，更适合批量修改dom；
+ 尽量不要跨层级修改dom；
+ 设置key 可以最大的利用节点（如果没有key值，元素就不能复用，而是直接创建新的，删除旧的；如果有key值，就会将原来的保留下来）。</p>
+</blockquote>
+
               
             </div>
           </div>
