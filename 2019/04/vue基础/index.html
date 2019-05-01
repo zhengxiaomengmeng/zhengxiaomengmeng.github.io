@@ -475,6 +475,108 @@ Vue-loader就是一个加载器，能把vue组件转化成JavaScript模板</p>
  设置key 可以最大的利用节点（如果没有key值，元素就不能复用，而是直接创建新的，删除旧的；如果有key值，就会将原来的保留下来）。</p>
 </blockquote>
 
+<ul>
+<li><strong>如何理解Vue的MVVM模式</strong></li>
+</ul>
+
+<blockquote>
+<ol>
+<li><strong>MVVM和MVC之间的区别</strong>
+MVC是指Model、View、Controller
+view &lt;==&gt; controller ==&gt; model &lt;==&gt;view  (最大缺点就是数据更新生、反馈不及时)
+MVVM也Model、View、ViewModel
+而Vue就是专注于view和viewmodel这样的框架</li>
+</ol>
+</blockquote>
+
+<ul>
+<li>Vue中的keep-alive的作用</li>
+</ul>
+
+<blockquote>
+<p><strong>什么是keep-alive</strong>
+说白了它能让不活动的组件“活着”
+它提供了include与exclude两个属性允许组件有条件的缓存（<strong>include</strong>: 字符串或正则表达式。只有匹配的组件会被缓存。
+<strong>exclude</strong>: 字符串或正则表达式。任何匹配的组件都不会被缓存。）</p>
+
+<p><strong>实现的原理是什么</strong>
+其实就是在created时候将需要缓存的vnode节点放到cache中，在render的时候根据name再进行取出。</p>
+
+<p><strong>怎么去使用它</strong></p>
+</blockquote>
+
+<pre><code>// 组件
+export default {
+  name: 'test-keep-alive',
+  data () {
+    return {
+        includedComponents: &quot;test-keep-alive&quot;
+    }
+  }
+}
+</code></pre>
+
+<pre><code>&lt;keep-alive include=&quot;test-keep-alive&quot;&gt;
+  &lt;!-- 将缓存name为test-keep-alive的组件 --&gt;
+  &lt;component&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+&lt;keep-alive include=&quot;a,b&quot;&gt;
+  &lt;!-- 将缓存name为a或者b的组件，结合动态组件使用 --&gt;
+  &lt;component :is=&quot;view&quot;&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+&lt;!-- 使用正则表达式，需使用v-bind --&gt;
+&lt;keep-alive :include=&quot;/a|b/&quot;&gt;
+  &lt;component :is=&quot;view&quot;&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+&lt;!-- 动态判断 --&gt;
+&lt;keep-alive :include=&quot;includedComponents&quot;&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/keep-alive&gt;
+
+&lt;keep-alive exclude=&quot;test-keep-alive&quot;&gt;
+  &lt;!-- 将不缓存name为test-keep-alive的组件 --&gt;
+  &lt;component&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+</code></pre>
+
+<pre><code>//结合router，缓存部分页面
+//使用$route.meta的keepAlive属性：
+
+&lt;keep-alive&gt;
+    &lt;router-view v-if=&quot;$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;
+&lt;/keep-alive&gt;
+&lt;router-view v-if=&quot;!$route.meta.keepAlive&quot;&gt;&lt;/router-view&gt;
+
+</code></pre>
+
+<pre><code>//需要在router中设置router的元信息meta：
+//...router.js
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Hello',
+      component: Hello,
+      meta: {
+        keepAlive: false // 不需要缓存
+      }
+    },
+    {
+      path: '/page1',
+      name: 'Page1',
+      component: Page1,
+      meta: {
+        keepAlive: true // 需要被缓存
+      }
+    }
+  ]
+})
+</code></pre>
+
               
             </div>
           </div>
