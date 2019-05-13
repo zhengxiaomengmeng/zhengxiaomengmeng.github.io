@@ -6,10 +6,23 @@
     <description>Recent content in 数据结构 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Mar 2019 22:31:13 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 12:56:29 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Set和Map</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/</link>
+      <pubDate>Mon, 13 May 2019 12:56:29 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/</guid>
+      <description>Set ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。 Set本身是一个构造函数，用来生成Set数据结构。
+var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x)) for (i of s) { console.log(i) } // 2 3 4 5 （表明set结构不会添加重复的值）   Set结构接收一个数组作为参数，用来初始化。
+ var items = new Set([1, 2, 3, 4, 5, 5, 5]); items.size // 5   向Set加入值的时候，不会发生类型转换。这意味着，在Set中5和”5”是两个不同的值。
+ Set结构有以下属性：  Set.prototype.constructor: 构造函数，默认就是Set函数。 Set.prototype.size : 返回Set的成员总数。
+ Set结构有以下属性：  add(value) : 添加某个值。 delete(value) : 删除某个值。 has(value) : 返回一个布尔值，表示该值是否为Set的成员。 clear() : 清除所有成员。</description>
+    </item>
     
     <item>
       <title>JavaScript堆栈原理</title>

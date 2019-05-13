@@ -502,6 +502,66 @@
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/">
+                <h3 class="media-heading">Set和Map</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Set ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。 Set本身是一个构造函数，用来生成Set数据结构。
+var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5, 2, 2].map(x =&gt; s.add(x)) for (i of s) { console.log(i) } // 2 3 4 5 （表明set结构不会添加重复的值）   Set结构接收一个数组作为参数，用来初始化。
+ var items = new Set([1, 2, 3, 4, 5, 5, 5]); items.size // 5   向Set加入值的时候，不会发生类型转换。这意味着，在Set中5和”5”是两个不同的值。
+ Set结构有以下属性：  Set.prototype.constructor: 构造函数，默认就是Set函数。 Set.prototype.size : 返回Set的成员总数。
+ Set结构有以下属性：  add(value) : 添加某个值。 delete(value) : 删除某个值。 has(value) : 返回一个布尔值，表示该值是否为Set的成员。 clear() : 清除所有成员。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
+                <h3 class="media-heading">页面放大缩小如何保持其宽高比例不变</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/">
+                <h3 class="media-heading">网易游戏</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 电话面试  对于浏览器标准的理解 对流式布局、flex布局、媒体布局的理解和如何应用 Localstorage实现商家收藏功能，用到哪些方法和属性 对于继承的理解，以及有哪些继承，各自的优缺点 Set和map的理解 Promise的实现原理 Css有哪些选择器和各自权重的问题，有没有比内联样式优先级更高的样式 ！important的有哪些危害 项目中如何实现使用vue-router，有哪几种使用方式 浏览器的内核有哪些，在写样式时如何区别 谷歌控制台中Audits的作用 ES6中模块化的概念，以及自己如何自定义一个模块 Vue中组件如何使用 对于项目中的图片如何做优化的（懒加载） Vue-cli中的Webpack文件有没有配置过，对于文件过大的文档如何使其打包后出来出个文档 在项目中如何保持宽高在放大缩小时不变  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/axios/">
                 <h3 class="media-heading">Axios</h3>
               </a>
@@ -660,99 +720,6 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">渲染机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">渲染机制 问题提出 题目: 渲染机制问题
-分析过程 需要掌握得知识点
- 什么是DOCTYPE及作用
- 浏览器渲染过程
- 重排(Reflow)
- 重绘(Repaint)
- 布局(layout)
-  1.什么是DOCTYPE及作用
- DTD（document type definition,文档类型定义）是一系列的语法规则，用来定义XML或（X）HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。（DTD就是告诉浏览器我是什么文档类型，浏览器根据这个判断用什么引擎来解析和渲染它） DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错；（DOCTYPE就是直接告诉浏览器什么是DTD的，通知浏览器告诉当前的文档包含的是哪个DTD， 也就是哪个文档类型。）
-  常见的DOCTYPE有哪些？   HTML5 &lt;!DOCTYPE html&gt; HTML 4.01 Strict(严格模式) （该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素--比如：font） &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional（传统模式--宽松模式） (该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素--比如font) &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;  当问到此题时，说出HTML5的具体用法和HTML4的严格模式和传统模式以及这两种模式的特点，其他可以不用说。
-2.浏览器渲染过程
- html css js三个都会影响页面最后的呈现形式（*浏览器拿到html，css之后要干什么？） 浏览器渲染过程？ 1.把html经过HTML Parser也就是DOM Parser转成DOM Tree（dom树）； 2.css按照css规则和css解释器转成css Rules（cssOM Tree）； 3.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
-                <h3 class="media-heading">算法类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
-分析过程 需要掌握得知识点
- 排序
- 堆栈、队列、链表
- 递归
- 波兰式和逆波兰式
-  1. 排序(重要)
- 冒泡排序
- 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
- 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
- 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
-  2.堆栈(重要)、队列、链表
- &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
-堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
- 3.递归(重要)（60%算法题都要用到递归）
- https://segmentfault.com/a/1190000009857470
- 递归的终止条件和参数传递？
-4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E5%AE%89%E5%85%A8%E7%B1%BB/">
-                <h3 class="media-heading">安全类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">安全类 问题提出 题目: 安全类问题
-分析过程 需要掌握得知识点
- CSRF(基本概念和缩写、攻击原理、防御措施)
- XSS
-  1.CSRF
- 基本概念和缩写   跨站请求伪造；Cross-Site Request Forgery 缩写CSRF
-  攻击原理   1.用户是网站A的注册用户，通过身份验证登录网站A，登录之后网站A核查身份是不是正确的，如果正确就下发cookie，这个cookie保存到用户浏览器当中，这就是完成了一次身份认证的过程。 2.用户又访问了一个网站B，网站B会给用户下发用户页面的时候，会存在引诱的一个点击，这个点击往往是一个链接，就是指向网站A的一个API接口，接口是GET类型，比如：www.xxx.com/hack， 指向存在漏洞的接口，当用户经不住引诱点击了这个东西，这个点击就访问了A网站，访问A网站这个链接的时候，浏览器会自动上传cookie，上传之后网站A觉得是A这个Cookie拿过来之后对身份重新认证，发现是合法用户，就执行了这个接口的动作。
- 重点：用户在注册网站登录过，没有登录会提示登录；
-CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素）
-1.网站中某一个接口存在漏洞 2.这个用户在注册网站确实登录过
- 防御措施  访问接口的时候，浏览器自动上传cookie，但是没有手动上传一个Token，这个Token是你注册成功以后，或者没有注册，只要你访问了这个网站，服务器会自动的向你本地存储一个Token，在你访问各种接口的时候，如果没带Token,,就不能帮你通过验证，如果只是点击了引诱链接，这个链接只会自动携带cookie，不会自动携带Token，所以就避免了那个攻击。 2.Referer验证 Referer指的是页面来源，如果服务器判断页面来的是不是我的这个站点下面的页面，如果是就执行你这个动作，如果不是就拦截。 3.隐藏令牌 和Token有点像，做法：隐藏在http的head头中，不会放在链接上，这样就做的比较隐蔽。本质上没 有太大区别。只是使用方式有一点差别。  2.XSS
- 基本概念和缩写:   跨域脚本攻击；Cross-Site Scripting 缩写XSS
-  攻击原理（核心宗旨：让你插入的js不可执行）   http://www.immoc.com/learn/812
-  防御措施   http://www.immoc.com/learn/812
-  和CSRF区别 &gt; XSS不需要做任何的登录认证，核心原理向你页面注入脚本； eg：比如评论区：如果评论区注入XSS最好的方式可以在你提交区里面写上script标签，img标签上加事件，总之，它的方法利用你合法的渠道向你页面注入js，这是XSS攻击原理。 XSS是向你页面注入js运行，然后js函数体里面做它想做的事情。 CSRF利用你本身的漏洞，去帮你自动执行那些接口。  &mdash;&mdash;这两种攻击方式是不一样的，CSRF要依赖用户要登录网站。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -760,7 +727,7 @@ CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         40 posts found
+         42 posts found
       </p>
     </div>
   </div>

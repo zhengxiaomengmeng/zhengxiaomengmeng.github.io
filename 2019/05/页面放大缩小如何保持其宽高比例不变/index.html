@@ -8,79 +8,55 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
+<meta name="description" content="页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .">
 
 
-<meta property="og:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
+<meta property="og:description" content="页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器的标准模式和怪异模式">
-<meta name="twitter:title" content="浏览器的标准模式和怪异模式">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+<meta property="og:title" content="页面放大缩小如何保持其宽高比例不变">
+<meta name="twitter:title" content="页面放大缩小如何保持其宽高比例不变">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
-<meta name="twitter:description" content=" 浏览器的标准模式和怪异模式 现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。
-在标准模式下，浏览器按照HTML与CSS标准对文档进行解析和渲染；
-而在怪异模式下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。
-其实归根结底就是，浏览器如何能将旧网页与新网页区分开来。
-标准模式与怪异模式的区别:
-  #### 盒模型    图片元素的垂直对齐方式： 对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。
- table 元素中的字体 CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。
- 内联元素的尺寸： 标准模式下，non-replaced inline 元素无法自定义大小
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。
- 元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
-  b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
- #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  ">
+<meta property="og:description" content="页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .">
+<meta name="twitter:description" content="页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-25T14:18:32">
+    <meta property="article:published_time" content="2019-05-11T19:30:26">
   
   
-    <meta property="article:modified_time" content="2019-02-25T14:18:32">
+    <meta property="article:modified_time" content="2019-05-11T19:30:26">
   
-  
-  
-    
-      <meta property="article:section" content="HTML学习笔记">
-    
   
   
     
-      <meta property="article:tag" content="HTML">
+      <meta property="article:section" content="CSS学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="CSS">
     
   
 
@@ -101,14 +77,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>浏览器的标准模式和怪异模式</title>
+    <title>页面放大缩小如何保持其宽高比例不变</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -250,19 +226,19 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      浏览器的标准模式和怪异模式
+      页面放大缩小如何保持其宽高比例不变
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-25T14:18:32&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-05-11T19:30:26&#43;08:00">
         
   
   
   
   
-    2019-02-25
+    2019-05-11
   
 
       </time>
@@ -272,7 +248,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/html%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">HTML学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
     
   
 
@@ -284,47 +260,84 @@
             <div class="main-content-wrap">
               
 
-<h2 id="浏览器的标准模式和怪异模式">浏览器的标准模式和怪异模式</h2>
+<h2 id="页面放大缩小如何保持其宽高比例不变">页面放大缩小如何保持其宽高比例不变</h2>
 
-<p>现代的浏览器一般都有两种渲染模式：标准模式和怪异模式。<br>
-在<strong>标准模式</strong>下，浏览器按照HTML与CSS标准对文档进行解析和渲染；<br>
-而在<strong>怪异模式</strong>下，浏览器则按照旧有的非标准的实现方式对文档进行解析和渲染。这样的话，对于旧有的网页，浏览器启动怪异模式，就能够使得旧网页正常显示；对于新的网页，则可以启动标准模式，使得新网页能够使用HTML与CSS的标准特性。<br>
-其实归根结底就是，<strong>浏览器如何能将旧网页与新网页区分开来</strong>。</p>
+<h3 id="解决方案">解决方案</h3>
 
-<h3 id="标准模式与怪异模式的-区别-br">标准模式与怪异模式的<strong>区别</strong>:<br></h3>
+<ol>
+<li><p>使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度</p></li>
 
-<ul>
-<li>#### 盒模型
-<img src="https://note.youdao.com/yws/public/resource/ebdcf184009dda8d4641c939e84949ff/xmlnote/54CB289100A446AC8E01DEC9D881DF73/3400" alt="IE盒子模型" title="IE盒子模型.jpg" /></li>
-</ul>
+<li><p>使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）</p></li>
 
-<p><img src="https://note.youdao.com/yws/public/resource/ebdcf184009dda8d4641c939e84949ff/xmlnote/8F9F53701A674ABB975D6217D811E473/3403" alt="标准盒子模型" title="标准盒子模型.jpg" /></p>
+<li><p>使用vw属性</p></li>
+</ol>
 
-<ul>
-<li><h4 id="图片元素的垂直对齐方式">图片元素的垂直对齐方式：</h4>
+<h3 id="实现方案">实现方案</h3>
 
-<p>对于inline元素和table-cell元素，标准模式下vertical-align属性默认取值为baseline，在怪异模式下，table单元格中的图片的vertical-align属性默认取值为bottom，因此在图片底部会有及像素的空间。</p></li>
+<ol>
+<li><p>媒体查询</p>
 
-<li><h4 id="table-元素中的字体">table 元素中的字体</h4>
+<pre><code>@media only screen and (min-width: 100px) and (max-width: 640px) {
+div{
+  width: 100px;
+  height: 100px;
+}
+}
+@media only screen and (min-width: 641px) and (max-width: 789px) {
+div{
+  width: 200px;
+  height: 200px;
+}
+}
+</code></pre></li>
 
-<p>CSS中，对于font的属性都是可以继承的，怪异模式下，对于table元素，字体的某些元素将不会从body等其他封装元素中继承得到，特别是font-size属性。</p></li>
+<li><p>padding-bottom：XX%大法</p></li>
+</ol>
 
-<li><h4 id="内联元素的尺寸">内联元素的尺寸：</h4>
+<pre><code>&lt;body&gt;
+  &lt;style&gt;
+  .inner {
+    height: 0;
+    padding-bottom: 25%;
+    overflow: hidden;
+    background-color: red;
+  }
+  &lt;/style&gt;
+  &lt;div style=&quot;width: 50%;&quot;&gt;
+    &lt;div class=&quot;inner&quot;&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+      测试&lt;br&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
 
-<p>标准模式下，non-replaced  inline 元素无法自定义大小<br>
-怪异模式下，定义这些元素的width，height属性可以影响这些元素显示的尺寸。</p></li>
+</code></pre>
 
-<li><h4 id="元素的百分比高度">元素的百分比高度：</h4>
+<p><img src="https://note.youdao.com/yws/public/resource/3794e401d186cc4bb396f0fe9b0e7d4b/xmlnote/7D5F9186EEA14F93BDBF6AB3B08A7E3D/3438" alt="效果图" /></p>
 
-<p>a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。</p></li>
-</ul>
+<ol>
+<li>使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】</li>
+</ol>
 
-<p>b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。</p>
-
-<ul>
-<li>####  元素溢出的处理：
-标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。</li>
-</ul>
+<pre><code>.item {
+    float: left;
+    background-color: darkslategrey;
+    border: 1px solid black;
+    margin: 5%;
+    width: 20vw;
+    height: 20vw;
+}
+</code></pre>
 
               
             </div>
@@ -337,7 +350,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/html/">HTML</a>
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/css/">CSS</a>
 
                   </div>
                 
@@ -350,7 +363,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/" data-tooltip="渐进式渲染">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/" data-tooltip="Set和Map">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -358,7 +371,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/" data-tooltip="网易游戏">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -376,7 +389,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -426,7 +439,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B8%B2%E6%9F%93/" data-tooltip="渐进式渲染">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/" data-tooltip="Set和Map">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -434,7 +447,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/02/" data-tooltip="">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/" data-tooltip="网易游戏">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -452,7 +465,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -482,7 +495,7 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F02%2F%25E6%25B5%258F%25E8%25A7%2588%25E5%2599%25A8%25E7%259A%2584%25E6%25A0%2587%25E5%2587%2586%25E6%25A8%25A1%25E5%25BC%258F%25E5%2592%258C%25E6%2580%25AA%25E5%25BC%2582%25E6%25A8%25A1%25E5%25BC%258F%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F05%2F%25E9%25A1%25B5%25E9%259D%25A2%25E6%2594%25BE%25E5%25A4%25A7%25E7%25BC%25A9%25E5%25B0%258F%25E5%25A6%2582%25E4%25BD%2595%25E4%25BF%259D%25E6%258C%2581%25E5%2585%25B6%25E5%25AE%25BD%25E9%25AB%2598%25E6%25AF%2594%25E4%25BE%258B%25E4%25B8%258D%25E5%258F%2598%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -823,9 +836,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/02\/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/05\/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98\/';
           
-            this.page.identifier = '\/2019\/02\/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F\/'
+            this.page.identifier = '\/2019\/05\/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98\/'
           
         };
         (function() {

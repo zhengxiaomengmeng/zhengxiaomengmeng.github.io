@@ -6,10 +6,46 @@
     <description>Recent content in Posts on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 21:48:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 12:56:29 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Set和Map</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/</link>
+      <pubDate>Mon, 13 May 2019 12:56:29 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/</guid>
+      <description>Set ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。 Set本身是一个构造函数，用来生成Set数据结构。
+var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x)) for (i of s) { console.log(i) } // 2 3 4 5 （表明set结构不会添加重复的值）   Set结构接收一个数组作为参数，用来初始化。
+ var items = new Set([1, 2, 3, 4, 5, 5, 5]); items.size // 5   向Set加入值的时候，不会发生类型转换。这意味着，在Set中5和”5”是两个不同的值。
+ Set结构有以下属性：  Set.prototype.constructor: 构造函数，默认就是Set函数。 Set.prototype.size : 返回Set的成员总数。
+ Set结构有以下属性：  add(value) : 添加某个值。 delete(value) : 删除某个值。 has(value) : 返回一个布尔值，表示该值是否为Set的成员。 clear() : 清除所有成员。</description>
+    </item>
+    
+    <item>
+      <title>页面放大缩小如何保持其宽高比例不变</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/</link>
+      <pubDate>Sat, 11 May 2019 19:30:26 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/</guid>
+      <description>页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &amp;lt;body&amp;gt; &amp;lt;style&amp;gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &amp;lt;/style&amp;gt; &amp;lt;div style=&amp;quot;width: 50%;&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .</description>
+    </item>
+    
+    <item>
+      <title>网易游戏</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Fri, 10 May 2019 17:28:50 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</guid>
+      <description> 电话面试  对于浏览器标准的理解 对流式布局、flex布局、媒体布局的理解和如何应用 Localstorage实现商家收藏功能，用到哪些方法和属性 对于继承的理解，以及有哪些继承，各自的优缺点 Set和map的理解 Promise的实现原理 Css有哪些选择器和各自权重的问题，有没有比内联样式优先级更高的样式 ！important的有哪些危害 项目中如何实现使用vue-router，有哪几种使用方式 浏览器的内核有哪些，在写样式时如何区别 谷歌控制台中Audits的作用 ES6中模块化的概念，以及自己如何自定义一个模块 Vue中组件如何使用 对于项目中的图片如何做优化的（懒加载） Vue-cli中的Webpack文件有没有配置过，对于文件过大的文档如何使其打包后出来出个文档 在项目中如何保持宽高在放大缩小时不变  </description>
+    </item>
     
     <item>
       <title>Axios</title>
@@ -448,15 +484,6 @@ viewport设置移动端自适应的方法：
       
       <guid>https://zhengxiaomengmeng.github.io/2019/03/ie%E4%B8%AD%E5%B8%B8%E8%A7%81bug%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
       <description>https://www.cnblogs.com/songzk/p/6181641.html</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
-      <description></description>
     </item>
     
     <item>

@@ -6,10 +6,19 @@
     <description>Recent content in Interview on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Apr 2019 21:53:35 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 17:28:50 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/interview/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>网易游戏</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Fri, 10 May 2019 17:28:50 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</guid>
+      <description> 电话面试  对于浏览器标准的理解 对流式布局、flex布局、媒体布局的理解和如何应用 Localstorage实现商家收藏功能，用到哪些方法和属性 对于继承的理解，以及有哪些继承，各自的优缺点 Set和map的理解 Promise的实现原理 Css有哪些选择器和各自权重的问题，有没有比内联样式优先级更高的样式 ！important的有哪些危害 项目中如何实现使用vue-router，有哪几种使用方式 浏览器的内核有哪些，在写样式时如何区别 谷歌控制台中Audits的作用 ES6中模块化的概念，以及自己如何自定义一个模块 Vue中组件如何使用 对于项目中的图片如何做优化的（懒加载） Vue-cli中的Webpack文件有没有配置过，对于文件过大的文档如何使其打包后出来出个文档 在项目中如何保持宽高在放大缩小时不变  </description>
+    </item>
     
     <item>
       <title>税友实习生一二三面</title>

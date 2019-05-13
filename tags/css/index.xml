@@ -6,10 +6,24 @@
     <description>Recent content in Css on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 19:30:26 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>页面放大缩小如何保持其宽高比例不变</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/</link>
+      <pubDate>Sat, 11 May 2019 19:30:26 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/</guid>
+      <description>页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
+ 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
+ 使用vw属性
+  实现方案  媒体查询
+@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
+  &amp;lt;body&amp;gt; &amp;lt;style&amp;gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &amp;lt;/style&amp;gt; &amp;lt;div style=&amp;quot;width: 50%;&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; 测试&amp;lt;br&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .</description>
+    </item>
     
     <item>
       <title>CSS盒子模型的联想</title>
@@ -71,15 +85,6 @@ Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的
       <guid>https://zhengxiaomengmeng.github.io/2019/03/%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>浮动元素引起的问题和解决办法 问题  多个浮动的元素无法撑开父元素的宽度，父元素的高度可能会变成0。 若浮动元素后面跟非浮动元素，非浮动元素会紧随其后浮动起来。 若浮动元素前面还有同级元素没有浮动则会影响页面结构。  解决办法  clear:both 在最后一个浮动元素后面添加属性为clear:both;的元素。  &amp;lt;style&amp;gt; div.parent&amp;gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear{ clear: both; } &amp;lt;/style&amp;gt; &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;1&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;2&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;3&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;4&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clear&amp;quot;&amp;gt;5&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  给父元素添加clear:both;属性的:after伪元素。
 &amp;lt;style&amp;gt; div.parent&amp;gt;div.fl{ float: left; width: 200px; height: 200px; margin-right: 20px; border: 1px solid red; } .clear:after{ content: &#39;&#39;; display: block; clear: both; } &amp;lt;/style&amp;gt; &amp;lt;div class=&amp;quot;parent clear&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;1&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;2&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;3&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;fl&amp;quot;&amp;gt;4&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  注意：伪元素默认是内联水平，所以借助伪元素时要设置属性display: block;。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
-      <description></description>
     </item>
     
     <item>
