@@ -39,15 +39,6 @@ var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5,
     </item>
     
     <item>
-      <title>网易游戏</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</link>
-      <pubDate>Fri, 10 May 2019 17:28:50 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E7%BD%91%E6%98%93%E6%B8%B8%E6%88%8F/</guid>
-      <description> 电话面试  对于浏览器标准的理解 对流式布局、flex布局、媒体布局的理解和如何应用 Localstorage实现商家收藏功能，用到哪些方法和属性 对于继承的理解，以及有哪些继承，各自的优缺点 Set和map的理解 Promise的实现原理 Css有哪些选择器和各自权重的问题，有没有比内联样式优先级更高的样式 ！important的有哪些危害 项目中如何实现使用vue-router，有哪几种使用方式 浏览器的内核有哪些，在写样式时如何区别 谷歌控制台中Audits的作用 ES6中模块化的概念，以及自己如何自定义一个模块 Vue中组件如何使用 对于项目中的图片如何做优化的（懒加载） Vue-cli中的Webpack文件有没有配置过，对于文件过大的文档如何使其打包后出来出个文档 在项目中如何保持宽高在放大缩小时不变  </description>
-    </item>
-    
-    <item>
       <title>Axios</title>
       <link>https://zhengxiaomengmeng.github.io/2019/04/axios/</link>
       <pubDate>Mon, 29 Apr 2019 21:48:43 +0800</pubDate>
@@ -141,15 +132,6 @@ Resource interpreted as script but transferred 错误信息：Script error.</des
  使用CDN（网络优化，CDN加载资源非常快）
  预解析DNS ```    **1.资源压缩合并，减少HTTP请求** 资源传输的过程变小 **2.非核心的代码异步加载—异步加载的方式—异步加载的区别** 异步加载的方式： &amp;gt; **1.动态脚本加载** —js创建了一个标签，把标签最后加到body上去或者head（加到文档当中实现加载） document.createElement(“*”); **2.defer** **3.async** **怎么用：** 在加载js时候在script标签上加这两个属性完成异步加载； **异步加载的区别：** &amp;gt; 1.defer是在HTML解析完之后才会执行，如果是多个，按照加载顺序依次执行； 2.async是在加载完之后立即执行，如果是多个，执行顺序和加载顺序无关； **异步加载原理：**（任何一个时刻都只能做一件事） &amp;gt; 1.defer：新加载的，在HTML解析完之前，是不会执行的；defer能保证按你的加载顺序依次执行； 2.async：哪个先回来，哪个先执行，和加载顺序无关； **3.利用浏览器缓存—缓存的分类—缓存的原理** - 缓存的分类： &amp;gt; **缓存：** 对应文件在浏览器中存在的备份（副本），把请求的东西缓存到本地了（是放在电脑磁盘中的），浏览器下次请求相当于是从这个磁盘直接读了，而不会再去请求这个文件的地址。 **1. 强缓存**  http协议头： Expires Expires:Thu,21 Jan 2017 23:39:02 GMT Cache-Control Cahe-Control : Max-age=3600
  &amp;gt; **强缓存**：问都不问，不直接请求，直接拿过来就用了；不管是绝对时间还是相对时间，这个时间过期之前不会和服务器通信了，直接从浏览器副本拿出来给页面用； ``` HTTP协议头： 在请求一个文件的时候，http头上（响应头上）会带两个东西（有可能是2个，也有可能是1个，根据服务器配置）； 响应头中会有key，value Expires 过期时间； value值表示的是绝对时间（服务器的绝对时间，这个时间是服务器下发的） 判断客户端当前的时候是不是这个时间，比较的时候是按浏览器本地的时间做比较，下发的是服务器端的时间，会有偏差； 缺点：有可能客户端和服务器的时间不一致。 Cache-Control value值 Max-age=3600（相对时间） 不管客户端和服务器时间是否一致，它最后是以客户端相对时间为止，时间单位是秒（拿到资源之后再3600s之内不会再去请求服务器，在这个时间之内直接去浏览器拿缓存） *如果服务器两个时间都下发了，依哪个时间为准呢？ 以后者相对时间为准（这个规定）  2.</description>
-    </item>
-    
-    <item>
-      <title>JS运行机制</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</link>
-      <pubDate>Sun, 28 Apr 2019 13:59:33 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/04/js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -615,15 +597,6 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
  元素的百分比高度： a：CSS中对于元素的百分比高度规定如下：百分比为元素包含块的高度，不可为负值，如果包含块的高度没有显示给出，该值等同于auto，所以百分比的高度必须在父元素有高度声明的情况下使用。
   b：当一个元素使用百分比高度时，标准模式下，高度取决于内容变化，怪异模式下，百分比高度被正确应用。
  #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
-      <description></description>
     </item>
     
     <item>

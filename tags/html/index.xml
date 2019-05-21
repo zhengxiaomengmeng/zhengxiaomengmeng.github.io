@@ -170,14 +170,5 @@ XHTML可以很好处理各大浏览器的兼容(pc端浏览器、手机端浏览
  #### 元素溢出的处理： 标准模式下，overflow取默认值visible，在怪异模式下，该溢出会被当做扩展box来对待，即元素的大小由其内容决定，溢出不会裁减，元素框自动调整，包含溢出内容。  </description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://zhengxiaomengmeng.github.io/2019/02/</link>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/02/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
