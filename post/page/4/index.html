@@ -204,6 +204,143 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+          JavaScript堆栈原理
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
+        
+  
+  
+  
+  
+    2019-03-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
+栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
+堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
+栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
+堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+栈（数据结构）：一种先进后出的数据结构。
+数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
+ var a =1 ;
+ 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
+ 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
+ var b=a;
+ 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
+ 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
+ var a = new Object(); //(引用指针指向object)
+ 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/">
+          各种布局的优缺点
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-03-06T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-03-06
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        各种布局的优缺点 这篇博客讲的非常详细
+      
+      <p>
+        <a href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/" class="postShorten-excerpt_link link">阅读全文</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
         <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E4%BC%98%E7%BC%BA%E7%82%B9/">
           各种布局优缺点
         </a>
@@ -512,136 +649,6 @@ viewport设置移动端自适应的方法：
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
-          css实现水平、垂直居中
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-28
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        css实现水平、垂直居中 元素水平居中 块级元素水平居中 最简单的方式：margin： 0 auto; 注意点 (1)元素需要设置宽度 (2)元素不能为行内元素
-行内元素水平居中 元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。（对于块级元素不起作用）
-不定宽度的块状元素有三种方法居中（这三种方法目前使用的都比较多）： 1.加入 table 标签 第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 、、 ) 第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）
-&lt;!DOCTYPE HTML&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;不定宽块状元素水平居中&lt;/title&gt; &lt;style&gt; table{ margin:0 auto; } ul{list-style:none;margin:0;padding:0;} li{float:left;display:inline;margin-right:8px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt;&lt;td&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  2.设置 display;inline 方法 改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/">
-          css实现隐藏页面的方式
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-28T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-28
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/css%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">CSS学习笔记</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        css实现隐藏页面的方式 opacity 设置透明度，值为0-1。为0则页面上不显示，但是元素还在那个位置,依然可以网页交互,单纯是看不到而已。在呈现上与visibility:hidden;方式一样，同样会占据页面空间。
-.class{ opacity:0; }  visibility 设置隐藏。hidden为隐藏，在页面不显示，交互效果也会没有。visible为显示,hidden为隐藏。该方法仍占用页面空间，但是不会导致浏览器重排，但是会重绘。
-.class{ visibility:hidden;//隐藏 visibility:visible;//显示 }  display 设置不显示和显示。注意了，这里要强调的一点是，如果你想使他的子元素显示，用display:visible是没用的。而上面两种方式是可以使用。该方法不占用空间，会导致浏览器的重排和重绘。
-.class { display:none; }  position position位置，用绝对定位把它挪到远远地。
-.class{ position:absolute; left:-999px; top:-999px; }  Clip-path 该属性很少见，该属性是通过裁剪的方法实现隐藏的。被隐藏的内容依然占据着那个位置，它周围的元素的行为就如同它可见时一样。记住用户交互例如鼠标悬停或者点击在剪裁区域之外也不可能生效。此外，这个属性能够使用各种过渡动画来实现不同的效果。
-.haorooms-small { background-size: cover; width: 300px; height: 300px; -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%); }  &lt;div class=&quot;haorooms-small&quot; style=&quot;background-image: url('http://sandbox.
-      
-      <p>
-        <a href="https://zhengxiaomengmeng.github.io/2019/02/css%E5%AE%9E%E7%8E%B0%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -725,6 +732,47 @@ viewport设置移动端自适应的方法：
       <div class="no-result text-color-light text-center"></div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/">
+                <h3 class="media-heading">Mock数据</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/proxytable-%E8%A7%A3%E5%86%B3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+                <h3 class="media-heading">ProxyTable 解决开发环境的跨域问题</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli中的proxyTable解决开发环境的跨域问题  对于前端开发人员来讲，当你在开发环境中与后台开发人员进行数据联调时，总会遇到烦人的跨域问题！
+ 解决跨域的方法有很多种，比如你和后台人员经过友好协商后，你可以通过JSONP的方式或者让后台人员将代码设置为允许你进行跨域！但是往往前后台开发人员的配合默契度是不太高的。如果后台只给你接口，并明确告诉你不允许修改接口，怎么办？怎么办才能实现跨域？此时你就可以通过proxyTable来解决跨域问题！
+ 通过proxyTable解决跨域在Vue-cli当中是很简单的。只需修改config文件夹下的index.js中的proxyTable就能实现：
+ //代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/api&quot;:{ target:&quot;http://www.xxx.com&quot;, //访问的服务器地址 changeOrigin:true, //true为开启代理 //secure: true, // 如果是https接口，需要配置这个参数 pathRewrite:{ '^/api': '/' //路径的替换规则 /* *这里的配置是正则表达式，以/api开头的路径将会被‘/'替换掉 *假如后台文档的接口是 &quot;http://www.xxx.com/user/add&quot; *前端调取API接口应写：axios.get('/api/user/add') */ } } }   以上代码的“/api”你可以认为用于代替target里面的地址，调取接口的地址直接用api来替换。
+比如后台接口地址为：”http://www.xxx.com/user/login“。 你可以直接写为：”/api/user/login”即可。
+ 可以根据不同的API域名负责的模块不同来进行多项配置
+//代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/adv&quot;:{ target:&quot;http://adv.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/adv': '/'//路径的替换规则 } }， &quot;/user&quot;:{ target:&quot;http://user.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/user': '/'//路径的替换规则 } } }   以上代码”/adv”与”/user”分别负责项目中的广告模块与用户模块。 例如： 后台文档的地址是：“http://adv.com/add”， 前端调取API接口应写：axios.get(‘/adv/add’)
+ 注意： 配置修改完以后一定要重新npm run dev 一次</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -913,68 +961,6 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">渲染机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">渲染机制 问题提出 题目: 渲染机制问题
-分析过程 需要掌握得知识点
- 什么是DOCTYPE及作用
- 浏览器渲染过程
- 重排(Reflow)
- 重绘(Repaint)
- 布局(layout)
-  1.什么是DOCTYPE及作用
- DTD（document type definition,文档类型定义）是一系列的语法规则，用来定义XML或（X）HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。（DTD就是告诉浏览器我是什么文档类型，浏览器根据这个判断用什么引擎来解析和渲染它） DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错；（DOCTYPE就是直接告诉浏览器什么是DTD的，通知浏览器告诉当前的文档包含的是哪个DTD， 也就是哪个文档类型。）
-  常见的DOCTYPE有哪些？   HTML5 &lt;!DOCTYPE html&gt; HTML 4.01 Strict(严格模式) （该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素--比如：font） &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional（传统模式--宽松模式） (该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素--比如font) &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;  当问到此题时，说出HTML5的具体用法和HTML4的严格模式和传统模式以及这两种模式的特点，其他可以不用说。
-2.浏览器渲染过程
- html css js三个都会影响页面最后的呈现形式（*浏览器拿到html，css之后要干什么？） 浏览器渲染过程？ 1.把html经过HTML Parser也就是DOM Parser转成DOM Tree（dom树）； 2.css按照css规则和css解释器转成css Rules（cssOM Tree）； 3.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
-                <h3 class="media-heading">算法类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
-分析过程 需要掌握得知识点
- 排序
- 堆栈、队列、链表
- 递归
- 波兰式和逆波兰式
-  1. 排序(重要)
- 冒泡排序
- 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
- 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
- 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
-  2.堆栈(重要)、队列、链表
- &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
-堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
- 3.递归(重要)（60%算法题都要用到递归）
- https://segmentfault.com/a/1190000009857470
- 递归的终止条件和参数传递？
-4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -982,7 +968,7 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         39 posts found
+         41 posts found
       </p>
     </div>
   </div>

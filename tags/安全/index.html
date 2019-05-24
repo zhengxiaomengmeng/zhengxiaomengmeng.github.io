@@ -329,6 +329,47 @@ CSRF能够造成攻击的原理：（实现CSRF攻击不可缺失的连个因素
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/">
+                <h3 class="media-heading">Mock数据</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/proxytable-%E8%A7%A3%E5%86%B3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+                <h3 class="media-heading">ProxyTable 解决开发环境的跨域问题</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli中的proxyTable解决开发环境的跨域问题  对于前端开发人员来讲，当你在开发环境中与后台开发人员进行数据联调时，总会遇到烦人的跨域问题！
+ 解决跨域的方法有很多种，比如你和后台人员经过友好协商后，你可以通过JSONP的方式或者让后台人员将代码设置为允许你进行跨域！但是往往前后台开发人员的配合默契度是不太高的。如果后台只给你接口，并明确告诉你不允许修改接口，怎么办？怎么办才能实现跨域？此时你就可以通过proxyTable来解决跨域问题！
+ 通过proxyTable解决跨域在Vue-cli当中是很简单的。只需修改config文件夹下的index.js中的proxyTable就能实现：
+ //代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/api&quot;:{ target:&quot;http://www.xxx.com&quot;, //访问的服务器地址 changeOrigin:true, //true为开启代理 //secure: true, // 如果是https接口，需要配置这个参数 pathRewrite:{ '^/api': '/' //路径的替换规则 /* *这里的配置是正则表达式，以/api开头的路径将会被‘/'替换掉 *假如后台文档的接口是 &quot;http://www.xxx.com/user/add&quot; *前端调取API接口应写：axios.get('/api/user/add') */ } } }   以上代码的“/api”你可以认为用于代替target里面的地址，调取接口的地址直接用api来替换。
+比如后台接口地址为：”http://www.xxx.com/user/login“。 你可以直接写为：”/api/user/login”即可。
+ 可以根据不同的API域名负责的模块不同来进行多项配置
+//代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/adv&quot;:{ target:&quot;http://adv.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/adv': '/'//路径的替换规则 } }， &quot;/user&quot;:{ target:&quot;http://user.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/user': '/'//路径的替换规则 } } }   以上代码”/adv”与”/user”分别负责项目中的广告模块与用户模块。 例如： 后台文档的地址是：“http://adv.com/add”， 前端调取API接口应写：axios.get(‘/adv/add’)
+ 注意： 配置修改完以后一定要重新npm run dev 一次</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/">
                 <h3 class="media-heading">Set和Map</h3>
               </a>
@@ -513,68 +554,6 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/">
-                <h3 class="media-heading">渲染机制</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">渲染机制 问题提出 题目: 渲染机制问题
-分析过程 需要掌握得知识点
- 什么是DOCTYPE及作用
- 浏览器渲染过程
- 重排(Reflow)
- 重绘(Repaint)
- 布局(layout)
-  1.什么是DOCTYPE及作用
- DTD（document type definition,文档类型定义）是一系列的语法规则，用来定义XML或（X）HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。（DTD就是告诉浏览器我是什么文档类型，浏览器根据这个判断用什么引擎来解析和渲染它） DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错；（DOCTYPE就是直接告诉浏览器什么是DTD的，通知浏览器告诉当前的文档包含的是哪个DTD， 也就是哪个文档类型。）
-  常见的DOCTYPE有哪些？   HTML5 &lt;!DOCTYPE html&gt; HTML 4.01 Strict(严格模式) （该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素--比如：font） &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional（传统模式--宽松模式） (该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素--比如font) &lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;  当问到此题时，说出HTML5的具体用法和HTML4的严格模式和传统模式以及这两种模式的特点，其他可以不用说。
-2.浏览器渲染过程
- html css js三个都会影响页面最后的呈现形式（*浏览器拿到html，css之后要干什么？） 浏览器渲染过程？ 1.把html经过HTML Parser也就是DOM Parser转成DOM Tree（dom树）； 2.css按照css规则和css解释器转成css Rules（cssOM Tree）； 3.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E7%AE%97%E6%B3%95%E7%B1%BB/">
-                <h3 class="media-heading">算法类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">算法类 问题提出 题目: 算法类问题
-分析过程 需要掌握得知识点
- 排序
- 堆栈、队列、链表
- 递归
- 波兰式和逆波兰式
-  1. 排序(重要)
- 冒泡排序
- 快速排序(重要) &gt; https://segmentfault.com/a/1190000009426421
- 选择排序(重要) &gt; https://segmentfault.com/a/1190000009366805
- 希尔排序(重要) &gt; https://segmentfault.com/a/1190000009461832
-  2.堆栈(重要)、队列、链表
- &ndash;JS数组本身就是具备堆栈，队列的特性； pop、push、shift、unshift 这个四个api已经帮我们实现堆栈和队列；
-堆栈：先进后出；可以让unshift进，pop出； https://juejin.im/entry/58759e79128fe1006b48cdfd 队列： https://juejin.im/entry/58759e79128fe1006b48cdfd 链表： https://juejin.im/entry/58759e79128fe1006b48cdfd
- 3.递归(重要)（60%算法题都要用到递归）
- https://segmentfault.com/a/1190000009857470
- 递归的终止条件和参数传递？
-4.波兰式和逆波兰式 eg：(1+35)(4+63&frasl;2)用js来写怎么去实现最后的结果？ 理论： http://www.cnblogs.com/chenying99/p/3675876.html 源码： https://github.com/Tairraos/rpn.js/blob/master/rpn.js</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -582,7 +561,7 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         39 posts found
+         41 posts found
       </p>
     </div>
   </div>
