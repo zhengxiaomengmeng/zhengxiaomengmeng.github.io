@@ -750,6 +750,28 @@ viewport设置移动端自适应的方法：
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/">
+                <h3 class="media-heading">通用的事件侦听函数</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">通用的事件侦听函数 分析过程 需要考虑的问题如下几点：
+ 页面是否加载完成
+ 增加移除事件：DOM等级和不同浏览器之间的兼容性
+ 取消默认行为、阻止默认行为
+ 获取事件目标
+  代码实现 //写一个通用的事件监听函数 markyun.Event = { //页面加载完成后 readyEvent: function (fn) { if (fn == null) { fn = document; } var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = fn; } else { window.onload = function () { oldonload(); fn(); } } }, //分别使用dom0，dom2或IE方式来绑定事件 //参数：操作的元素、事件名称、事件处理程序 addEvent: function (element, type, handler) { if (element.addEventListener) { element.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/">
                 <h3 class="media-heading">Mock数据</h3>
               </a>
@@ -951,30 +973,6 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/js%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E7%B1%BB/">
-                <h3 class="media-heading">JS页面性能类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">JS页面性能类 问题提出 题目: 提升页面性能的方法有哪些？
-分析过程 需要掌握得知识点
- 资源压缩合并，减少HTTP请求
- 非核心的代码异步加载—异步加载的方式—异步加载的区别
- 利用浏览器缓存—缓存的分类—缓存的原理
- 使用CDN（网络优化，CDN加载资源非常快）
- 预解析DNS ```    **1.资源压缩合并，减少HTTP请求** 资源传输的过程变小 **2.非核心的代码异步加载—异步加载的方式—异步加载的区别** 异步加载的方式： &gt; **1.动态脚本加载** —js创建了一个标签，把标签最后加到body上去或者head（加到文档当中实现加载） document.createElement(“*”); **2.defer** **3.async** **怎么用：** 在加载js时候在script标签上加这两个属性完成异步加载； **异步加载的区别：** &gt; 1.defer是在HTML解析完之后才会执行，如果是多个，按照加载顺序依次执行； 2.async是在加载完之后立即执行，如果是多个，执行顺序和加载顺序无关； **异步加载原理：**（任何一个时刻都只能做一件事） &gt; 1.defer：新加载的，在HTML解析完之前，是不会执行的；defer能保证按你的加载顺序依次执行； 2.async：哪个先回来，哪个先执行，和加载顺序无关； **3.利用浏览器缓存—缓存的分类—缓存的原理** - 缓存的分类： &gt; **缓存：** 对应文件在浏览器中存在的备份（副本），把请求的东西缓存到本地了（是放在电脑磁盘中的），浏览器下次请求相当于是从这个磁盘直接读了，而不会再去请求这个文件的地址。 **1. 强缓存**  http协议头： Expires Expires:Thu,21 Jan 2017 23:39:02 GMT Cache-Control Cahe-Control : Max-age=3600
- &gt; **强缓存**：问都不问，不直接请求，直接拿过来就用了；不管是绝对时间还是相对时间，这个时间过期之前不会和服务器通信了，直接从浏览器副本拿出来给页面用； ``` HTTP协议头： 在请求一个文件的时候，http头上（响应头上）会带两个东西（有可能是2个，也有可能是1个，根据服务器配置）； 响应头中会有key，value Expires 过期时间； value值表示的是绝对时间（服务器的绝对时间，这个时间是服务器下发的） 判断客户端当前的时候是不是这个时间，比较的时候是按浏览器本地的时间做比较，下发的是服务器端的时间，会有偏差； 缺点：有可能客户端和服务器的时间不一致。 Cache-Control value值 Max-age=3600（相对时间） 不管客户端和服务器时间是否一致，它最后是以客户端相对时间为止，时间单位是秒（拿到资源之后再3600s之内不会再去请求服务器，在这个时间之内直接去浏览器拿缓存） *如果服务器两个时间都下发了，依哪个时间为准呢？ 以后者相对时间为准（这个规定）  2.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -982,7 +980,7 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         41 posts found
+         42 posts found
       </p>
     </div>
   </div>

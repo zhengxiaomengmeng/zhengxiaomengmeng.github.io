@@ -6,10 +6,24 @@
     <description>Recent content in Javascript on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2019 15:12:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 14:36:04 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>通用的事件侦听函数</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 27 May 2019 14:36:04 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/</guid>
+      <description>通用的事件侦听函数 分析过程 需要考虑的问题如下几点：
+ 页面是否加载完成
+ 增加移除事件：DOM等级和不同浏览器之间的兼容性
+ 取消默认行为、阻止默认行为
+ 获取事件目标
+  代码实现 //写一个通用的事件监听函数 markyun.Event = { //页面加载完成后 readyEvent: function (fn) { if (fn == null) { fn = document; } var oldonload = window.onload; if (typeof window.onload != &#39;function&#39;) { window.onload = fn; } else { window.onload = function () { oldonload(); fn(); } } }, //分别使用dom0，dom2或IE方式来绑定事件 //参数：操作的元素、事件名称、事件处理程序 addEvent: function (element, type, handler) { if (element.addEventListener) { element.</description>
+    </item>
     
     <item>
       <title>Mock数据</title>
