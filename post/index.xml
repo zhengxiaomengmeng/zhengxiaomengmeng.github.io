@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 May 2019 14:36:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 19:50:08 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用javascript实现用户登录验证的代码</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Mon, 03 Jun 2019 19:50:08 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/</guid>
+      <description>用javascript实现用户登录验证的代码 不带验证码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&amp;quot;/&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form id=&amp;quot;form1&amp;quot; action=&amp;quot;&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;text1&amp;quot; type=&amp;quot;text&amp;quot; value=&amp;quot;&amp;quot; placeholder=&amp;quot;name&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;password&amp;quot; name=&amp;quot;pwd&amp;quot; placeholder=&amp;quot;密码&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;text3&amp;quot; value=&amp;quot;submit&amp;quot; type=&amp;quot;submit&amp;quot; onclick=&amp;quot;subimtonclick()&amp;quot;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;quot;JavaScript&amp;quot;&amp;gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &amp;quot;&amp;quot;) { alert(&amp;quot;用户名不能为空&amp;quot;); form1.text1.focus(); return; } if (form1.text1.value.length &amp;lt; 6 || form1.text1.value.length &amp;gt; 10) { alert(&amp;quot;用户名不能少于六个字符，不能超过十个字符&amp;quot;); form1.text1.focus(); return; } if (form1.pwd.value == &amp;quot;&amp;quot;) { alert(&amp;quot;密码不能为空&amp;quot;); form1.</description>
+    </item>
     
     <item>
       <title>通用的事件侦听函数</title>
@@ -32,6 +41,16 @@
       
       <guid>https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/</guid>
       <description>Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</description>
+    </item>
+    
+    <item>
+      <title>使用indexOf判断一个字符串包含另一个字符串</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Wed, 22 May 2019 17:51:22 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description> 使用indexOf判断一个字符串包含另一个字符串 题目  请实现 javascript 中的 indexOf 功能，判断一个字符串 a 中是否包含另一个字符串 b。 a）如果包含，需要返回匹配字符串 b 的位置。 b）如果不包含，需要返回-1。 如：indexOf(&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;el&amp;rdquo;) return 1。
+ 代码实现 function indexOf1(a,b) { var result = a.match(b); return result?result.index:-1; } function indexOf2(a,b) { return a.search(b); } console.log(indexOf2(&#39;axcvvb&#39;,&#39;cv&#39;))  </description>
     </item>
     
     <item>
@@ -361,22 +380,6 @@ DOM3：element.addEventListener(&amp;lsquo;keyup&amp;rsquo;,fuction(){},false) �
 window&amp;ndash;&amp;gt;document&amp;ndash;&amp;gt;html&amp;ndash;&amp;gt;body&amp;ndash;&amp;gt;&amp;hellip;&amp;ndash;&amp;gt;目标元素 （其中获取html节点用document.documentElement，获取body节点用document.body）
 冒泡则是反过来的 var ev = document.getElementById(&#39;ev&#39;); window.addEventListener(&#39;click&#39;,function(){ console.log(&#39;window capture&#39;) },true)//true是捕获，false是冒泡 document.addEventListener(&#39;click&#39;,function(){ console.log(&#39;document capture&#39;) },true) document.documentElement.addEventListener(&#39;click&#39;,function(){ console.log(&#39;html capture&#39;) },true) document.body.addEventListener(&#39;click&#39;,function(){ console.log(&#39;body capture&#39;) },true) ev.addEventListener(&#39;click&#39;,function(){ console.log(&#39;ev capture&#39;) },true)  5.Event对象的常见应用
 event.preventDefault() （阻止默认事件） event.stopPropagation() （阻止冒泡行为） event.stopImmediatePropagation() （假如同一个button创建了两个click事件，要执行A不执行B，就用这个方法） event.</description>
-    </item>
-    
-    <item>
-      <title>税友实习生一二三面</title>
-      <link>https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/</link>
-      <pubDate>Mon, 22 Apr 2019 21:53:35 +0800</pubDate>
-      
-      <guid>https://zhengxiaomengmeng.github.io/2019/04/%E7%A8%8E%E5%8F%8B%E5%AE%9E%E4%B9%A0%E7%94%9F%E4%B8%80%E4%BA%8C%E4%B8%89%E9%9D%A2/</guid>
-      <description>人生第一次面试，记录一下！
-从做完税友的笔试到现场面试中间只隔四天，笔试内容需要关注上届的笔试题，我这次做的笔试题和师兄秋招的题是一样的。笔试内容分成两块：选择题和问答题，题目都很简单，和大公司的笔试不在一个档次。 税友实习生面试总共有一二三面，一面是技术面，二面是HR面，三面是技术总监面，（有可能一面和二面顺序互换），面试的时候问的都是基础题，只要准备过，经历三轮面试基本没问题，下面列的是一二三面问到的问题。
-一面（技术面）：简历上怎么写面试官就怎么问（40分钟左右） 1.自我介绍（注意：最好摆脱官方自我介绍，在自我介绍的时候可以加点简历上没有写的内容） 2.localStorage、sessionStorage、Cookie的区别、用法、优缺点（看时需要知道它们各自的存放数据大小） 3.html5有哪些新特性（讲自己用到过的，在哪里用到，实现什么功能） 4.ES6的新特性 5.什么是原型，什么是原型链 6.讲述一下使用JQuery和Vue框架的优缺点 7.兼容性问题，平时在项目中怎么处理 8.Vue的数据双向绑定原理 9.在使用Vue时，通过什么方式获取后端数据，并怎么实现（其实他想知道的是axios插件） 10.在IE浏览器处理兼容性时，hack用法 11.用原生的js写Ajax 12.echarts感觉如何，有没有应用过 13.平时如何学前端的技术，有没有了解新技术，关注哪些人博客或公众号，对前端所需要的技术栈了解没（入门学什么，中期学什么，后期学什么） 14.为什么选择前端这个职业，它对你的吸引在哪里 15.在项目中如何和后端开发人员合作 16.项目中遇到什么问题，怎么解决（平时遇到问题最好做下笔记） 17.for、foreach、map如何跳出循环
-只记得问了上述的问题，其他问题忘了，问题问完后，每轮都会提问还有什么想问的吗（需要用心准备，都是有套路的） 最后给我一道题目，并且给我花两分钟时间，让我判断七个杯里哪个被子会有水
-二面（HR面）（25分钟左右） 1.优缺点 2.你认为中大型企业招聘实习生的要求是什么 3.学习规划 4.调查户口 5.期待工资（不要太直接，最好给个范围） 6.前端吸引你的地方 7.在前端这职位的发展规划 8.对于上一轮面试印象最深刻的问题 9.聊本科（主要是我本科在东北，所有他们比较好奇） 10. &amp;hellip;..忘了
-提问还有什么想问的
-三面（技术总监面）（40分钟左右） 1.为什么选择前端这工作，对前端的理解 2.在考虑利益最大化，你比本科生的优势在哪里 3.怎么学习前端（这一块他给我讲了很多，给我规划了一下接下来的学习方向：要深入原理看） 4&amp;hellip;.忘了
-给我的感觉吧，基础很重要，基础扎实一般都没问题，这公司没深入问项目，有点与众不同，最重要的是它更偏爱本科生。</description>
     </item>
     
     <item>

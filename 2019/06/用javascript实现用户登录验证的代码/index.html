@@ -8,97 +8,35 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Dream">
 <meta name="keywords" content=", JavaScript, CSS, HTML">
-<meta name="description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta name="description" content="用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.">
 
 
-<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta property="og:description" content="用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript堆栈原理">
-<meta name="twitter:title" content="JavaScript堆栈原理">
-<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
-<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+<meta property="og:title" content="用javascript实现用户登录验证的代码">
+<meta name="twitter:title" content="用javascript实现用户登录验证的代码">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
 <meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
-<meta property="og:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
-<meta name="twitter:description" content="JavaScript堆栈原理 堆&amp;栈 两者都是用来存放临时数据。
-栈是先进后出的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。
-堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。
-栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。
-堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
-堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
-栈（数据结构）：一种先进后出的数据结构。
-数据类型访问&amp;&amp;复制 基本数据类型：基本数据类型值指保存在栈内存中的简单数据段。访问方式是按值访问。
- var a =1 ;
- 栈内存  a 1        操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。
- 基本类型变量的复制：从一个变量向一个变量复制时，会在栈中创建一个新值，然后把值复制到为新变量分配的位置上。
- var b=a;
- 栈内存  a 1  b 1    var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；
- 引用数据类型：引用数据类型值指保存在堆内存中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。
- var a = new Object(); //(引用指针指向object)
- 栈内存  堆内存  a 引用指针 object            当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。">
+<meta property="og:description" content="用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.">
+<meta name="twitter:description" content="用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-03-07T22:31:13">
+    <meta property="article:published_time" content="2019-06-03T19:50:08">
   
   
-    <meta property="article:modified_time" content="2019-03-07T22:31:13">
+    <meta property="article:modified_time" content="2019-06-03T19:50:08">
   
   
   
     
-      <meta property="article:section" content="数据结构学习笔记">
+      <meta property="article:section" content="JavaScript学习笔记">
     
   
   
     
       <meta property="article:tag" content="JavaScript">
-    
-      <meta property="article:tag" content="数据结构">
     
   
 
@@ -119,14 +57,14 @@
   <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
 
 
-    <title>JavaScript堆栈原理</title>
+    <title>用javascript实现用户登录验证的代码</title>
 
     <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -268,19 +206,19 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      JavaScript堆栈原理
+      用javascript实现用户登录验证的代码
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-03-07T22:31:13&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-06-03T19:50:08&#43;08:00">
         
   
   
   
   
-    2019-03-07
+    2019-06-03
   
 
       </time>
@@ -290,7 +228,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构学习笔记</a>
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">JavaScript学习笔记</a>
     
   
 
@@ -302,187 +240,156 @@
             <div class="main-content-wrap">
               
 
-<h2 id="javascript堆栈原理">JavaScript堆栈原理</h2>
+<h2 id="用javascript实现用户登录验证的代码">用javascript实现用户登录验证的代码</h2>
 
-<h3 id="堆-栈">堆&amp;栈</h3>
+<h3 id="不带验证码">不带验证码</h3>
 
-<p>两者都是用来存放<strong>临时数据</strong>。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt;
+&lt;body&gt;
+&lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt;
+    &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt;
+    &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt;
+    &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt;
+&lt;/form&gt;
+&lt;script language=&quot;JavaScript&quot;&gt;
+    function subimtonclick() {
+        var form1 = document.getElementById('form1');
+        if (form1.text1.value == &quot;&quot;) {
+            alert(&quot;用户名不能为空&quot;);
+            form1.text1.focus();
+            return;
+        }
+        if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) {
+            alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;);
+            form1.text1.focus();
+            return;
+        }
+        if (form1.pwd.value == &quot;&quot;) {
+            alert(&quot;密码不能为空&quot;);
+            form1.pwd.focus();
+            return;
+        }
+        if (form1.pwd.value.length &lt; 6 || form1.pwd.value.length &gt; 10) {
+            alert(&quot;密码不能少于六个字符，不能超过十个字符&quot;);
+            form1.pwd.focus();
+            return;
+        }
+        var str = &quot;用户名：&quot; + form1.text1.value + &quot;&lt;br&gt;&quot; + &quot;密码：&quot; + form1.pwd.value + &quot;&lt;br&gt;&quot;;
+        document.writeln(str);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-<p>栈是<strong>先进后出</strong>的，就像一个桶，后进去的先出来，它下面本来有的东西要等其他出来之后才能出来。</p>
+<h3 id="带验证码">带验证码</h3>
 
-<p>堆是在程序运行时，而不是在程序编译时，申请某个大小的内存空间。即动态分配内存，对其访问和对一般内存的访问没有区别。对于堆，我们可以随心所欲的进行增加变量和删除变量，不用遵循次序。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt;
+    &lt;style&gt;
+        .code {
+            background-image: url(./vbg.jpeg);
+            font-family: Arial;
+            font-style: italic;
+            color: Red;
+            border: 0;
+            padding: 6px 0px;
+            letter-spacing: 3px;
+            font-weight: bolder;
+            height: 12px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            border-radius: 4px;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
 
-<p>栈区（stack） 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。</p>
+        .unchanged {
+            border: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt;
+    &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt;
+    &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;validCode&quot; id=&quot;validCode&quot; placeholder=&quot;请输入验证码&quot;/&gt;
+    &lt;input type=&quot;text&quot; onClick=&quot;createCode()&quot; readonly=&quot;readonly&quot; id=&quot;checkCode&quot; class=&quot;unchanged&quot;
+           style=&quot;width: 80px;cursor:pointer&quot;/&gt;
+    &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt;
+&lt;/form&gt;
+&lt;script language=&quot;JavaScript&quot;&gt;
+    window.onload = function () {
+        createCode()
+    }
+    var code;
 
-<p>堆区（heap） 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。</p>
+    function createCode() {
+        var code = &quot;&quot;;
+        var codeLength = 4;//验证码的长度
+        checkCode = document.getElementById(&quot;checkCode&quot;);
+        var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//所有候选组成验证码的字符，当然也可以用中文的
+        for (var i = 0; i &lt; codeLength; i++) {
+            var charIndex = Math.floor(Math.random() * 36);
+            code += selectChar[charIndex];
+        }
+        if (checkCode) {
+            checkCode.className = &quot;code&quot;;
+            checkCode.value = code;
+            checkCode.blur();
+        }
+    }
 
-<p>堆（数据结构）：堆可以被看成是一棵树，如：堆排序；</p>
-
-<p>栈（数据结构）：一种先进后出的数据结构。</p>
-
-<h3 id="数据类型访问-复制">数据类型访问&amp;&amp;复制</h3>
-
-<p><strong>基本数据类型</strong>：基本数据类型值指保存在<strong>栈内存</strong>中的简单数据段。访问方式是<strong>按值访问</strong>。</p>
-
-<blockquote>
-<p>var a =1 ;</p>
-</blockquote>
-
-<table border='1' align='center' width=200px height=150px >
-<tr  align='center'>
-<th colspan = '2'>栈内存</th>
-</tr>
-<tr align='center'>
-<td>a</td>
-<td>1</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<blockquote>
-<p>操作的是变量实际保存的值。当a = 2时，栈内存的1直接改成2。</p>
-</blockquote>
-
-<p><strong>基本类型变量的复制</strong>：从一个变量向一个变量复制时，会在<strong>栈</strong>中创建一个新值，然后把值复制到为新变量分配的位置上。</p>
-
-<blockquote>
-<p>var b=a;</p>
-</blockquote>
-
-<table border='1' align='center' width=200px height=150px >
-<tr  align='center'>
-<th colspan = '2'>栈内存</th>
-</tr>
-<tr align='center'>
-<td>a</td>
-<td>1</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>1</td>
-</tr>
-</table>
-
-<blockquote>
-<p>var b=2; //把栈中b所对应的值改成2，a的值不变，仍然是1；</p>
-</blockquote>
-
-<p><strong>引用数据类型</strong>：引用数据类型值指保存在<strong>堆内存</strong>中的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存中的另一个位置，该位置保存着对象。访问方式是按引用访问。</p>
-
-<blockquote>
-<p>var a = new Object();       //(引用指针指向object)</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object</td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<blockquote>
-<p>当操作时，需要先从栈中读取内存地址，然后再延指针找到保存在堆内存中的值再操作。</p>
-
-<p>a.name= &lsquo;xz&rsquo;;</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object{name:'xz'}</td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<p><strong>引用类型变量的复制</strong>：复制的是存储在栈中的指针，将指针复制到栈中未新变量分配的空间中，而这个指针副本和原指针指向存储在堆中的同一个对象；复制操作结束后，两个变量实际上将引用同一个对象。因此，在使用时，改变其中的一个变量的值，将影响另一个变量。</p>
-
-<blockquote>
-<p>var b=a;                //a,b的引用指针都指向object</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>引用指针</td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-
-<blockquote>
-<p>b.sex =&lsquo;boy&rsquo;;</p>
-</blockquote>
-
-<table border='1' align='center' width=400px height=200px >
-<tr align='center'>
-<td colspan =2 width=100px >栈内存</td>
-<td rowspan =4 width=50px ></td>
-<td>堆内存</td>
-</tr>
-<tr align='center'>
-<td width=50px >a</td>
-<td>引用指针</td>
-<td>object{name:'xz'}</td>
-</tr>
-<tr align='center'>
-<td>b</td>
-<td>引用指针</td>
-<td></td>
-</tr>
-<tr align='center'>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
+    function subimtonclick() {
+        var form1 = document.getElementById('form1');
+        if (form1.text1.value == &quot;&quot;) {
+            alert(&quot;用户名不能为空&quot;);
+            form1.text1.focus();
+            return;
+        }
+        if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) {
+            alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;);
+            form1.text1.focus();
+            return;
+        }
+        if (form1.pwd.value == &quot;&quot;) {
+            alert(&quot;密码不能为空&quot;);
+            form1.pwd.focus();
+            return;
+        }
+        if (form1.pwd.value.length &lt; 6 || form1.pwd.value.length &gt; 10) {
+            alert(&quot;密码不能少于六个字符，不能超过十个字符&quot;);
+            form1.pwd.focus();
+            return;
+        }
+        if (form1.validCode.value == &quot;&quot;) {
+            alert(&quot;验证码不能为空&quot;);
+            form1.validCode.focus();
+            return;
+        }
+        if (form1.validCode.value !== checkCode.value) {
+            alert(&quot;验证码错误&quot;);
+            form1.validCode.focus();
+            return;
+        }
+        var str = &quot;用户名：&quot; + form1.text1.value + &quot;&lt;br&gt;&quot; + &quot;密码：&quot; + form1.pwd.value + &quot;&lt;br&gt;&quot; + &quot;验证码：&quot; + form1.validCode.value;
+        document.writeln(str);
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
               
             </div>
@@ -497,8 +404,6 @@
                     
   <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
 
-  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-
                   </div>
                 
               
@@ -510,7 +415,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E5%8F%8A%E5%85%B6%E6%AF%94%E8%BE%83/" data-tooltip="三栏布局实现方案及其比较">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -518,7 +423,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/" data-tooltip="各种布局的优缺点">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/" data-tooltip="通用的事件侦听函数">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -536,7 +441,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -586,7 +491,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/04/%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E5%8F%8A%E5%85%B6%E6%AF%94%E8%BE%83/" data-tooltip="三栏布局实现方案及其比较">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -594,7 +499,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/03/%E5%90%84%E7%A7%8D%E5%B8%83%E5%B1%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/" data-tooltip="各种布局的优缺点">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/" data-tooltip="通用的事件侦听函数">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -612,7 +517,7 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/03/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -642,7 +547,7 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F03%2Fjavascript%25E5%25A0%2586%25E6%25A0%2588%25E5%258E%259F%25E7%2590%2586%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F06%2F%25E7%2594%25A8javascript%25E5%25AE%259E%25E7%258E%25B0%25E7%2594%25A8%25E6%2588%25B7%25E7%2599%25BB%25E5%25BD%2595%25E9%25AA%258C%25E8%25AF%2581%25E7%259A%2584%25E4%25BB%25A3%25E7%25A0%2581%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -972,9 +877,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/';
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/06\/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81\/';
           
-            this.page.identifier = '\/2019\/03\/javascript%E5%A0%86%E6%A0%88%E5%8E%9F%E7%90%86\/'
+            this.page.identifier = '\/2019\/06\/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81\/'
           
         };
         (function() {

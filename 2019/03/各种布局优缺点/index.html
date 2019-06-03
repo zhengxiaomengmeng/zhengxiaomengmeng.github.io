@@ -499,6 +499,23 @@ css3引入的，flex布局；优点在于其容易上手，根据flex规则很�
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
+                <h3 class="media-heading">用javascript实现用户登录验证的代码</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById('form1'); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/">
                 <h3 class="media-heading">通用的事件侦听函数</h3>
               </a>
@@ -530,6 +547,24 @@ css3引入的，flex布局；优点在于其容易上手，根据flex规则很�
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                <h3 class="media-heading">使用indexOf判断一个字符串包含另一个字符串</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 使用indexOf判断一个字符串包含另一个字符串 题目  请实现 javascript 中的 indexOf 功能，判断一个字符串 a 中是否包含另一个字符串 b。 a）如果包含，需要返回匹配字符串 b 的位置。 b）如果不包含，需要返回-1。 如：indexOf(&ldquo;hello&rdquo;,&ldquo;el&rdquo;) return 1。
+ 代码实现 function indexOf1(a,b) { var result = a.match(b); return result?result.index:-1; } function indexOf2(a,b) { return a.search(b); } console.log(indexOf2('axcvvb','cv'))  </div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -671,57 +706,6 @@ var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5,
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vuex/">
-                <h3 class="media-heading">Vuex</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Vuex学习笔记 问题提出 题目: Vuex是什么？怎么使用？哪种功能场景是用它？
-分析过程 1. Vuex是什么
-Vuex是一个专门为Vue构建的状态集管理，主要是为了解决组件间状态共享的问题，强调的是集中式管理（说白了,主要是便于维护，便于解耦，所以不是所有的项目都适合使用vuex）如果不是大型项目使用vuex反而使项目代码繁琐多余
-2. Vuex的核心
- state（不可缺，存储数据的位置） mutations （不可缺，用来变更状态） getters （类似vue中的computed，动态变更数据） actions （不可缺，动作层，与mutations一起使用，触发状态） modules （拆分state（仓库）方便取数据）  3. 状态集管理的流向
-从视图流向actions，actions再commit给mutations，mutations再变更state状态，这三个合在一起就是Vuex，也就是store。
-&lt;div id=&quot;app&quot;&gt; &lt;p&gt;更新技术{{count}}&lt;/p&gt; &lt;button @click=&quot;add&quot;&gt;++&lt;/button&gt; &lt;button @click=&quot;reduce&quot;&gt;--&lt;/button&gt; &lt;/div&gt; &lt;script&gt; var store = new Vuex.Store({ state: { count: 0 }, mutations: { //唯一一个可以更改状态的地方 addState: function (state) { if (state.count &lt; 59) { state.count++; } else { state.count = 0; } }, reduceState: function (state) { if (state.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7%E7%B1%BB/">
-                <h3 class="media-heading">错误监控类</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">错误监控类 问题提出 题目: 错误监控类有哪些或者如何保证产品质量？？
-分析过程 需要掌握得知识点
- 前端错误的分类
- 错误的捕获方式
- 上报错误的基本原理
-  1.前端错误的分类
- 即时运行错误：代码错误
- 资源加载错误：（js、css、图片加载失败）
-  2.错误的捕获方式
- 即时运行错误： try…catch(需要把try&hellip;catch布到代码中) window.onerror(dom0)只能捕获即时运行错误
-  **资源加载错误：（js、css、图片加载失败）** object.onerror(通过节点绑onerror事件，捕获加载错误；) performance.getEntries(); 获取已加载资源时长，通过这个方式可以间接的拿到没有加载资源的错误； 返回的是一个数组，有forEach方法。 performance.getEntries().forEach(item=&gt;{console.log(item.name)});可以得到已成功加载的资源。 document.getElementsByTagName(‘img’);能拿到所有img的一个集合，是我们所需要加载的所有 图片的一个集合减去上面已成功加载的集合，剩下就是没有成功加载的。 Error事件捕获 window上通过事件捕获一样可以拦截到资源加载错误。可以在捕获阶段拿到这个。 body中: &lt;script src=“//baidu.com/test.js” charset=“utf-8”&gt;&lt;/script&gt;//不存在 为了证明捕获可以拿到这个事件； head中： &lt;script&gt; window.addEventListener(‘error’,function(e){ conosle.log(‘捕获’,e); }); &lt;/script&gt; ==&gt;报错 GETfiles | baidu.com | test.js 没找到 捕获 Event {isTrusted:true,’type’:’error’,target:script,currentTarget:window,eventphase:1…} 不会冒泡，script标签发生了错误，触发本身onerror事件已经可以了，不会向上冒泡到window。  延伸：跨域JS运行错误可以捕获吗，错误提示是什么，应该怎么处理？ 可以拿到所有跨域文件的代码错误；
-Resource interpreted as script but transferred 错误信息：Script error.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -729,7 +713,7 @@ Resource interpreted as script but transferred 错误信息：Script error.</div
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         42 posts found
+         43 posts found
       </p>
     </div>
   </div>

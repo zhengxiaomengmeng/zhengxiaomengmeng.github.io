@@ -6,10 +6,19 @@
     <description>Recent content in Javascript on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 May 2019 14:36:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 19:50:08 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用javascript实现用户登录验证的代码</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Mon, 03 Jun 2019 19:50:08 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/</guid>
+      <description>用javascript实现用户登录验证的代码 不带验证码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&amp;quot;/&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form id=&amp;quot;form1&amp;quot; action=&amp;quot;&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;text1&amp;quot; type=&amp;quot;text&amp;quot; value=&amp;quot;&amp;quot; placeholder=&amp;quot;name&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;password&amp;quot; name=&amp;quot;pwd&amp;quot; placeholder=&amp;quot;密码&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;text3&amp;quot; value=&amp;quot;submit&amp;quot; type=&amp;quot;submit&amp;quot; onclick=&amp;quot;subimtonclick()&amp;quot;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;quot;JavaScript&amp;quot;&amp;gt; function subimtonclick() { var form1 = document.getElementById(&#39;form1&#39;); if (form1.text1.value == &amp;quot;&amp;quot;) { alert(&amp;quot;用户名不能为空&amp;quot;); form1.text1.focus(); return; } if (form1.text1.value.length &amp;lt; 6 || form1.text1.value.length &amp;gt; 10) { alert(&amp;quot;用户名不能少于六个字符，不能超过十个字符&amp;quot;); form1.text1.focus(); return; } if (form1.pwd.value == &amp;quot;&amp;quot;) { alert(&amp;quot;密码不能为空&amp;quot;); form1.</description>
+    </item>
     
     <item>
       <title>通用的事件侦听函数</title>
@@ -32,6 +41,16 @@
       
       <guid>https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/</guid>
       <description>Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</description>
+    </item>
+    
+    <item>
+      <title>使用indexOf判断一个字符串包含另一个字符串</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Wed, 22 May 2019 17:51:22 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description> 使用indexOf判断一个字符串包含另一个字符串 题目  请实现 javascript 中的 indexOf 功能，判断一个字符串 a 中是否包含另一个字符串 b。 a）如果包含，需要返回匹配字符串 b 的位置。 b）如果不包含，需要返回-1。 如：indexOf(&amp;ldquo;hello&amp;rdquo;,&amp;ldquo;el&amp;rdquo;) return 1。
+ 代码实现 function indexOf1(a,b) { var result = a.match(b); return result?result.index:-1; } function indexOf2(a,b) { return a.search(b); } console.log(indexOf2(&#39;axcvvb&#39;,&#39;cv&#39;))  </description>
     </item>
     
     <item>
