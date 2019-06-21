@@ -740,6 +740,98 @@ Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                <h3 class="media-heading">重建二叉树</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">重建二叉树 题目描述  输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
+ 解题思路  由前序遍历可以得出二叉树的根节点是该序列的第一项，再在中序遍历中找到该节点所在的位子，因为中序遍历序列的根节点将数分布在左右两侧，将中序遍历序列左右的数分离出来，组成新序列，去掉前序遍历的第一个数，按照中序遍历左边数的个数分割前序遍历左右两边的数，再进行递归，返回二叉树&hellip;
+ 代码实现 /* function TreeNode(x) { this.val = x; this.left = null; this.right = null; } */ function reConstructBinaryTree(pre, vin) { // write code here var result = null; if(pre.length&gt;1){ var root = pre[0]; var rootIndex = vin.indexOf(pre[0]); var rootLeft = vin.slice(0,rootIndex); var rootRight = vin.slice(rootIndex+1,vin.length); pre.shift(); var preLeft = pre.slice(0,rootLeft.length); var preRight = pre.slice(rootLeft.length,pre.length); result={ val:root, left:reConstructBinaryTree(preLeft, rootLeft), right:reConstructBinaryTree(preRight, rootRight), } }else if (pre.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">
+                <h3 class="media-heading">用两个栈实现队列</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 用两个栈实现队列 题目描述  用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+ 分析思路  栈是先进后出，队列是先进先出的，想实现这功能则需要：设定两个数组，数组1是给push函数用的，数组2必须为空，如果数组1不为空的话，便将数组1的元素每pop出来直接push到数组2中，最后返回数组2 pop出来的元素，与push（）相结合，达到先进先出的效果。
+ 代码实现 var arr1 = []; var arr2 = []; function push(node) { // write code here arr1.push(node); } function pop() { // write code here if(arr1.length===0&amp;&amp;arr2.length===0){ return false }else if(arr2.length===0){ while(arr1.length!==0){ arr2.push(arr1.pop()) } } return arr2.pop() }  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/">
+                <h3 class="media-heading">创建优先级队列类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 创建优先级队列类 </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+                <h3 class="media-heading">创建队列类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/">
+                <h3 class="media-heading">创建堆栈类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">创建堆栈类 题目  编写一个将元素推送到堆栈顶部的push方法，一种删除堆栈顶部元素的pop方法，一个查看堆栈中第一个元素的peek方法，一个检查堆栈是否为空的。 isEmpty方法，以及一个从堆栈中删除所有元素的clear方法。 通常堆栈没有这个，但是我们添加了一个print帮助器方法，控制台记录集合。
+ 实现要求 1. 你的 Stack 类应该有一个 push 方法。 2. 你的 Stack 类应该有一个 pop 方法。 3. 你的 Stack 类应该有一个 peek 方法。 4. 你的 Stack 类应该有一个 isEmpty 方法。 5. 你的 Stack 类应该有一个 clear 方法。 6. peek 方法应该返回堆栈的顶部元素 7. pop 方法应该删除并返回堆栈的顶部元素 8. 如果堆栈不包含任何元素，则 isEmpty 方法应返回true 9. clear 方法应该从堆栈中删除所有元素  代码实现 function Stack() { collection = []; this.print = function() { console.log(collection); }; // Only change code below this line this.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/">
                 <h3 class="media-heading">通用的事件侦听函数</h3>
               </a>
@@ -818,118 +910,6 @@ Flexbox 的出现很大程度上改善了我们的布局方式，但它的目的
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/set%E5%92%8Cmap/">
-                <h3 class="media-heading">Set和Map</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Set ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。 Set本身是一个构造函数，用来生成Set数据结构。
-var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5, 2, 2].map(x =&gt; s.add(x)) for (i of s) { console.log(i) } // 2 3 4 5 （表明set结构不会添加重复的值）   Set结构接收一个数组作为参数，用来初始化。
- var items = new Set([1, 2, 3, 4, 5, 5, 5]); items.size // 5   向Set加入值的时候，不会发生类型转换。这意味着，在Set中5和”5”是两个不同的值。
- Set结构有以下属性：  Set.prototype.constructor: 构造函数，默认就是Set函数。 Set.prototype.size : 返回Set的成员总数。
- Set结构有以下属性：  add(value) : 添加某个值。 delete(value) : 删除某个值。 has(value) : 返回一个布尔值，表示该值是否为Set的成员。 clear() : 清除所有成员。</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%A1%B5%E9%9D%A2%E6%94%BE%E5%A4%A7%E7%BC%A9%E5%B0%8F%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E5%85%B6%E5%AE%BD%E9%AB%98%E6%AF%94%E4%BE%8B%E4%B8%8D%E5%8F%98/">
-                <h3 class="media-heading">页面放大缩小如何保持其宽高比例不变</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">页面放大缩小如何保持其宽高比例不变 解决方案  使用响应式来做，根据媒体查询，设定在不同屏幕宽度下div的高度和宽度
- 使用padding-bottom：XX%大法实现（定义基于父元素宽度的百分比下内边距。此值不会如预期地那样工作于所有的浏览器中。）
- 使用vw属性
-  实现方案  媒体查询
-@media only screen and (min-width: 100px) and (max-width: 640px) { div{ width: 100px; height: 100px; } } @media only screen and (min-width: 641px) and (max-width: 789px) { div{ width: 200px; height: 200px; } }  padding-bottom：XX%大法
-  &lt;body&gt; &lt;style&gt; .inner { height: 0; padding-bottom: 25%; overflow: hidden; background-color: red; } &lt;/style&gt; &lt;div style=&quot;width: 50%;&quot;&gt; &lt;div class=&quot;inner&quot;&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; 测试&lt;br&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;   使用vw属性，他是参考整个viewport（视窗）的宽度【vw、vh、vmin、vmax是css3新属性，支持主流浏览器且IE10以上】  .</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/axios/">
-                <h3 class="media-heading">Axios</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Axios 问题提出 题目: axios是什么？怎么使用？描述使用它实现登录功能的流程
-分析过程  axios是什么？  是基于promise的，用于浏览器和node.js的http客户端，主要作用是向后台发送请求的。
- 优势   支持promise 提供一些并发的方法（最大优势） 提供拦截器（相当守卫） 浏览器支持防止CSRF（跨站请求伪造）   axios fetch ajax（jQuery）区别   相同点：都向后台请求数据 区别：前两者基于promise，后者主要还是利用callback的形式 fetch脱离了xhr是新的语法（默认不传cookie 另外不像xhr 可以监听到请求的进度）
-  怎么使用？描述使用它实现登录功能的流程  npm install axios -S装好，然后发送的是跨域，需在配置文件中config/index.js进行设置。后台如果是Tp5则定义一个资源路由。js中使用import进来，然后.get或.post。返回在.then函数中如果成功，失败则是在.catch函数中</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vue-router/">
-                <h3 class="media-heading">Vue-router</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Vue-router 问题提出 题目: 导航钩子有哪些？他们有哪些参数？
-分析过程  导航钩子翻译过来就是路由的生命周期（vue-router）
- 其实分成两种 全局和局部
- 全局的钩子函数 &gt; beforeEach(在路由切换开始时调用,路由守卫的实现) &gt; afterEach(在路由切换离开时调用)
- 局部到单个路由 &gt; beforeEnter
- 组件的钩子函数（局部到单个组件） &gt; beforeRouterEnter &gt; beforeRouterUpdate &gt; beforeRouterLeave
- 使用的顺序 (组件的钩子函数&gt;局部到单个路由&gt;全局的钩子函数)
-   const router = new VueRouter({ routes: routes, }) const routes = [ { path: '/', name: '/', component: Home, beforeEnter:function () { //局部到单个路由 } }, { path: '/login', name: 'login', component: Login }, { path: '/buy', name: 'buy', component: Buy, meta:{ auth:true } } ] //全局路由 /** to:即将进入目录对象 from:当前导航要离开的导航对象 next:是一个函数调用resolve 执行下一步 */ //实现路由守卫 router.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/04/vue%E5%9F%BA%E7%A1%80/">
-                <h3 class="media-heading">Vue基础</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Vue基础 问题提出 题目: 说出4个vue当中的指令和它的用法
-分析过程 1. v-if 条件渲染指令 代码存在销毁
-2. v-bind 绑定指令 用来绑定属性 （简写:）
-3. v-on 监听事件属性（简写@）
-4. v-for 循环指令
-5. v-model 数据双向绑定
- v-modle是什么   vue中利用它来进行表单数据的双向绑定（说白了，它只做了两个操作） v-bind绑定了一个value的属性 利用v-on把当前的元素绑定到一个事件上
-  Vue中标签怎么绑定事件？  &lt;div id=&quot;app&quot;&gt; &lt;input v-model=&quot;message&quot;&gt; &lt;p&gt;{{message}}&lt;/p&gt; ------------------------&lt;br/&gt; &lt;input :value=&quot;message2&quot; @input=&quot;message2=$event.target.value&quot;&gt; &lt;p &gt;{{message2}}&lt;/p&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: '#app', data: { message: &quot; &quot;, message2: &quot; &quot;, } }) &lt;/script&gt;  - 关于Vue
- vue是由饿了么ued团队开发并维护的一个渐进式js框架 vue是一个MVVM的框架</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -937,7 +917,7 @@ var s = new Set(); // 通过add方法向Set结构中加入成员 [2, 3, 5, 4, 5,
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         43 posts found
+         48 posts found
       </p>
     </div>
   </div>

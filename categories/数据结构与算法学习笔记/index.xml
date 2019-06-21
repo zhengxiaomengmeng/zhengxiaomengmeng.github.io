@@ -6,10 +6,62 @@
     <description>Recent content in 数据结构与算法学习笔记 on Welcome to Dream&#39;s blog </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Apr 2019 22:54:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 15:33:47 +0800</lastBuildDate>
     
 	<atom:link href="https://zhengxiaomengmeng.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>重建二叉树</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Mon, 03 Jun 2019 15:33:47 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>重建二叉树 题目描述  输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
+ 解题思路  由前序遍历可以得出二叉树的根节点是该序列的第一项，再在中序遍历中找到该节点所在的位子，因为中序遍历序列的根节点将数分布在左右两侧，将中序遍历序列左右的数分离出来，组成新序列，去掉前序遍历的第一个数，按照中序遍历左边数的个数分割前序遍历左右两边的数，再进行递归，返回二叉树&amp;hellip;
+ 代码实现 /* function TreeNode(x) { this.val = x; this.left = null; this.right = null; } */ function reConstructBinaryTree(pre, vin) { // write code here var result = null; if(pre.length&amp;gt;1){ var root = pre[0]; var rootIndex = vin.indexOf(pre[0]); var rootLeft = vin.slice(0,rootIndex); var rootRight = vin.slice(rootIndex+1,vin.length); pre.shift(); var preLeft = pre.slice(0,rootLeft.length); var preRight = pre.slice(rootLeft.length,pre.length); result={ val:root, left:reConstructBinaryTree(preLeft, rootLeft), right:reConstructBinaryTree(preRight, rootRight), } }else if (pre.</description>
+    </item>
+    
+    <item>
+      <title>用两个栈实现队列</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</link>
+      <pubDate>Sun, 02 Jun 2019 19:06:11 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</guid>
+      <description> 用两个栈实现队列 题目描述  用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+ 分析思路  栈是先进后出，队列是先进先出的，想实现这功能则需要：设定两个数组，数组1是给push函数用的，数组2必须为空，如果数组1不为空的话，便将数组1的元素每pop出来直接push到数组2中，最后返回数组2 pop出来的元素，与push（）相结合，达到先进先出的效果。
+ 代码实现 var arr1 = []; var arr2 = []; function push(node) { // write code here arr1.push(node); } function pop() { // write code here if(arr1.length===0&amp;amp;&amp;amp;arr2.length===0){ return false }else if(arr2.length===0){ while(arr1.length!==0){ arr2.push(arr1.pop()) } } return arr2.pop() }  </description>
+    </item>
+    
+    <item>
+      <title>创建优先级队列类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/</link>
+      <pubDate>Sun, 02 Jun 2019 12:56:58 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/</guid>
+      <description> 创建优先级队列类 </description>
+    </item>
+    
+    <item>
+      <title>创建队列类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/</link>
+      <pubDate>Sat, 01 Jun 2019 12:49:16 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/</guid>
+      <description>创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.</description>
+    </item>
+    
+    <item>
+      <title>创建堆栈类</title>
+      <link>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/</link>
+      <pubDate>Sat, 01 Jun 2019 12:29:46 +0800</pubDate>
+      
+      <guid>https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/</guid>
+      <description>创建堆栈类 题目  编写一个将元素推送到堆栈顶部的push方法，一种删除堆栈顶部元素的pop方法，一个查看堆栈中第一个元素的peek方法，一个检查堆栈是否为空的。 isEmpty方法，以及一个从堆栈中删除所有元素的clear方法。 通常堆栈没有这个，但是我们添加了一个print帮助器方法，控制台记录集合。
+ 实现要求 1. 你的 Stack 类应该有一个 push 方法。 2. 你的 Stack 类应该有一个 pop 方法。 3. 你的 Stack 类应该有一个 peek 方法。 4. 你的 Stack 类应该有一个 isEmpty 方法。 5. 你的 Stack 类应该有一个 clear 方法。 6. peek 方法应该返回堆栈的顶部元素 7. pop 方法应该删除并返回堆栈的顶部元素 8. 如果堆栈不包含任何元素，则 isEmpty 方法应返回true 9. clear 方法应该从堆栈中删除所有元素  代码实现 function Stack() { collection = []; this.print = function() { console.log(collection); }; // Only change code below this line this.</description>
+    </item>
     
     <item>
       <title>算法类</title>

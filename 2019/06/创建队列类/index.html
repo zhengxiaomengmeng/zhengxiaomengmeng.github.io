@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Dream">
+<meta name="keywords" content=", JavaScript, CSS, HTML">
+<meta name="description" content="创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.">
+
+
+<meta property="og:description" content="创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建队列类">
+<meta name="twitter:title" content="创建队列类">
+<meta property="og:url" content="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+<meta property="twitter:url" content="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+<meta property="og:site_name" content="Welcome to Dream&#39;s blog ">
+<meta property="og:description" content="创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.">
+<meta name="twitter:description" content="创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-06-01T12:49:16">
+  
+  
+    <meta property="article:modified_time" content="2019-06-01T12:49:16">
+  
+  
+  
+    
+      <meta property="article:section" content="数据结构与算法学习笔记">
+    
+  
+  
+    
+      <meta property="article:tag" content="数据结构">
+    
+      <meta property="article:tag" content="JavaScript">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
+  <meta property="twitter:image" content="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg">
+
+
+    <title>创建队列类</title>
+
+    <link rel="icon" href="https://zhengxiaomengmeng.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+
+    
+    
+    <link rel="stylesheet" href="https://zhengxiaomengmeng.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://zhengxiaomengmeng.github.io/">Welcome to Dream&#39;s blog </a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://zhengxiaomengmeng.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://zhengxiaomengmeng.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Dream</h4>
+        
+          <h5 class="sidebar-profile-bio">It is better to be clear than to be clever.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhengxiaomengmeng.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhengxiaomengmeng.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhengxiaomengmeng.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhengxiaomengmeng.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhengxiaomengmeng.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/zhengxiaomengmeng" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      创建队列类
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-06-01T12:49:16&#43;08:00">
+        
+  
+  
+  
+  
+    2019-06-01
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://zhengxiaomengmeng.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">数据结构与算法学习笔记</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h2 id="创建队列类">创建队列类</h2>
+
+<h3 id="概念">概念</h3>
+
+<blockquote>
+<p>像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。
+我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。
+队列类的两个主要方法是:
+enqueue(data): 添加数据插入队尾
+dequeue()： 读取队列头节点数据并删除该节点
+其他有用的方法是:
+size(): 队列长度
+empty()：判断队列是否为空
+front()：查看队首元素
+back()：查看队尾元素</p>
+</blockquote>
+
+<h3 id="说明">说明</h3>
+
+<blockquote>
+<p>编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。</p>
+</blockquote>
+
+<h3 id="实现要求">实现要求</h3>
+
+<pre><code>1. 你的 Queue 类应该有一个 enqueue 的方法。
+2. 你的 Queue 类应该有一个 dequeue 的方法。
+3. 你的 Queue 类应该有一个 front 的方法。
+4. 你的 Queue 类应该有一个 size 的方法。
+5. 你的 Queue 类应该有一个 isEmpty 的方法。
+6. dequeue 方法应该删除并返回队列的前端元素
+7. front 方法应该返回队列的前端元素的值
+8. size 方法应该返回队列的长度
+9. 如果队列中有元素，则 isEmpty 方法应返回 false
+</code></pre>
+
+<h3 id="代码实现">代码实现</h3>
+
+<pre><code>function Queue () { 
+    collection = [];
+    this.print = function() {
+        console.log(collection);
+    };
+    // Only change code below this line
+    this.enqueue = function(element){
+        collection.push(element)
+    };
+    this.dequeue = function(){
+        return collection.shift()
+    };
+    this.front = function(){
+        return collection[0]
+    };
+    this.size = function(){
+         return  collection.length
+    }
+    this.isEmpty = function(){
+        if(collection.length===0){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    // Only change code above this line
+}
+
+</code></pre>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+
+  <a class="tag tag--primary tag--small" href="https://zhengxiaomengmeng.github.io/tags/javascript/">JavaScript</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/" data-tooltip="创建优先级队列类">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/" data-tooltip="创建堆栈类">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+			
+          </div>
+		 
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Dream. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/" data-tooltip="创建优先级队列类">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/" data-tooltip="创建堆栈类">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fzhengxiaomengmeng.github.io%2F2019%2F06%2F%25E5%2588%259B%25E5%25BB%25BA%25E9%2598%259F%25E5%2588%2597%25E7%25B1%25BB%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://upload-images.jianshu.io/upload_images/15578035-30911da9c83ed8b1.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Dream</h4>
+    
+      <div id="about-card-bio">It is better to be clear than to be clever.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国-浙江
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="搜索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BB%A3%E7%A0%81/">
+                <h3 class="media-heading">用javascript实现用户登录验证的代码</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">用javascript实现用户登录验证的代码 不带验证码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head lang=&quot;en&quot;&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0&quot;/&gt; &lt;body&gt; &lt;form id=&quot;form1&quot; action=&quot;&quot; method=&quot;get&quot;&gt; &lt;input name=&quot;text1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;name&quot;&gt; &lt;input type=&quot;password&quot; name=&quot;pwd&quot; placeholder=&quot;密码&quot;&gt; &lt;input name=&quot;text3&quot; value=&quot;submit&quot; type=&quot;submit&quot; onclick=&quot;subimtonclick()&quot;&gt; &lt;/form&gt; &lt;script language=&quot;JavaScript&quot;&gt; function subimtonclick() { var form1 = document.getElementById('form1'); if (form1.text1.value == &quot;&quot;) { alert(&quot;用户名不能为空&quot;); form1.text1.focus(); return; } if (form1.text1.value.length &lt; 6 || form1.text1.value.length &gt; 10) { alert(&quot;用户名不能少于六个字符，不能超过十个字符&quot;); form1.text1.focus(); return; } if (form1.pwd.value == &quot;&quot;) { alert(&quot;密码不能为空&quot;); form1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                <h3 class="media-heading">重建二叉树</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">重建二叉树 题目描述  输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
+ 解题思路  由前序遍历可以得出二叉树的根节点是该序列的第一项，再在中序遍历中找到该节点所在的位子，因为中序遍历序列的根节点将数分布在左右两侧，将中序遍历序列左右的数分离出来，组成新序列，去掉前序遍历的第一个数，按照中序遍历左边数的个数分割前序遍历左右两边的数，再进行递归，返回二叉树&hellip;
+ 代码实现 /* function TreeNode(x) { this.val = x; this.left = null; this.right = null; } */ function reConstructBinaryTree(pre, vin) { // write code here var result = null; if(pre.length&gt;1){ var root = pre[0]; var rootIndex = vin.indexOf(pre[0]); var rootLeft = vin.slice(0,rootIndex); var rootRight = vin.slice(rootIndex+1,vin.length); pre.shift(); var preLeft = pre.slice(0,rootLeft.length); var preRight = pre.slice(rootLeft.length,pre.length); result={ val:root, left:reConstructBinaryTree(preLeft, rootLeft), right:reConstructBinaryTree(preRight, rootRight), } }else if (pre.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">
+                <h3 class="media-heading">用两个栈实现队列</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 用两个栈实现队列 题目描述  用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+ 分析思路  栈是先进后出，队列是先进先出的，想实现这功能则需要：设定两个数组，数组1是给push函数用的，数组2必须为空，如果数组1不为空的话，便将数组1的元素每pop出来直接push到数组2中，最后返回数组2 pop出来的元素，与push（）相结合，达到先进先出的效果。
+ 代码实现 var arr1 = []; var arr2 = []; function push(node) { // write code here arr1.push(node); } function pop() { // write code here if(arr1.length===0&amp;&amp;arr2.length===0){ return false }else if(arr2.length===0){ while(arr1.length!==0){ arr2.push(arr1.pop()) } } return arr2.pop() }  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%B1%BB/">
+                <h3 class="media-heading">创建优先级队列类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 创建优先级队列类 </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB/">
+                <h3 class="media-heading">创建队列类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">创建队列类 概念  像堆栈一样，队列是元素的集合。但是与堆栈不同的是，队列遵循FIFO（先进先出）原则。添加到队列的元素被推送到队列的尾部或末尾，并且仅允许删除队列前面的元素。 我们可以使用一个数组来表示一个队列，但是像堆栈一样，我们要限制我们在队列中的控制量。 队列类的两个主要方法是: enqueue(data): 添加数据插入队尾 dequeue()： 读取队列头节点数据并删除该节点 其他有用的方法是: size(): 队列长度 empty()：判断队列是否为空 front()：查看队首元素 back()：查看队尾元素
+ 说明  编写一个将元素推送到队列尾部的 enqueue 方法，一个删除并返回前面元素的 dequeue 方法，一种让我们看到前面元素的 front 方法，一个显示长度的 size 方法，以及一个 isEmpty 方法来检查队列是否为空。
+ 实现要求 1. 你的 Queue 类应该有一个 enqueue 的方法。 2. 你的 Queue 类应该有一个 dequeue 的方法。 3. 你的 Queue 类应该有一个 front 的方法。 4. 你的 Queue 类应该有一个 size 的方法。 5. 你的 Queue 类应该有一个 isEmpty 的方法。 6. dequeue 方法应该删除并返回队列的前端元素 7. front 方法应该返回队列的前端元素的值 8. size 方法应该返回队列的长度 9.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/06/%E5%88%9B%E5%BB%BA%E5%A0%86%E6%A0%88%E7%B1%BB/">
+                <h3 class="media-heading">创建堆栈类</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">创建堆栈类 题目  编写一个将元素推送到堆栈顶部的push方法，一种删除堆栈顶部元素的pop方法，一个查看堆栈中第一个元素的peek方法，一个检查堆栈是否为空的。 isEmpty方法，以及一个从堆栈中删除所有元素的clear方法。 通常堆栈没有这个，但是我们添加了一个print帮助器方法，控制台记录集合。
+ 实现要求 1. 你的 Stack 类应该有一个 push 方法。 2. 你的 Stack 类应该有一个 pop 方法。 3. 你的 Stack 类应该有一个 peek 方法。 4. 你的 Stack 类应该有一个 isEmpty 方法。 5. 你的 Stack 类应该有一个 clear 方法。 6. peek 方法应该返回堆栈的顶部元素 7. pop 方法应该删除并返回堆栈的顶部元素 8. 如果堆栈不包含任何元素，则 isEmpty 方法应返回true 9. clear 方法应该从堆栈中删除所有元素  代码实现 function Stack() { collection = []; this.print = function() { console.log(collection); }; // Only change code below this line this.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E9%80%9A%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%87%BD%E6%95%B0/">
+                <h3 class="media-heading">通用的事件侦听函数</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">通用的事件侦听函数 分析过程 需要考虑的问题如下几点：
+ 页面是否加载完成
+ 增加移除事件：DOM等级和不同浏览器之间的兼容性
+ 取消默认行为、阻止默认行为
+ 获取事件目标
+  代码实现 //写一个通用的事件监听函数 markyun.Event = { //页面加载完成后 readyEvent: function (fn) { if (fn == null) { fn = document; } var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = fn; } else { window.onload = function () { oldonload(); fn(); } } }, //分别使用dom0，dom2或IE方式来绑定事件 //参数：操作的元素、事件名称、事件处理程序 addEvent: function (element, type, handler) { if (element.addEventListener) { element.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/mock%E6%95%B0%E6%8D%AE/">
+                <h3 class="media-heading">Mock数据</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli 本地开发mock数据使用方法 参考博客： vue-cli 本地开发mock数据使用方法</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/%E4%BD%BF%E7%94%A8indexof%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                <h3 class="media-heading">使用indexOf判断一个字符串包含另一个字符串</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 使用indexOf判断一个字符串包含另一个字符串 题目  请实现 javascript 中的 indexOf 功能，判断一个字符串 a 中是否包含另一个字符串 b。 a）如果包含，需要返回匹配字符串 b 的位置。 b）如果不包含，需要返回-1。 如：indexOf(&ldquo;hello&rdquo;,&ldquo;el&rdquo;) return 1。
+ 代码实现 function indexOf1(a,b) { var result = a.match(b); return result?result.index:-1; } function indexOf2(a,b) { return a.search(b); } console.log(indexOf2('axcvvb','cv'))  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://zhengxiaomengmeng.github.io/2019/05/proxytable-%E8%A7%A3%E5%86%B3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+                <h3 class="media-heading">ProxyTable 解决开发环境的跨域问题</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Vue-cli中的proxyTable解决开发环境的跨域问题  对于前端开发人员来讲，当你在开发环境中与后台开发人员进行数据联调时，总会遇到烦人的跨域问题！
+ 解决跨域的方法有很多种，比如你和后台人员经过友好协商后，你可以通过JSONP的方式或者让后台人员将代码设置为允许你进行跨域！但是往往前后台开发人员的配合默契度是不太高的。如果后台只给你接口，并明确告诉你不允许修改接口，怎么办？怎么办才能实现跨域？此时你就可以通过proxyTable来解决跨域问题！
+ 通过proxyTable解决跨域在Vue-cli当中是很简单的。只需修改config文件夹下的index.js中的proxyTable就能实现：
+ //代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/api&quot;:{ target:&quot;http://www.xxx.com&quot;, //访问的服务器地址 changeOrigin:true, //true为开启代理 //secure: true, // 如果是https接口，需要配置这个参数 pathRewrite:{ '^/api': '/' //路径的替换规则 /* *这里的配置是正则表达式，以/api开头的路径将会被‘/'替换掉 *假如后台文档的接口是 &quot;http://www.xxx.com/user/add&quot; *前端调取API接口应写：axios.get('/api/user/add') */ } } }   以上代码的“/api”你可以认为用于代替target里面的地址，调取接口的地址直接用api来替换。
+比如后台接口地址为：”http://www.xxx.com/user/login“。 你可以直接写为：”/api/user/login”即可。
+ 可以根据不同的API域名负责的模块不同来进行多项配置
+//代理配置表，在这里可以配置特定的请求代理到对应的API接口 proxyTable:{ &quot;/adv&quot;:{ target:&quot;http://adv.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/adv': '/'//路径的替换规则 } }， &quot;/user&quot;:{ target:&quot;http://user.com&quot;,//访问的服务器地址 changeOrigin:true,//true为开启代理 pathRewrite:{ '^/user': '/'//路径的替换规则 } } }   以上代码”/adv”与”/user”分别负责项目中的广告模块与用户模块。 例如： 后台文档的地址是：“http://adv.com/add”， 前端调取API接口应写：axios.get(‘/adv/add’)
+ 注意： 配置修改完以后一定要重新npm run dev 一次</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         48 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://zhengxiaomengmeng.github.io/images/cover1.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://zhengxiaomengmeng.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/zhengxiaomengmeng.github.io\/2019\/06\/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB\/';
+          
+            this.page.identifier = '\/2019\/06\/%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97%E7%B1%BB\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Dream\x27s blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
